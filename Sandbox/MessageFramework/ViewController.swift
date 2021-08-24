@@ -8,7 +8,6 @@
 import UIKit
 import MessageUI
 
-
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
@@ -45,7 +44,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
                 let composeViewController = MFMessageComposeViewController()
                 composeViewController.messageComposeDelegate = self
                 composeViewController.recipients = ["01048227008"]
-                composeViewController.body = "신고합니다"
+                composeViewController.body = "Report"
                 present(composeViewController, animated: true, completion: nil)
             }
     }
