@@ -7,6 +7,7 @@
 
 import UIKit
 import MessageUI
+import Messages
 
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
