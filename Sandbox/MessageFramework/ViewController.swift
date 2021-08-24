@@ -7,7 +7,6 @@
 
 import UIKit
 import MessageUI
-import Messages
 
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
@@ -34,19 +33,20 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
         // Do any additional setup after loading the view.
     }
         
-    @objc private func didTapSendButton(_ sender: UIButton) {
-            print("Tap")
-            
-            guard MFMessageComposeViewController.canSendText() else {
-                print("SMS services are not available")
-                return
+    
+    @IBAction func reportTapped(_ sender: UIButton) {
+        print("Tap")
+                
+                guard MFMessageComposeViewController.canSendText() else {
+                    print("SMS services are not available")
+                    return
+                }
+                
+                let composeViewController = MFMessageComposeViewController()
+                composeViewController.messageComposeDelegate = self
+                composeViewController.recipients = ["01048227008"]
+                composeViewController.body = "신고합니다"
+                present(composeViewController, animated: true, completion: nil)
             }
-            
-            let composeViewController = MFMessageComposeViewController()
-            composeViewController.messageComposeDelegate = self
-            composeViewController.recipients = ["01048227008"]
-            composeViewController.body = "신고합니다"
-            present(composeViewController, animated: true, completion: nil)
-        }
-}
-
+    }
+    
