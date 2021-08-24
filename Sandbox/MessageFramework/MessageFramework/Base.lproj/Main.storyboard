@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dJQ-sj-qd3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -17,8 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlt-yG-WfV">
-                                <rect key="frame" x="183.5" y="433" width="47" height="30"/>
-                                <state key="normal" title="Report"/>
+                                <rect key="frame" x="74.5" y="412" width="265" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Report Now!"/>
                                 <connections>
                                     <action selector="reportTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EIc-Hm-RS2"/>
                                 </connections>
@@ -31,13 +32,122 @@
                             <constraint firstItem="hlt-yG-WfV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tZf-nc-Udo"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xea-FF-AjC">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="DVs-NC-YNE"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2536" y="-204"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Pa5-Vz-IhQ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dJQ-sj-qd3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wx1-Aj-Ozx">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8CC-q3-MJJ" kind="relationship" relationship="viewControllers" id="gy9-V8-p0O"/>
+                        <segue destination="rG8-kT-GIO" kind="relationship" relationship="viewControllers" id="e3n-oN-xyS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aj5-u4-kQq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="18.840579710144929" y="76.339285714285708"/>
+        </scene>
+        <!--My page-->
+        <scene sceneID="hgO-iA-DOr">
+            <objects>
+                <viewController id="dZJ-al-sa7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hgw-vs-RGJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Bc5-PV-sRJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="My page" id="ute-MS-DWr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eyS-iq-PNh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="459"/>
+        </scene>
+        <!--Report-->
+        <scene sceneID="rJB-Pn-1zf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwC-eT-cwX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8CC-q3-MJJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Report" image="megaphone" catalog="system" selectedImage="megaphone.fill" id="p0B-7X-Yon"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0th-do-zeH">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d3Z-T2-QrR" kind="relationship" relationship="rootViewController" id="fuZ-og-61N"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="980" y="-203"/>
+        </scene>
+        <!--Report view-->
+        <scene sceneID="Kos-oK-a36">
+            <objects>
+                <viewController id="d3Z-T2-QrR" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UZX-3r-SrZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLP-SN-7NH">
+                                <rect key="frame" x="149.5" y="418" width="115" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Report"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="4Bf-Qa-jvR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lHT-EM-GeS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LLP-SN-7NH" firstAttribute="centerY" secondItem="UZX-3r-SrZ" secondAttribute="centerY" id="L7d-Ru-q2I"/>
+                            <constraint firstItem="LLP-SN-7NH" firstAttribute="centerX" secondItem="UZX-3r-SrZ" secondAttribute="centerX" id="SYb-bg-2ix"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Report view" id="aC7-Y0-3t0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4we-Sj-6Rm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="-204"/>
+        </scene>
+        <!--My page-->
+        <scene sceneID="xz1-c8-qhR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rG8-kT-GIO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My page" image="house" catalog="system" selectedImage="house.fill" id="hvr-xH-jsN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x66-4X-LGA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dZJ-al-sa7" kind="relationship" relationship="rootViewController" id="eeD-J3-j9x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PgC-mK-5g9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="459"/>
         </scene>
     </scenes>
     <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="megaphone" catalog="system" width="128" height="111"/>
+        <image name="megaphone.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
