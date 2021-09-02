@@ -17,9 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlt-yG-WfV">
-                                <rect key="frame" x="74.5" y="412" width="265" height="72"/>
+                                <rect key="frame" x="135.5" y="412" width="143" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="Report Now!"/>
+                                <state key="normal" title="Report"/>
                                 <connections>
                                     <action selector="reportTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EIc-Hm-RS2"/>
                                 </connections>
@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2536" y="-204"/>
+            <point key="canvasLocation" x="1752" y="-204"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Pa5-Vz-IhQ">
@@ -46,6 +46,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dJQ-sj-qd3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wx1-Aj-Ozx">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -77,7 +78,6 @@
         <!--Report-->
         <scene sceneID="rJB-Pn-1zf">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nwC-eT-cwX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8CC-q3-MJJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Report" image="megaphone" catalog="system" selectedImage="megaphone.fill" id="p0B-7X-Yon"/>
                     <toolbarItems/>
@@ -87,41 +87,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="d3Z-T2-QrR" kind="relationship" relationship="rootViewController" id="fuZ-og-61N"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WWd-Vs-IPg"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwC-eT-cwX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="-203"/>
-        </scene>
-        <!--Report view-->
-        <scene sceneID="Kos-oK-a36">
-            <objects>
-                <viewController id="d3Z-T2-QrR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UZX-3r-SrZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLP-SN-7NH">
-                                <rect key="frame" x="149.5" y="418" width="115" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <state key="normal" title="Report"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="4Bf-Qa-jvR"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="lHT-EM-GeS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="LLP-SN-7NH" firstAttribute="centerY" secondItem="UZX-3r-SrZ" secondAttribute="centerY" id="L7d-Ru-q2I"/>
-                            <constraint firstItem="LLP-SN-7NH" firstAttribute="centerX" secondItem="UZX-3r-SrZ" secondAttribute="centerX" id="SYb-bg-2ix"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Report view" id="aC7-Y0-3t0"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4we-Sj-6Rm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1729" y="-204"/>
         </scene>
         <!--My page-->
         <scene sceneID="xz1-c8-qhR">
