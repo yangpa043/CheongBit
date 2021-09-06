@@ -1,24 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Rf-4F-8H1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CheongBit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="BQf-8e-oU2">
+                                <rect key="frame" x="111" y="296.5" width="192" height="303"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="micOff" translatesAutoresizingMaskIntoConstraints="NO" id="scd-YC-Lho">
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="192"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="scd-YC-Lho" secondAttribute="height" id="7Pv-eW-YOe"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdG-eB-67Q">
+                                        <rect key="frame" x="57.5" y="226" width="77" height="77"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="TdG-eB-67Q" secondAttribute="height" id="ul5-7t-pnp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="switchOff"/>
+                                        <connections>
+                                            <action selector="switchChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bbv-H8-7Ap"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TdG-eB-67Q" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.1" id="96i-eY-H90"/>
+                            <constraint firstItem="scd-YC-Lho" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.214286" id="Ref-p7-qr0"/>
+                            <constraint firstItem="BQf-8e-oU2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UaW-eI-CEv"/>
+                            <constraint firstItem="BQf-8e-oU2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="z8V-it-keJ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="oHn-pG-tSY">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Yua-Ke-rKQ">
+                            <rect key="frame" x="118" y="7" width="178" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="성북구 성복동 5-9 ⌵"/>
+                            <connections>
+                                <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3oA-qB-VeC"/>
+                            </connections>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" title="myPage" image="person.circle" catalog="system" id="jhi-HI-AKM">
+                            <connections>
+                                <segue destination="u3i-6O-i7C" kind="show" id="hqk-hG-nxv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="micImage" destination="scd-YC-Lho" id="Xag-8q-feM"/>
+                        <outlet property="micSwitch" destination="TdG-eB-67Q" id="5h5-8K-4ks"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="773.91304347826087" y="-309.375"/>
+        </scene>
+        <!--내 프로필-->
+        <scene sceneID="XQe-dv-dQd">
+            <objects>
+                <viewController id="u3i-6O-i7C" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Dt-WX-O9H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XYF-mi-KLI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="내 프로필" id="trm-O3-Ukf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PaN-ek-bDD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1488" y="-309"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZR2-U6-cvP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Rf-4F-8H1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MNg-Jd-3oC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" name="AccentColor"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Uti-Sl-TCd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="74F-XK-beC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-136.23188405797103" y="-309.375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="micOff" width="250" height="250"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="switchOff" width="500" height="500"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
