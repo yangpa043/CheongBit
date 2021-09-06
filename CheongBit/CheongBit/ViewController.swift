@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         switchButtonUpdate()
-        // Do any additional setup after loading the view.
     }
 
 
