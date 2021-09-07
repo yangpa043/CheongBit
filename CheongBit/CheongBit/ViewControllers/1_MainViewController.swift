@@ -9,10 +9,10 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var switchValue:Bool = false
+    var switchONorOFF:Bool = false
 
+    // MARK: - Outlets
     @IBOutlet weak var micSwitch: UIButton!
-    
     @IBOutlet weak var micImage: UIImageView!
     
     override func viewDidLoad() {
@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
         switchButtonUpdate()
     }
 
-
+// MARK: - Actions
     @IBAction func buttonTapped(_ sender: UIButton) {
         print("tap")
     }
@@ -29,17 +29,16 @@ class MainViewController: UIViewController {
         switchButtonUpdate()
     }
     
+    // MARK: - Functions
     func switchButtonUpdate() {
-        if switchValue == true{
-//            micSwitch.setTitle("on", for: .normal)
+        if switchONorOFF == true{
             micSwitch.setImage(UIImage(named: "switchOn"), for: .normal)
             micImage.image = UIImage(named: "micOn")
-            switchValue = false
+            switchONorOFF = false
         } else {
-//            micSwitch.setTitle("off", for: .normal)
             micSwitch.setImage(UIImage(named: "switchOff"), for: .normal)
             micImage.image = UIImage(named: "micOff")
-            switchValue = true
+            switchONorOFF = true
         }
     }
 }
