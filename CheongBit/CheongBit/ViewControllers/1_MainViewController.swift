@@ -15,6 +15,7 @@ class MainViewController: UIViewController, MFMessageComposeViewControllerDelega
     // MARK: - Outlets
     @IBOutlet weak var micSwitch: UIButton!
     @IBOutlet weak var micImage: UIImageView!
+    @IBOutlet weak var micStatusLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +53,12 @@ class MainViewController: UIViewController, MFMessageComposeViewControllerDelega
         if switchONorOFF == true{
             micSwitch.setImage(UIImage(named: "switchOn"), for: .normal)
             micImage.image = UIImage(named: "micOn")
+            micStatusLabel.text = "소리 인식 중"
             switchONorOFF = false
         } else {
             micSwitch.setImage(UIImage(named: "switchOff"), for: .normal)
             micImage.image = UIImage(named: "micOff")
+            micStatusLabel.text = "인식 중이 아님"
             switchONorOFF = true
         }
     }

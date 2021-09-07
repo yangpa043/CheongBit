@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BQf-8e-oU2">
-                                <rect key="frame" x="58" y="174.33333333333334" width="274" height="375.33333333333326"/>
+                                <rect key="frame" x="58" y="164.33333333333334" width="274" height="395.33333333333326"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="micOff" translatesAutoresizingMaskIntoConstraints="NO" id="scd-YC-Lho">
                                         <rect key="frame" x="0.0" y="0.0" width="274" height="274.33333333333331"/>
@@ -26,8 +26,14 @@
                                             <constraint firstAttribute="width" secondItem="scd-YC-Lho" secondAttribute="height" id="7Pv-eW-YOe"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인식 중이 아님" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOC-jf-Qzo">
+                                        <rect key="frame" x="88.666666666666657" y="274.33333333333337" width="97" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdG-eB-67Q">
-                                        <rect key="frame" x="86.666666666666657" y="274.33333333333337" width="100.66666666666666" height="101"/>
+                                        <rect key="frame" x="86.666666666666657" y="294.66666666666663" width="100.66666666666666" height="100.66666666666669"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="TdG-eB-67Q" secondAttribute="height" id="ul5-7t-pnp"/>
                                         </constraints>
@@ -64,23 +70,41 @@
                     </view>
                     <navigationItem key="navigationItem" id="oHn-pG-tSY">
                         <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Yua-Ke-rKQ">
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Yua-Ke-rKQ" customClass="mainViewNavButton" customModule="CheongBit" customModuleProvider="target">
                             <rect key="frame" x="106" y="7" width="178" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                             <state key="normal" title="성북구 성복동 5-9 ⌵"/>
                             <connections>
                                 <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3oA-qB-VeC"/>
+                                <segue destination="fWG-3O-ecj" kind="presentation" id="vKS-lU-B0Y"/>
                             </connections>
                         </button>
                     </navigationItem>
                     <connections>
                         <outlet property="micImage" destination="scd-YC-Lho" id="Xag-8q-feM"/>
+                        <outlet property="micStatusLabel" destination="HOC-jf-Qzo" id="3Nv-YM-kN9"/>
                         <outlet property="micSwitch" destination="TdG-eB-67Q" id="5h5-8K-4ks"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1863" y="-833"/>
+        </scene>
+        <!--Location Select View Controller-->
+        <scene sceneID="hcf-3u-kE5">
+            <objects>
+                <viewController id="fWG-3O-ecj" customClass="LocationSelectViewController" customModule="CheongBit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YHS-eP-tcr">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Mbo-dJ-xl9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5rX-BM-5HA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2769" y="-833"/>
         </scene>
         <!--홈-->
         <scene sceneID="ZR2-U6-cvP">

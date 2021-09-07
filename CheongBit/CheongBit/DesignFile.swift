@@ -17,3 +17,11 @@ class reportButton: UIButton {
         tintColor = UIColor.white
     }
 }
+
+class mainViewNavButton: UIButton {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        
+        tintColor = UIColor(red: 1/255, green: 122/255, blue: 255/255, alpha: 1)
+    }
+}
