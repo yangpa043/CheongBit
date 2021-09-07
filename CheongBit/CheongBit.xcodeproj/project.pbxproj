@@ -89,8 +89,8 @@
 		D5D8A6F626E7031D00A31EC2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D575487F26CFF63000B2E602 /* Main.storyboard */,
 				D575488426CFF63200B2E602 /* LaunchScreen.storyboard */,
+				D575487F26CFF63000B2E602 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
