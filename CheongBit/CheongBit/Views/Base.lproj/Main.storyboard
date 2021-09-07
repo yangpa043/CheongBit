@@ -39,7 +39,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3c-IZ-TXa" customClass="reportButton" customModule="CheongBit" customModuleProvider="target">
-                                <rect key="frame" x="40" y="615.33333333333337" width="310" height="110.66666666666663"/>
+                                <rect key="frame" x="40" y="590.33333333333337" width="310" height="110.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="l3c-IZ-TXa" secondAttribute="height" multiplier="3.5:1.25" id="U15-kw-uiv"/>
                                 </constraints>
@@ -53,7 +53,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="l3c-IZ-TXa" secondAttribute="bottom" constant="35" id="57l-N6-NIK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="l3c-IZ-TXa" secondAttribute="bottom" constant="60" id="57l-N6-NIK"/>
                             <constraint firstItem="TdG-eB-67Q" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.15" id="96i-eY-H90"/>
                             <constraint firstItem="scd-YC-Lho" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.325" id="Ref-p7-qr0"/>
                             <constraint firstItem="l3c-IZ-TXa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TWX-ns-QvE"/>
