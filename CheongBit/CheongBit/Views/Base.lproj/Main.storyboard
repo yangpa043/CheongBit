@@ -45,6 +45,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                 <state key="normal" title="신고하기"/>
+                                <connections>
+                                    <action selector="reportButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yvu-2i-fRN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
