@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		76349AB726E7332000BD7BAE /* LocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */; };
+		76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */; };
+		76B3552D26EAEC0D00957891 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* DummyData.swift */; };
 		D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487926CFF63000B2E602 /* AppDelegate.swift */; };
 		D575487C26CFF63000B2E602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487B26CFF63000B2E602 /* SceneDelegate.swift */; };
 		D575487E26CFF63000B2E602 /* 1_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487D26CFF63000B2E602 /* 1_MainViewController.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectViewController.swift; sourceTree = "<group>"; };
+		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = CheongBit/Views/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		76B3552C26EAEC0D00957891 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		D575487626CFF63000B2E602 /* CheongBit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheongBit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D575487926CFF63000B2E602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D575487B26CFF63000B2E602 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 			children = (
 				D575487926CFF63000B2E602 /* AppDelegate.swift */,
 				D575487B26CFF63000B2E602 /* SceneDelegate.swift */,
+				76B3552C26EAEC0D00957891 /* DummyData.swift */,
 				D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */,
 				D5D8A6F526E6FF0900A31EC2 /* ViewControllers */,
 				D5D8A6F626E7031D00A31EC2 /* Views */,
@@ -81,6 +86,7 @@
 				D575487D26CFF63000B2E602 /* 1_MainViewController.swift */,
 				76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */,
 				D5D8A6F326E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift */,
+				76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */,
 				D5D8A6F126E6FC3900A31EC2 /* 3_MyPageViewController.swift */,
 			);
 			path = ViewControllers;
@@ -168,6 +174,8 @@
 				D5D8A6F226E6FC3900A31EC2 /* 3_MyPageViewController.swift in Sources */,
 				D575487E26CFF63000B2E602 /* 1_MainViewController.swift in Sources */,
 				D5D8A6F426E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift in Sources */,
+				76B3552D26EAEC0D00957891 /* DummyData.swift in Sources */,
+				76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */,
 				D5D8A6F026E6ED0000A31EC2 /* DesignFile.swift in Sources */,
 				76349AB726E7332000BD7BAE /* LocationSelectViewController.swift in Sources */,
 				D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */,

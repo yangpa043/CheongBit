@@ -21,25 +21,27 @@ class FriendsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return UserDummyData.shared.user.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! FriendsTableViewCell
+        let user = UserDummyData.shared.user[indexPath.row]
+        
+        cell.userImageView.image = UIImage(named: user.userImage)
+        cell.userNameLabel.text = user.userName
+        cell.userIdLabel.text = user.userId
+        cell.userImageView.layer.masksToBounds = false
+        cell.userImageView.layer.borderWidth = 1.5
+        cell.userImageView.layer.cornerRadius = cell.userImageView.frame.size.width/2
+        cell.userIdLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
