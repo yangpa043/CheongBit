@@ -8,6 +8,15 @@
 import Foundation
 import UIKit
 
+// 흰색 텍스트
+class whiteText: UILabel {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+}
+
+
 // MARK: - 메인페이지
 
 //신고 버튼
@@ -16,7 +25,7 @@ class reportButton: UIButton {
         super.init(coder: aDecoder)!
         
         layer.cornerRadius = 25;
-        backgroundColor = UIColor.black
+        backgroundColor = #colorLiteral(red: 0, green: 0.4877254963, blue: 1, alpha: 1)
         tintColor = UIColor.white
     }
 }
@@ -25,7 +34,6 @@ class reportButton: UIButton {
 class mainViewNavButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        
-        tintColor = UIColor(red: 1/255, green: 122/255, blue: 255/255, alpha: 1)
+        tintColor = #colorLiteral(red: 0, green: 0.4877254963, blue: 1, alpha: 1)
     }
 }

@@ -16,20 +16,33 @@ class MainViewController: UIViewController, MFMessageComposeViewControllerDelega
     @IBOutlet weak var micSwitch: UIButton!
     @IBOutlet weak var micImage: UIImageView!
     @IBOutlet weak var micStatusLabel: UILabel!
+    @IBOutlet weak var micONandOFFStackView: UIStackView!
     
+    
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         switchButtonUpdate()
+        
+        // 마이크 스텍뷰 디자인
+        micONandOFFStackView.backgroundColor = #colorLiteral(red: 0, green: 0.4877254963, blue: 1, alpha: 1)
+        micONandOFFStackView.layer.cornerRadius = micONandOFFStackView.frame.width/15
+        micONandOFFStackView.layer.masksToBounds = false
     }
 
 // MARK: - Actions
-    @IBAction func buttonTapped(_ sender: UIButton) {
+    
+    // 주소설정버튼
+    @IBAction func locationSelectbuttonTapped(_ sender: UIButton) {
         print("locationButtonTapped")
     }
     
+    // 마이크 스위치 버튼
     @IBAction func switchChanged(_ sender: UIButton) {
         switchButtonUpdate()
     }
+    
+    // 신고버튼
     @IBAction func reportButtonTapped(_ sender: UIButton) {
         
         // 메시지가 안 보내졌을 때 앱을 죽지 않도록 하는 가드
@@ -63,7 +76,7 @@ class MainViewController: UIViewController, MFMessageComposeViewControllerDelega
         }
     }
     
-    // 신고하기 버튼 변수 차단 케이스 함수
+    // 메시지 전송 변수 차단 케이스 함수
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
             switch result {
             case .cancelled:
@@ -81,6 +94,5 @@ class MainViewController: UIViewController, MFMessageComposeViewControllerDelega
             }
         }
     
-    //
 }
 

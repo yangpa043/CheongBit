@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "마이크 오프.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "micOff.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

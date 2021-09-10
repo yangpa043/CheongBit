@@ -26,7 +26,7 @@ class FriendsTableViewController: UITableViewController {
         return UserDummyData.shared.user.count
     }
 
-    
+    // 테이블 뷰 셀
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! FriendsTableViewCell
         let user = UserDummyData.shared.user[indexPath.row]
