@@ -54,6 +54,7 @@
                                 <state key="normal" title="신고하기"/>
                                 <connections>
                                     <action selector="reportButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yvu-2i-fRN"/>
+                                    <segue destination="cpg-0g-hXM" kind="show" id="Amj-a2-nQM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -94,6 +95,64 @@
             </objects>
             <point key="canvasLocation" x="675" y="-161"/>
         </scene>
+        <!--신고하기-->
+        <scene sceneID="d2z-7x-CM1">
+            <objects>
+                <viewController id="cpg-0g-hXM" customClass="ReportDetail" customModule="CheongBit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TBD-3F-qaV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azg-IP-r1j" customClass="reportButton" customModule="CheongBit" customModuleProvider="target">
+                                <rect key="frame" x="40" y="612.5" width="334" height="119"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Azg-IP-r1j" secondAttribute="height" multiplier="3.5:1.25" id="zLh-cI-err"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <state key="normal" title="신고하기"/>
+                                <connections>
+                                    <action selector="reportButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vtb-QR-x84"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="장소 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfm-65-5hF">
+                                <rect key="frame" x="40" y="184" width="111" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="신고 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyr-cA-KNr">
+                                <rect key="frame" x="40" y="339" width="111" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eE-B9-fa8">
+                                <rect key="frame" x="40" y="420" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DS8-4X-KsE">
+                                <rect key="frame" x="40" y="475" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fSf-xw-4gW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Azg-IP-r1j" firstAttribute="leading" secondItem="fSf-xw-4gW" secondAttribute="leading" constant="40" id="YiY-9p-2H7"/>
+                            <constraint firstItem="Azg-IP-r1j" firstAttribute="centerX" secondItem="TBD-3F-qaV" secondAttribute="centerX" id="hZo-Nl-IXA"/>
+                            <constraint firstItem="Azg-IP-r1j" firstAttribute="centerY" secondItem="TBD-3F-qaV" secondAttribute="centerY" multiplier="1.5" id="yLn-RO-XZg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="신고하기" id="rzE-IT-KD4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBW-JB-B5o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1798.5507246376812" y="197.54464285714286"/>
+        </scene>
         <!--Location Select View Controller-->
         <scene sceneID="Smg-IM-2or">
             <objects>
@@ -128,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ad-Im-cud" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="-161"/>
+            <point key="canvasLocation" x="1803" y="-447"/>
         </scene>
         <!--홈-->
         <scene sceneID="ZR2-U6-cvP">

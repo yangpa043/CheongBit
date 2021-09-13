@@ -45,18 +45,18 @@ class MainViewController: UIViewController, MFMessageComposeViewControllerDelega
     // 신고버튼
     @IBAction func reportButtonTapped(_ sender: UIButton) {
         
-        // 메시지가 안 보내졌을 때 앱을 죽지 않도록 하는 가드
-        guard MFMessageComposeViewController.canSendText() else {
-            print("SMS services are not available")
-            return
-        }
-        
-        let composeViewController = MFMessageComposeViewController()
-        
-        composeViewController.messageComposeDelegate = self
-        composeViewController.recipients = ["01048227008"]
-        composeViewController.body = "Report"
-        present(composeViewController, animated: true, completion: nil)
+//        // 메시지가 안 보내졌을 때 앱을 죽지 않도록 하는 가드
+//        guard MFMessageComposeViewController.canSendText() else {
+//            print("SMS services are not available")
+//            return
+//        }
+//
+//        let composeViewController = MFMessageComposeViewController()
+//
+//        composeViewController.messageComposeDelegate = self
+//        composeViewController.recipients = ["01048227008"]
+//        composeViewController.body = "Report"
+//        present(composeViewController, animated: true, completion: nil)
     }
     
     // MARK: - Functions

@@ -22,6 +22,7 @@
 		D5D8A70326EEDE8B00A31EC2 /* 1_MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D8A70126EEDE8B00A31EC2 /* 1_MainTab.storyboard */; };
 		D5D8A70526EEDEFA00A31EC2 /* 2_FriendsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D8A70426EEDEFA00A31EC2 /* 2_FriendsTab.storyboard */; };
 		D5D8A70826EEDF4200A31EC2 /* 3_MyPageTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D8A70626EEDF4200A31EC2 /* 3_MyPageTab.storyboard */; };
+		D5D8A70C26EEE35400A31EC2 /* ReportDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A70B26EEE35400A31EC2 /* ReportDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		D5D8A70226EEDE8B00A31EC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CheongBit/Views/Base.lproj/1_MainTab.storyboard; sourceTree = "<group>"; };
 		D5D8A70426EEDEFA00A31EC2 /* 2_FriendsTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = 2_FriendsTab.storyboard; sourceTree = "<group>"; };
 		D5D8A70726EEDF4200A31EC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CheongBit/Views/Base.lproj/3_MyPageTab.storyboard; sourceTree = "<group>"; };
+		D5D8A70B26EEE35400A31EC2 /* ReportDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			children = (
 				D575487D26CFF63000B2E602 /* 1_MainViewController.swift */,
 				76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */,
+				D5D8A70B26EEE35400A31EC2 /* ReportDetail.swift */,
 				D5D8A6F326E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift */,
 				76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */,
 				D5D8A6F126E6FC3900A31EC2 /* 3_MyPageViewController.swift */,
@@ -185,6 +188,7 @@
 			files = (
 				D5D8A6F226E6FC3900A31EC2 /* 3_MyPageViewController.swift in Sources */,
 				D575487E26CFF63000B2E602 /* 1_MainViewController.swift in Sources */,
+				D5D8A70C26EEE35400A31EC2 /* ReportDetail.swift in Sources */,
 				D5D8A6F426E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift in Sources */,
 				76B3552D26EAEC0D00957891 /* DummyData.swift in Sources */,
 				76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */,
