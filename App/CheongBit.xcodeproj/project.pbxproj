@@ -10,6 +10,7 @@
 		76349AB726E7332000BD7BAE /* LocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */; };
 		76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */; };
 		76B3552D26EAEC0D00957891 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* DummyData.swift */; };
+		B9BCC4FAA6DAFD4629992EC0 /* Pods_CheongBit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A719577CEE91AB498C1EF2 /* Pods_CheongBit.framework */; };
 		D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487926CFF63000B2E602 /* AppDelegate.swift */; };
 		D575487C26CFF63000B2E602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487B26CFF63000B2E602 /* SceneDelegate.swift */; };
 		D575487E26CFF63000B2E602 /* 1_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487D26CFF63000B2E602 /* 1_MainViewController.swift */; };
@@ -26,9 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40A719577CEE91AB498C1EF2 /* Pods_CheongBit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheongBit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectViewController.swift; sourceTree = "<group>"; };
 		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = CheongBit/ViewControllers/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		76B3552C26EAEC0D00957891 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		86AA25B8CC5778B9024E5A6C /* Pods-CheongBit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheongBit.debug.xcconfig"; path = "Target Support Files/Pods-CheongBit/Pods-CheongBit.debug.xcconfig"; sourceTree = "<group>"; };
+		B25994797AF2E26F860D4B8F /* Pods-CheongBit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheongBit.release.xcconfig"; path = "Target Support Files/Pods-CheongBit/Pods-CheongBit.release.xcconfig"; sourceTree = "<group>"; };
 		D575487626CFF63000B2E602 /* CheongBit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheongBit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D575487926CFF63000B2E602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D575487B26CFF63000B2E602 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,17 +55,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9BCC4FAA6DAFD4629992EC0 /* Pods_CheongBit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		465294FB9DDCF1CB30E8B737 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86AA25B8CC5778B9024E5A6C /* Pods-CheongBit.debug.xcconfig */,
+				B25994797AF2E26F860D4B8F /* Pods-CheongBit.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A53D77C6E013B42F999B086A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40A719577CEE91AB498C1EF2 /* Pods_CheongBit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D575486D26CFF63000B2E602 = {
 			isa = PBXGroup;
 			children = (
 				D575487826CFF63000B2E602 /* CheongBit */,
 				D575487726CFF63000B2E602 /* Products */,
+				465294FB9DDCF1CB30E8B737 /* Pods */,
+				A53D77C6E013B42F999B086A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D575488A26CFF63200B2E602 /* Build configuration list for PBXNativeTarget "CheongBit" */;
 			buildPhases = (
+				CBCF40D2A6B091900B89C0D6 /* [CP] Check Pods Manifest.lock */,
 				D575487226CFF63000B2E602 /* Sources */,
 				D575487326CFF63000B2E602 /* Frameworks */,
 				D575487426CFF63000B2E602 /* Resources */,
+				9C0B8D20A66CF804B83208DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +207,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9C0B8D20A66CF804B83208DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheongBit/Pods-CheongBit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheongBit/Pods-CheongBit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CheongBit/Pods-CheongBit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBCF40D2A6B091900B89C0D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CheongBit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D575487226CFF63000B2E602 /* Sources */ = {
@@ -339,6 +408,7 @@
 		};
 		D575488B26CFF63200B2E602 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86AA25B8CC5778B9024E5A6C /* Pods-CheongBit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -358,6 +428,7 @@
 		};
 		D575488C26CFF63200B2E602 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B25994797AF2E26F860D4B8F /* Pods-CheongBit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

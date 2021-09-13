@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -15,26 +15,26 @@
             <objects>
                 <viewController id="zNb-AT-MS6" customClass="MainViewController" customModule="CheongBit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yhW-BV-hyo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uZV-b8-Spl">
-                                <rect key="frame" x="50" y="178" width="314" height="420"/>
+                                <rect key="frame" x="50" y="164.33333333333334" width="290" height="395.33333333333326"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="micOff" translatesAutoresizingMaskIntoConstraints="NO" id="k91-zu-IdK">
-                                        <rect key="frame" x="11.5" y="0.0" width="291" height="291"/>
+                                        <rect key="frame" x="8" y="0.0" width="274" height="274.33333333333331"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="k91-zu-IdK" secondAttribute="height" multiplier="1:1" id="neg-F4-aXM"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인식 중이 아님" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjY-0R-nJN" customClass="whiteText" customModule="CheongBit" customModuleProvider="target">
-                                        <rect key="frame" x="109" y="291" width="96.5" height="20.5"/>
+                                        <rect key="frame" x="97" y="274.33333333333337" width="96.333333333333314" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgP-vt-qPD">
-                                        <rect key="frame" x="102.5" y="311.5" width="109" height="108.5"/>
+                                        <rect key="frame" x="94.666666666666657" y="294.66666666666663" width="100.66666666666666" height="100.66666666666669"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="tgP-vt-qPD" secondAttribute="height" multiplier="1:1" id="bRF-UW-6Fy"/>
                                         </constraints>
@@ -46,7 +46,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crw-Sk-Xv1" customClass="reportButton" customModule="CheongBit" customModuleProvider="target">
-                                <rect key="frame" x="40" y="616" width="334" height="119.5"/>
+                                <rect key="frame" x="40" y="581.33333333333337" width="310" height="110.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Crw-Sk-Xv1" secondAttribute="height" multiplier="3.5:1.25" id="0mv-3J-67s"/>
                                 </constraints>
@@ -74,7 +74,7 @@
                     <navigationItem key="navigationItem" id="RGB-XW-5Md">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GPh-Pg-OsK" customClass="mainViewNavButton" customModule="CheongBit" customModuleProvider="target">
-                            <rect key="frame" x="118" y="7" width="178" height="30"/>
+                            <rect key="frame" x="106" y="7" width="178" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                             <state key="normal" title="성북구 성복동 5-9 ⌵"/>
@@ -100,65 +100,86 @@
             <objects>
                 <viewController id="SBG-sK-nEL" customClass="ReportDetail" customModule="CheongBit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BEW-TX-QIJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du5-yG-CqQ" customClass="reportButton" customModule="CheongBit" customModuleProvider="target">
-                                <rect key="frame" x="40" y="612.5" width="334" height="119"/>
+                                <rect key="frame" x="40" y="577.66666666666663" width="310" height="110.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="du5-yG-CqQ" secondAttribute="height" multiplier="3.5:1.25" id="iFb-YM-Mab"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                 <state key="normal" title="신고하기"/>
                                 <connections>
+                                    <action selector="reportButtonTapped:" destination="SBG-sK-nEL" eventType="touchUpInside" id="CPu-1D-dg8"/>
                                     <action selector="reportButtonTapped:" destination="zNb-AT-MS6" eventType="touchUpInside" id="L9E-sb-dlL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="장소 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idi-wJ-Nhv">
-                                <rect key="frame" x="40" y="184" width="111" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idi-wJ-Nhv">
+                                <rect key="frame" x="39.999999999999993" y="144" width="110.33333333333331" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="신고 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sR-Ja-c51">
-                                <rect key="frame" x="40" y="339" width="111" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sR-Ja-c51">
+                                <rect key="frame" x="39.999999999999993" y="329" width="110.33333333333331" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bah-iF-6Wu">
-                                <rect key="frame" x="40" y="420" width="111" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POm-XR-oOo" customClass="DLRadioButton">
+                                <rect key="frame" x="40" y="455" width="174" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="radioButtonTapped:" destination="SBG-sK-nEL" eventType="touchUpInside" id="yij-13-WDQ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POm-XR-oOo">
-                                <rect key="frame" x="40" y="475" width="111" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bah-iF-6Wu" customClass="DLRadioButton">
+                                <rect key="frame" x="40" y="400" width="174" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="radioButtonTapped:" destination="SBG-sK-nEL" eventType="touchUpInside" id="2DX-4n-xt8"/>
+                                    <outletCollection property="otherButtons" destination="POm-XR-oOo" id="zvm-hX-ndF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qGS-RG-EWK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2sR-Ja-c51" firstAttribute="top" secondItem="idi-wJ-Nhv" secondAttribute="bottom" constant="149" id="0EX-bW-fSC"/>
                             <constraint firstItem="du5-yG-CqQ" firstAttribute="centerY" secondItem="BEW-TX-QIJ" secondAttribute="centerY" multiplier="1.5" id="1Rq-r6-YEa"/>
+                            <constraint firstItem="idi-wJ-Nhv" firstAttribute="top" secondItem="qGS-RG-EWK" secondAttribute="top" constant="56" id="IWY-yN-dkS"/>
+                            <constraint firstItem="idi-wJ-Nhv" firstAttribute="leading" secondItem="qGS-RG-EWK" secondAttribute="leading" constant="40" id="JCK-dv-FZo"/>
+                            <constraint firstItem="2sR-Ja-c51" firstAttribute="leading" secondItem="qGS-RG-EWK" secondAttribute="leading" constant="40" id="Khp-Xf-Jm3"/>
                             <constraint firstItem="du5-yG-CqQ" firstAttribute="leading" secondItem="qGS-RG-EWK" secondAttribute="leading" constant="40" id="jWh-3c-i7b"/>
                             <constraint firstItem="du5-yG-CqQ" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="rTR-al-cOi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="신고하기" id="bQr-bv-BOB"/>
+                    <connections>
+                        <outlet property="fireReportButton" destination="bah-iF-6Wu" id="N86-sX-0L1"/>
+                        <outlet property="reportButton" destination="du5-yG-CqQ" id="7lZ-cW-jcc"/>
+                        <outlet property="rescueReportButton" destination="POm-XR-oOo" id="j0N-Yk-zYm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eI1-Eu-YGn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1798.5507246376812" y="197.54464285714286"/>
+            <point key="canvasLocation" x="1798.4615384615383" y="196.91943127962085"/>
         </scene>
         <!--Location Select View Controller-->
         <scene sceneID="ps6-by-ia2">
             <objects>
                 <viewController id="YLi-JK-DSt" customClass="LocationSelectViewController" customModule="CheongBit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0N3-Es-Aav">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCq-LY-OaC">
@@ -200,7 +221,7 @@
                     </simulatedNavigationBarMetrics>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WTT-a0-b0v">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" name="AccentColor"/>
@@ -224,6 +245,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
