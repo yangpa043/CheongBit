@@ -18,8 +18,8 @@ class UserDummyData {
     static let shared = UserDummyData()
     
     var user: [User] = [
-        User(userImage: "micOff", userName: "이롱", userId: "irong49"),
-        User(userImage: "micOn", userName: "우유", userId: "wooyou11"),
+        User(userImage: "switchOn", userName: "이롱", userId: "irong49"),
+        User(userImage: "switchOff", userName: "우유", userId: "wooyou11"),
         User(userImage: "switchOn", userName: "양파", userId: "yangpa043"),
         User(userImage: "switchOff", userName: "히재", userId: "kimseeit")
     
