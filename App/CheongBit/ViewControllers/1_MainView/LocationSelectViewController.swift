@@ -8,11 +8,14 @@
 import UIKit
 
 class LocationSelectViewController: UIViewController {
-
+    
+// MARK: - Outlets
+    @IBOutlet weak var locationEnterLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        applyDynamicFont()
     }
     
     //뒤로가기 버튼
@@ -20,6 +23,12 @@ class LocationSelectViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+    
+    // MARK: - Functions
+    func applyDynamicFont() {
+        locationEnterLabel.dynamicFont(fontSize: 35, weight: .regular)
+    }
+    
     /*
     // MARK: - Navigation
 

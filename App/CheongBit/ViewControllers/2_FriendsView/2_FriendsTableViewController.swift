@@ -36,7 +36,7 @@ class FriendsTableViewController: UITableViewController {
         cell.userIdLabel.text = user.userId
         cell.userImageView.layer.masksToBounds = false
         cell.userImageView.layer.borderWidth = 1.5
-        cell.userImageView.layer.cornerRadius = cell.userImageView.frame.size.width/2
+        cell.userImageView.layer.cornerRadius = UIScreen.main.bounds.width * 0.13 / 2
         cell.userIdLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         
 

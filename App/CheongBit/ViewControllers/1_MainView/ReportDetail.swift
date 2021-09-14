@@ -15,6 +15,8 @@ class ReportDetail: UIViewController, MFMessageComposeViewControllerDelegate {
 
     //MARK: - Outlets
     
+    @IBOutlet weak var placeContentTitle: UILabel!
+    @IBOutlet weak var reportContentTitle: UILabel!
     @IBOutlet weak var fireReportButton: DLRadioButton!
     @IBOutlet weak var rescueReportButton: DLRadioButton!
     @IBOutlet weak var reportButton: reportButton!
@@ -23,6 +25,8 @@ class ReportDetail: UIViewController, MFMessageComposeViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        applyDynamicfont()
         
         reportButton.isEnabled = false
         
@@ -95,5 +99,13 @@ class ReportDetail: UIViewController, MFMessageComposeViewControllerDelegate {
                 dismiss(animated: true, completion: nil)
             }
         }
+    
+    func applyDynamicfont() {
+        placeContentTitle.dynamicFont(fontSize: 40, weight: .bold)
+        reportContentTitle.dynamicFont(fontSize: 40, weight: .bold)
+        rescueReportButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
+        fireReportButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
+        reportButton.titleLabel?.dynamicFont(fontSize: 55, weight: .bold)
+    }
 
 }

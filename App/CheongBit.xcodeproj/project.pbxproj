@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		D575488626CFF63200B2E602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D575488426CFF63200B2E602 /* LaunchScreen.storyboard */; };
 		D5AB1AF126EF02900058AE87 /* 1_MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AB1AF026EF02900058AE87 /* 1_MainTab.storyboard */; };
 		D5AB1AF326EF02A80058AE87 /* 3_MyPageTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AB1AF226EF02A80058AE87 /* 3_MyPageTab.storyboard */; };
+		D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB1AF826F036EE0058AE87 /* Extension.swift */; };
 		D5D8A6F026E6ED0000A31EC2 /* DesignFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */; };
 		D5D8A6F226E6FC3900A31EC2 /* 3_MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A6F126E6FC3900A31EC2 /* 3_MyPageViewController.swift */; };
 		D5D8A6F426E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A6F326E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift */; };
@@ -29,7 +30,7 @@
 /* Begin PBXFileReference section */
 		40A719577CEE91AB498C1EF2 /* Pods_CheongBit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheongBit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectViewController.swift; sourceTree = "<group>"; };
-		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = CheongBit/ViewControllers/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = CheongBit/ViewControllers/2_FriendsView/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		76B3552C26EAEC0D00957891 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		86AA25B8CC5778B9024E5A6C /* Pods-CheongBit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheongBit.debug.xcconfig"; path = "Target Support Files/Pods-CheongBit/Pods-CheongBit.debug.xcconfig"; sourceTree = "<group>"; };
 		B25994797AF2E26F860D4B8F /* Pods-CheongBit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheongBit.release.xcconfig"; path = "Target Support Files/Pods-CheongBit/Pods-CheongBit.release.xcconfig"; sourceTree = "<group>"; };
@@ -43,6 +44,7 @@
 		D575488726CFF63200B2E602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5AB1AF026EF02900058AE87 /* 1_MainTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 1_MainTab.storyboard; sourceTree = "<group>"; };
 		D5AB1AF226EF02A80058AE87 /* 3_MyPageTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 3_MyPageTab.storyboard; sourceTree = "<group>"; };
+		D5AB1AF826F036EE0058AE87 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFile.swift; sourceTree = "<group>"; };
 		D5D8A6F126E6FC3900A31EC2 /* 3_MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3_MyPageViewController.swift; sourceTree = "<group>"; };
 		D5D8A6F326E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2_FriendsTableViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +70,6 @@
 				86AA25B8CC5778B9024E5A6C /* Pods-CheongBit.debug.xcconfig */,
 				B25994797AF2E26F860D4B8F /* Pods-CheongBit.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -105,6 +106,7 @@
 				D575487B26CFF63000B2E602 /* SceneDelegate.swift */,
 				76B3552C26EAEC0D00957891 /* DummyData.swift */,
 				D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */,
+				D5AB1AF826F036EE0058AE87 /* Extension.swift */,
 				D5D8A6F526E6FF0900A31EC2 /* ViewControllers */,
 				D5D8A6F626E7031D00A31EC2 /* Views */,
 				D575488226CFF63200B2E602 /* Assets.xcassets */,
@@ -113,15 +115,39 @@
 			path = CheongBit;
 			sourceTree = "<group>";
 		};
-		D5D8A6F526E6FF0900A31EC2 /* ViewControllers */ = {
+		D5AB1AF426F025F30058AE87 /* 1_MainView */ = {
 			isa = PBXGroup;
 			children = (
 				D575487D26CFF63000B2E602 /* 1_MainViewController.swift */,
 				76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */,
 				D5D8A70B26EEE35400A31EC2 /* ReportDetail.swift */,
+			);
+			path = 1_MainView;
+			sourceTree = "<group>";
+		};
+		D5AB1AF626F0261E0058AE87 /* 2_FriendsView */ = {
+			isa = PBXGroup;
+			children = (
 				D5D8A6F326E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift */,
 				76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */,
+			);
+			path = 2_FriendsView;
+			sourceTree = "<group>";
+		};
+		D5AB1AF726F026360058AE87 /* 3_MyPageView */ = {
+			isa = PBXGroup;
+			children = (
 				D5D8A6F126E6FC3900A31EC2 /* 3_MyPageViewController.swift */,
+			);
+			path = 3_MyPageView;
+			sourceTree = "<group>";
+		};
+		D5D8A6F526E6FF0900A31EC2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5AB1AF426F025F30058AE87 /* 1_MainView */,
+				D5AB1AF626F0261E0058AE87 /* 2_FriendsView */,
+				D5AB1AF726F026360058AE87 /* 3_MyPageView */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -259,6 +285,7 @@
 				D575487E26CFF63000B2E602 /* 1_MainViewController.swift in Sources */,
 				D5D8A70C26EEE35400A31EC2 /* ReportDetail.swift in Sources */,
 				D5D8A6F426E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift in Sources */,
+				D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */,
 				76B3552D26EAEC0D00957891 /* DummyData.swift in Sources */,
 				76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */,
 				D5D8A6F026E6ED0000A31EC2 /* DesignFile.swift in Sources */,

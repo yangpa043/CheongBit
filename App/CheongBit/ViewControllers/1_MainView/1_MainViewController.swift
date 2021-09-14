@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
     var switchONorOFF:Bool = false
 
     // MARK: - Outlets
+    @IBOutlet weak var locationSelectButton: mainViewNavButton!
     @IBOutlet weak var micSwitch: UIButton!
     @IBOutlet weak var micImage: UIImageView!
     @IBOutlet weak var micStatusLabel: UILabel!
@@ -22,6 +23,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         switchButtonUpdate()
+        applyDynamicFont()
         
         // 마이크 스텍뷰 디자인
         micONandOFFStackView.backgroundColor = #colorLiteral(red: 0, green: 0.4877254963, blue: 1, alpha: 1)
@@ -62,6 +64,9 @@ class MainViewController: UIViewController {
             switchONorOFF = true
         }
     }
-        
+    
+    func applyDynamicFont() {
+        locationSelectButton.titleLabel?.dynamicFont(fontSize: 20, weight: .regular)
+    }
 }
 
