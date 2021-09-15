@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		76349AB726E7332000BD7BAE /* LocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */; };
 		76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */; };
-		76B3552D26EAEC0D00957891 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* DummyData.swift */; };
+		76B3552D26EAEC0D00957891 /* DummyDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* DummyDatas.swift */; };
 		B9BCC4FAA6DAFD4629992EC0 /* Pods_CheongBit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A719577CEE91AB498C1EF2 /* Pods_CheongBit.framework */; };
 		D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487926CFF63000B2E602 /* AppDelegate.swift */; };
 		D575487C26CFF63000B2E602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487B26CFF63000B2E602 /* SceneDelegate.swift */; };
@@ -20,6 +20,7 @@
 		D5AB1AF126EF02900058AE87 /* 1_MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AB1AF026EF02900058AE87 /* 1_MainTab.storyboard */; };
 		D5AB1AF326EF02A80058AE87 /* 3_MyPageTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AB1AF226EF02A80058AE87 /* 3_MyPageTab.storyboard */; };
 		D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB1AF826F036EE0058AE87 /* Extension.swift */; };
+		D5AB1AFD26F086020058AE87 /* LocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB1AFC26F086020058AE87 /* LocationsTableViewCell.swift */; };
 		D5D8A6F026E6ED0000A31EC2 /* DesignFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */; };
 		D5D8A6F226E6FC3900A31EC2 /* 3_MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A6F126E6FC3900A31EC2 /* 3_MyPageViewController.swift */; };
 		D5D8A6F426E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A6F326E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift */; };
@@ -31,7 +32,7 @@
 		40A719577CEE91AB498C1EF2 /* Pods_CheongBit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheongBit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectViewController.swift; sourceTree = "<group>"; };
 		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = CheongBit/ViewControllers/2_FriendsView/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		76B3552C26EAEC0D00957891 /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		76B3552C26EAEC0D00957891 /* DummyDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDatas.swift; sourceTree = "<group>"; };
 		86AA25B8CC5778B9024E5A6C /* Pods-CheongBit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheongBit.debug.xcconfig"; path = "Target Support Files/Pods-CheongBit/Pods-CheongBit.debug.xcconfig"; sourceTree = "<group>"; };
 		B25994797AF2E26F860D4B8F /* Pods-CheongBit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheongBit.release.xcconfig"; path = "Target Support Files/Pods-CheongBit/Pods-CheongBit.release.xcconfig"; sourceTree = "<group>"; };
 		D575487626CFF63000B2E602 /* CheongBit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheongBit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +46,7 @@
 		D5AB1AF026EF02900058AE87 /* 1_MainTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 1_MainTab.storyboard; sourceTree = "<group>"; };
 		D5AB1AF226EF02A80058AE87 /* 3_MyPageTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 3_MyPageTab.storyboard; sourceTree = "<group>"; };
 		D5AB1AF826F036EE0058AE87 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		D5AB1AFC26F086020058AE87 /* LocationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewCell.swift; sourceTree = "<group>"; };
 		D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFile.swift; sourceTree = "<group>"; };
 		D5D8A6F126E6FC3900A31EC2 /* 3_MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3_MyPageViewController.swift; sourceTree = "<group>"; };
 		D5D8A6F326E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2_FriendsTableViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +106,7 @@
 			children = (
 				D575487926CFF63000B2E602 /* AppDelegate.swift */,
 				D575487B26CFF63000B2E602 /* SceneDelegate.swift */,
-				76B3552C26EAEC0D00957891 /* DummyData.swift */,
+				76B3552C26EAEC0D00957891 /* DummyDatas.swift */,
 				D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */,
 				D5AB1AF826F036EE0058AE87 /* Extension.swift */,
 				D5D8A6F526E6FF0900A31EC2 /* ViewControllers */,
@@ -121,6 +123,7 @@
 				D575487D26CFF63000B2E602 /* 1_MainViewController.swift */,
 				76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */,
 				D5D8A70B26EEE35400A31EC2 /* ReportDetail.swift */,
+				D5AB1AFC26F086020058AE87 /* LocationsTableViewCell.swift */,
 			);
 			path = 1_MainView;
 			sourceTree = "<group>";
@@ -286,8 +289,9 @@
 				D5D8A70C26EEE35400A31EC2 /* ReportDetail.swift in Sources */,
 				D5D8A6F426E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift in Sources */,
 				D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */,
-				76B3552D26EAEC0D00957891 /* DummyData.swift in Sources */,
+				76B3552D26EAEC0D00957891 /* DummyDatas.swift in Sources */,
 				76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */,
+				D5AB1AFD26F086020058AE87 /* LocationsTableViewCell.swift in Sources */,
 				D5D8A6F026E6ED0000A31EC2 /* DesignFile.swift in Sources */,
 				76349AB726E7332000BD7BAE /* LocationSelectViewController.swift in Sources */,
 				D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */,

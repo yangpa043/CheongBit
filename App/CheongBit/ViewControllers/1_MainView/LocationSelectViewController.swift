@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LocationSelectViewController: UIViewController {
+class LocationSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 // MARK: - Outlets
     @IBOutlet weak var locationEnterLabel: UILabel!
@@ -29,14 +29,20 @@ class LocationSelectViewController: UIViewController {
         locationEnterLabel.dynamicFont(fontSize: 35, weight: .regular)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - TableView Delegate
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return LocationDummyData.shared.location.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationsTableViewCell
+        let location = LocationDummyData.shared.location[indexPath.row]
 
+        cell.locationLabel.text = location.name
+        cell.locationNameLabel.text = location.location
+
+        return cell
+    }
+    
 }
