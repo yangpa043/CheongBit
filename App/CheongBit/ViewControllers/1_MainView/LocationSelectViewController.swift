@@ -39,8 +39,8 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationsTableViewCell
         let location = LocationDummyData.shared.location[indexPath.row]
 
-        cell.locationLabel.text = location.name
-        cell.locationNameLabel.text = location.location
+        cell.locationNameLabel.text = location.name
+        cell.locationLabel.text = location.location
 
         return cell
     }

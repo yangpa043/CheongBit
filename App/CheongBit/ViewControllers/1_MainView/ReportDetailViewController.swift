@@ -9,9 +9,10 @@ import UIKit
 import DLRadioButton
 import MessageUI
 
-class ReportDetail: UIViewController, MFMessageComposeViewControllerDelegate {
+class ReportDetailViewController: UIViewController, MFMessageComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    var reportContent:String = ""
+    var reportContent: String = ""
+    var locationSelectIsHidden: Bool = true
 
     //MARK: - Outlets
     
@@ -21,14 +22,24 @@ class ReportDetail: UIViewController, MFMessageComposeViewControllerDelegate {
     @IBOutlet weak var rescueReportButton: DLRadioButton!
     @IBOutlet weak var reportButton: reportButton!
     
+    //tableView
+    @IBOutlet weak var locationShowTableView: UITableView!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    
     //MARK: - viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 테이블뷰 높이 조정 코드
+        DispatchQueue.main.async {
+            self.tableViewHeight.constant = self.locationShowTableView.contentSize.height
+        }
+        
         applyDynamicfont()
         
         reportButton.isEnabled = false
+        locationShowTableView.isHidden = locationSelectIsHidden
         
         // 네비 바 백버튼 텍스트 수정
         self.navigationController?.navigationBar.topItem?.title = "홈"
@@ -44,6 +55,29 @@ class ReportDetail: UIViewController, MFMessageComposeViewControllerDelegate {
     }
     
     //MARK: - Actions
+    
+    // 장소를 선택해 주세요 버튼
+    @IBAction func locationSelectTapped(_ sender: UIButton) {
+        
+        // 버튼 눌렀을때 테이블 뷰 꺼졋다 켜졋다
+        if locationSelectIsHidden == true {
+            locationSelectIsHidden = false
+        } else {
+            locationSelectIsHidden = true
+        }
+        
+        locationShowTableView.isHidden = locationSelectIsHidden
+    }
+    
+    
+    // 신고 내용 선택
+    @IBAction func radioButtonTapped(_ sender: Any) {
+        if fireReportButton.isSelected {
+            reportButton.isEnabled = true
+        } else if rescueReportButton.isSelected {
+            reportButton.isEnabled = true
+        }
+    }
     
     // 신고 버튼 눌렸을 때
     @IBAction func reportButtonTapped(_ sender: Any) {
@@ -71,16 +105,18 @@ class ReportDetail: UIViewController, MFMessageComposeViewControllerDelegate {
         
     }
     
-    @IBAction func radioButtonTapped(_ sender: Any) {
-        if fireReportButton.isSelected {
-            reportButton.isEnabled = true
-        } else if rescueReportButton.isSelected {
-            reportButton.isEnabled = true
-        }
-    }
     
     
     // MARK: - functions
+    
+    // 폰 크기에 따라서 폰트 바뀌는 함수
+    func applyDynamicfont() {
+        placeContentTitle.dynamicFont(fontSize: 40, weight: .bold)
+        reportContentTitle.dynamicFont(fontSize: 40, weight: .bold)
+        rescueReportButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
+        fireReportButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
+        reportButton.titleLabel?.dynamicFont(fontSize: 55, weight: .bold)
+    }
     
     // 메시지 전송 변수 차단 케이스 함수
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
@@ -100,12 +136,22 @@ class ReportDetail: UIViewController, MFMessageComposeViewControllerDelegate {
             }
         }
     
-    func applyDynamicfont() {
-        placeContentTitle.dynamicFont(fontSize: 40, weight: .bold)
-        reportContentTitle.dynamicFont(fontSize: 40, weight: .bold)
-        rescueReportButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
-        fireReportButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
-        reportButton.titleLabel?.dynamicFont(fontSize: 55, weight: .bold)
+    // MARK: - TableView Delegate
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        LocationDummyData.shared.location.count
     }
+    
+    // MARK: - TableView Delegate
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "locationShowCell", for: indexPath) as! ReportDetailTableViewCell
+        let location = LocationDummyData.shared.location[indexPath.row]
 
+        cell.locationNameLabel.text = location.name
+        cell.locationLabel.text = location.location
+        cell.locationLabel.dynamicFont(fontSize: 18, weight: .regular)
+        cell.locationNameLabel.dynamicFont(fontSize: 24, weight: .regular)
+
+        return cell
+    }
 }
