@@ -162,7 +162,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             var myString = ""
             _ = selectedRow.map{ myString += "\($0)" }
             let myInt = Int(myString)
-            locationInfoButton.setTitle("\(data[myInt!].location)  ⌵", for: .normal)
+            locationInfoButton.setTitle("\(data[myInt!].name)  ⌵", for: .normal)
         }
     }
     
