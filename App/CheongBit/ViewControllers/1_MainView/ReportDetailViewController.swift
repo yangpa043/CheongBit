@@ -13,11 +13,13 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     var reportContent: String = ""
     var locationSelectIsHidden: Bool = true
+    let data = LocationDummyData.shared.location
 
     //MARK: - Outlets
     
     @IBOutlet weak var placeContentTitle: UILabel!
     @IBOutlet weak var reportContentTitle: UILabel!
+    @IBOutlet weak var locationInfoButton: UIButton!
     @IBOutlet weak var fireReportButton: DLRadioButton!
     @IBOutlet weak var rescueReportButton: DLRadioButton!
     @IBOutlet weak var reportButton: reportButton!
@@ -139,7 +141,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        LocationDummyData.shared.location.count
+        data.count
     }
     
     // MARK: - TableView Delegate
@@ -153,5 +155,19 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         cell.locationNameLabel.dynamicFont(fontSize: 24, weight: .regular)
 
         return cell
+    }
+    
+    var selectedRow : [Int] = [] {
+        didSet {
+            var myString = ""
+            _ = selectedRow.map{ myString += "\($0)" }
+            let myInt = Int(myString)
+            locationInfoButton.setTitle("\(data[myInt!].location)  ⌵", for: .normal)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedRow = [indexPath.row]
     }
 }

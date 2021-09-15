@@ -67,6 +67,7 @@ class MainViewController: UIViewController {
     
     func applyDynamicFont() {
         locationSelectButton.titleLabel?.dynamicFont(fontSize: 20, weight: .regular)
+        micStatusLabel.dynamicFont(fontSize: 24, weight: .bold)
     }
 }
 

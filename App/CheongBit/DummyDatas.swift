@@ -40,3 +40,5 @@ class LocationDummyData {
         Location(location: "경기도 양평군 양서면 양수로 177-6", name: "집")
     ]
 }
+
+
