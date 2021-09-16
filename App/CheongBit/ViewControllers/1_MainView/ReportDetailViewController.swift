@@ -145,6 +145,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     }
     
     // MARK: - TableView Delegate
+    
+    // cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationShowCell", for: indexPath) as! ReportDetailTableViewCell
         let location = LocationDummyData.shared.location[indexPath.row]
@@ -163,11 +165,15 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             _ = selectedRow.map{ myString += "\($0)" }
             let myInt = Int(myString)
             locationInfoButton.setTitle("\(data[myInt!].name)  ⌵", for: .normal)
+            
         }
     }
     
+    // 셀이 클릭 되었을 때
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedRow = [indexPath.row]
+        locationSelectIsHidden = true
+        locationShowTableView.isHidden = locationSelectIsHidden
     }
 }
