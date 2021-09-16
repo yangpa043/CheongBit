@@ -9,6 +9,9 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
 
+// MARK: - 전역함수
+    let data = UserDummyData.shared.user
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,17 +22,16 @@ class FriendsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
+// MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return UserDummyData.shared.user.count
+        data.count
     }
-
+    
     // 테이블 뷰 셀
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as! FriendsTableViewCell
-        let user = UserDummyData.shared.user[indexPath.row]
+        let user = data[indexPath.row]
         
         cell.userImageView.image = UIImage(named: user.userImage)
         cell.userNameLabel.text = user.userName
@@ -79,7 +81,7 @@ class FriendsTableViewController: UITableViewController {
     */
 
     /*
-    // MARK: - Navigation
+// MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

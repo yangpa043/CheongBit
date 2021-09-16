@@ -11,12 +11,16 @@ import MessageUI
 
 class ReportDetailViewController: UIViewController, MFMessageComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
+// MARK: - 전역함수
+    
+    let data = LocationDummyData.shared.location
     var reportContent: String = ""
     var locationSelectIsHidden: Bool = true
-    let data = LocationDummyData.shared.location
+    var locationSelected: Bool = false
+    var reportTypeSelected: Bool = false
 
-    //MARK: - Outlets
-    
+// MARK: - Outlets
+
     @IBOutlet weak var placeContentTitle: UILabel!
     @IBOutlet weak var reportContentTitle: UILabel!
     @IBOutlet weak var locationInfoButton: UIButton!
@@ -24,11 +28,11 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     @IBOutlet weak var rescueReportButton: DLRadioButton!
     @IBOutlet weak var reportButton: reportButton!
     
-    //tableView
+    //tableViewOutlets
     @IBOutlet weak var locationShowTableView: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
-    //MARK: - viewDidLoad
+// MARK: - viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +60,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         
     }
     
-    //MARK: - Actions
+// MARK: - Actions
     
     // 장소를 선택해 주세요 버튼
     @IBAction func locationSelectTapped(_ sender: UIButton) {
@@ -72,12 +76,18 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     }
     
     
-    // 신고 내용 선택
+    // 라디오 버튼으로 신고 타입 선택
     @IBAction func radioButtonTapped(_ sender: Any) {
         if fireReportButton.isSelected {
-            reportButton.isEnabled = true
+            reportTypeSelected = true
+            if reportTypeSelected == true, locationSelected == true {
+                reportButton.isEnabled = true
+            }
         } else if rescueReportButton.isSelected {
-            reportButton.isEnabled = true
+            reportTypeSelected = true
+            if reportTypeSelected == true, locationSelected == true {
+                reportButton.isEnabled = true
+            }
         }
     }
     
@@ -92,10 +102,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         
         if fireReportButton.isSelected {
             reportContent = "화재 신고"
-            print("화재 신고")
         } else if rescueReportButton.isSelected {
             reportContent = "구조, 구급 신고"
-            print("구조, 구급 신고")
         }
         
         let composeViewController = MFMessageComposeViewController()
@@ -109,7 +117,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     
     
-    // MARK: - functions
+// MARK: - functions
     
     // 폰 크기에 따라서 폰트 바뀌는 함수
     func applyDynamicfont() {
@@ -138,18 +146,16 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             }
         }
     
-    // MARK: - TableView Delegate
+// MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         data.count
     }
     
-    // MARK: - TableView Delegate
-    
     // cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationShowCell", for: indexPath) as! ReportDetailTableViewCell
-        let location = LocationDummyData.shared.location[indexPath.row]
+        let location = data[indexPath.row]
 
         cell.locationNameLabel.text = location.name
         cell.locationLabel.text = location.location
@@ -165,7 +171,6 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             _ = selectedRow.map{ myString += "\($0)" }
             let myInt = Int(myString)
             locationInfoButton.setTitle("\(data[myInt!].name)  ⌵", for: .normal)
-            
         }
     }
     
@@ -173,7 +178,14 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedRow = [indexPath.row]
+        
         locationSelectIsHidden = true
+        locationSelected = true
         locationShowTableView.isHidden = locationSelectIsHidden
+        
+        if reportTypeSelected == true, locationSelected == true {
+            
+            reportButton.isEnabled = true
+        }
     }
 }

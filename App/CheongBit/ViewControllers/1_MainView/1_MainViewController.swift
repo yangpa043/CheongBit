@@ -9,9 +9,12 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+// MARK: - 전역함수
+    
     var switchONorOFF:Bool = false
 
-    // MARK: - Outlets
+// MARK: - Outlets
+    
     @IBOutlet weak var locationSelectButton: mainViewNavButton!
     @IBOutlet weak var micSwitch: UIButton!
     @IBOutlet weak var micImage: UIImageView!
@@ -19,7 +22,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var micONandOFFStackView: UIStackView!
     
     
-    // MARK: - viewDidLoad
+// MARK: - viewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         switchButtonUpdate()
@@ -48,14 +52,14 @@ class MainViewController: UIViewController {
         
     }
     
-    // MARK: - Functions
+// MARK: - Functions
     
     // 마이크 스위치 함수
     func switchButtonUpdate() {
         if switchONorOFF == true{
             micSwitch.setImage(UIImage(named: "switchOn"), for: .normal)
             micImage.image = UIImage(named: "micOn")
-            micStatusLabel.text = "소리 인식 중"
+            micStatusLabel.text = "화재경보음 인식 중"
             switchONorOFF = false
         } else {
             micSwitch.setImage(UIImage(named: "switchOff"), for: .normal)

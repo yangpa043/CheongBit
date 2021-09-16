@@ -9,6 +9,9 @@ import UIKit
 
 class LocationSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+// MARK: - 전역함수
+    let data = LocationDummyData.shared.location
+    
 // MARK: - Outlets
     @IBOutlet weak var locationEnterLabel: UILabel!
     
@@ -24,20 +27,20 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     
-    // MARK: - Functions
+// MARK: - Functions
     func applyDynamicFont() {
         locationEnterLabel.dynamicFont(fontSize: 35, weight: .regular)
     }
     
-    // MARK: - TableView Delegate
+// MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return LocationDummyData.shared.location.count
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationsTableViewCell
-        let location = LocationDummyData.shared.location[indexPath.row]
+        let location = data[indexPath.row]
 
         cell.locationNameLabel.text = location.name
         cell.locationLabel.text = location.location
