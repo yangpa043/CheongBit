@@ -115,8 +115,6 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         
     }
     
-    
-    
 // MARK: - functions
     
     // 폰 크기에 따라서 폰트 바뀌는 함수

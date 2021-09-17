@@ -13,7 +13,7 @@
         <!--Main View Controller-->
         <scene sceneID="9jn-nF-zz6">
             <objects>
-                <viewController id="zNb-AT-MS6" customClass="MainViewController" customModule="CheongBit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="zNb-AT-MS6" customClass="MainViewController" customModule="CheongBit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yhW-BV-hyo">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,10 +74,10 @@
                     <navigationItem key="navigationItem" id="RGB-XW-5Md">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="GPh-Pg-OsK" customClass="mainViewNavButton" customModule="CheongBit" customModuleProvider="target">
-                            <rect key="frame" x="114.66666666666669" y="4" width="199" height="36"/>
+                            <rect key="frame" x="122.66666666666669" y="4" width="183" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
-                            <state key="normal" title="성북구 성복동 5-9 (집) ⌵"/>
+                            <state key="normal" title="주소를 선택해주세요  ⌵"/>
                             <connections>
                                 <action selector="locationSelectbuttonTapped:" destination="zNb-AT-MS6" eventType="touchUpInside" id="Vhr-9Z-lYL"/>
                                 <segue destination="YLi-JK-DSt" kind="presentation" modalPresentationStyle="fullScreen" id="e2T-Hz-N4B"/>
@@ -282,7 +282,7 @@
                                     <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonTapped:" destination="YLi-JK-DSt" eventType="touchUpInside" id="R1J-2W-PYd"/>
+                                    <action selector="backButtonTapped:" destination="YLi-JK-DSt" eventType="touchUpInside" id="JcA-Kc-mlT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소를 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWD-ct-O00">

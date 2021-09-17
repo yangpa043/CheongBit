@@ -11,7 +11,8 @@ class MainViewController: UIViewController {
     
 // MARK: - 전역함수
     
-    var switchONorOFF:Bool = false
+    var switchONorOFF: Bool = false
+    //var otherViewLocationData: String = ""
 
 // MARK: - Outlets
     
@@ -28,11 +29,17 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         switchButtonUpdate()
         applyDynamicFont()
+        //locationSelectButton.setTitle("주소를 선택해주세요  ⌵", for: .normal)
         
         // 마이크 스텍뷰 디자인
         micONandOFFStackView.backgroundColor = #colorLiteral(red: 0, green: 0.4877254963, blue: 1, alpha: 1)
         micONandOFFStackView.layer.cornerRadius = micONandOFFStackView.frame.width/15
         micONandOFFStackView.layer.masksToBounds = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        locationSelectButton.setTitle("주소를 선택해주세요  ⌵", for: .normal)
+        locationSelectButton.setTitle(otherViewLocationData, for: .normal)
     }
 
 // MARK: - Actions
