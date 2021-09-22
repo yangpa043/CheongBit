@@ -137,7 +137,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Ha-oY-SRA">
-                                <rect key="frame" x="40" y="402.66666666666669" width="348" height="181.00000000000006"/>
+                                <rect key="frame" x="40" y="414.66666666666669" width="348" height="157.00000000000006"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신고 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sR-Ja-c51">
                                         <rect key="frame" x="0.0" y="0.0" width="147" height="48"/>
@@ -146,24 +146,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5R7-xB-OVJ">
-                                        <rect key="frame" x="0.0" y="68" width="328" height="113"/>
+                                        <rect key="frame" x="0.0" y="68" width="328" height="89"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bah-iF-6Wu" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="328" height="49"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bah-iF-6Wu" customClass="DLRadioButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="328" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                <state key="normal" title=" Button">
+                                                    <imageReference key="image" image="checkmark.square" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="radioButtonTapped:" destination="SBG-sK-nEL" eventType="touchUpInside" id="2DX-4n-xt8"/>
-                                                    <outletCollection property="otherButtons" destination="POm-XR-oOo" id="zvm-hX-ndF"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POm-XR-oOo" customClass="DLRadioButton">
-                                                <rect key="frame" x="0.0" y="63.999999999999943" width="328" height="49"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POm-XR-oOo" customClass="DLRadioButton">
+                                                <rect key="frame" x="0.0" y="51.999999999999943" width="328" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                <state key="normal" title=" Button">
+                                                    <imageReference key="image" image="checkmark.square" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="radioButtonTapped:" destination="SBG-sK-nEL" eventType="touchUpInside" id="yij-13-WDQ"/>
@@ -246,6 +247,11 @@
                             <constraint firstItem="s4y-LJ-oZ9" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="tO4-DJ-70R"/>
                             <constraint firstItem="2Ha-oY-SRA" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="wMR-rj-3dQ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ecL-uf-teV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="신고하기" id="bQr-bv-BOB"/>
                     <connections>
@@ -408,6 +414,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

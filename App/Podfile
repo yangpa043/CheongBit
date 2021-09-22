@@ -7,6 +7,5 @@ target 'CheongBit' do
 
   # Pods for CheongBit
 
-	pod 'DLRadioButton', '~> 1.4'
 
 end

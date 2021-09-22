@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import DLRadioButton
 import MessageUI
 
 class ReportDetailViewController: UIViewController, MFMessageComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
@@ -24,8 +23,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     @IBOutlet weak var placeContentTitle: UILabel!
     @IBOutlet weak var reportContentTitle: UILabel!
     @IBOutlet weak var locationInfoButton: UIButton!
-    @IBOutlet weak var fireReportButton: DLRadioButton!
-    @IBOutlet weak var rescueReportButton: DLRadioButton!
+    @IBOutlet weak var fireReportButton: UIButton!
+    @IBOutlet weak var rescueReportButton: UIButton!
     @IBOutlet weak var reportButton: reportButton!
     
     //tableViewOutlets
@@ -53,11 +52,6 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         // 라디오 버튼 디자인
         fireReportButton.setTitle("화재 신고",for: .normal)
         rescueReportButton.setTitle("구조, 구급 신고", for: .normal)
-        fireReportButton.iconSize = 23
-        rescueReportButton.iconSize = 23
-        fireReportButton.isIconOnRight = true
-        rescueReportButton.isIconOnRight = true
-        
     }
     
 // MARK: - Actions
