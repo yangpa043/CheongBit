@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-// MARK: - 전역함수
+// MARK: - 전역 변/상수
     
     var switchONorOFF: Bool = false
     //var otherViewLocationData: String = ""

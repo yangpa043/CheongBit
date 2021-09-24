@@ -10,21 +10,30 @@ import MessageUI
 
 class ReportDetailViewController: UIViewController, MFMessageComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
-// MARK: - 전역함수
+// MARK: - 전역 변/상수
     
+    // 위치데이터 shared
     let data = LocationDummyData.shared.location
+    // 신고 메시지 내용
     var reportContent: String = ""
+    // 위치 선택 테이블뷰 표시 Bool 값
     var locationSelectIsHidden: Bool = true
+    // 위치 선택 테이블뷰 셀 선택 Bool 값
     var locationSelected: Bool = false
+    // 신고 타입 선택 완료 Bool 값
     var reportTypeSelected: Bool = false
+    // 신고 타입 중 화재 신고 클릭
+    var fireReportTypeSelected: Bool = false
+    // 신고 타입 중 구조,구급 신고 클릭
+    var rescueReportTypeSelected: Bool = false
 
 // MARK: - Outlets
 
     @IBOutlet weak var placeContentTitle: UILabel!
     @IBOutlet weak var reportContentTitle: UILabel!
     @IBOutlet weak var locationInfoButton: UIButton!
-    @IBOutlet weak var fireReportButton: UIButton!
-    @IBOutlet weak var rescueReportButton: UIButton!
+    @IBOutlet weak var fireReportTypeButton: UIButton!
+    @IBOutlet weak var rescueReportTypeButton: UIButton!
     @IBOutlet weak var reportButton: reportButton!
     
     //tableViewOutlets
@@ -50,13 +59,13 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         self.navigationController?.navigationBar.topItem?.title = "홈"
         
         // 라디오 버튼 디자인
-        fireReportButton.setTitle("화재 신고",for: .normal)
-        rescueReportButton.setTitle("구조, 구급 신고", for: .normal)
+        fireReportTypeButton.setTitle("  화재 신고",for: .normal)
+        rescueReportTypeButton.setTitle("  구조, 구급 신고", for: .normal)
     }
     
 // MARK: - Actions
     
-    // 장소를 선택해 주세요 버튼
+    // 장소를 선택해 주세요 버튼 눌렸을 때
     @IBAction func locationSelectTapped(_ sender: UIButton) {
         
         // 버튼 눌렀을때 테이블 뷰 꺼졋다 켜졋다
@@ -69,20 +78,50 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         locationShowTableView.isHidden = locationSelectIsHidden
     }
     
+    // 화재 신고 타입 버튼 눌렸을 때
+    @IBAction func fireReportTypeButtonTapped(_ sender: Any) {
+        fireReportTypeButtonUpdate()
+    }
     
-    // 라디오 버튼으로 신고 타입 선택
-    @IBAction func radioButtonTapped(_ sender: Any) {
-        if fireReportButton.isSelected {
-            reportTypeSelected = true
-            if reportTypeSelected == true, locationSelected == true {
-                reportButton.isEnabled = true
-            }
-        } else if rescueReportButton.isSelected {
-            reportTypeSelected = true
-            if reportTypeSelected == true, locationSelected == true {
-                reportButton.isEnabled = true
-            }
-        }
+    // 구조,구급 신고 타입 버튼 눌렸을 때
+    @IBAction func rescueReportTypeButtonTapped(_ sender: Any) {
+        rescueReportTypeButtonUpdate()
+    }
+    
+    
+    // 체크박스 버튼으로 신고 타입 선택
+    @IBAction func reportTypeButtonsTapped(_ sender: Any) {
+        
+        print(fireReportTypeSelected, rescueReportTypeSelected)
+        
+//        if fireReportTypeSelected == true, rescueReportTypeSelected == true {
+//            reportTypeSelected = true
+//
+//            if reportTypeSelected == true, locationSelected == true {
+//                reportButton.isEnabled = true
+//            }
+//        }
+//        else if fireReportTypeSelected == true, rescueReportTypeSelected == false {
+//            reportTypeSelected = true
+//
+//            if reportTypeSelected == true, locationSelected == true {
+//                reportButton.isEnabled = true
+//            }
+//        } else if fireReportTypeSelected == false, rescueReportTypeSelected == true {
+//            reportTypeSelected = true
+//
+//            if reportTypeSelected == true, locationSelected == true {
+//                reportButton.isEnabled = true
+//            }
+//        }
+//        else if fireReportTypeSelected == false, rescueReportTypeSelected == false {
+//            reportTypeSelected = false
+//
+//            if reportTypeSelected == false, locationSelected == true {
+//                reportButton.isEnabled = false
+//            }
+//        }
+        
     }
     
     // 신고 버튼 눌렸을 때
@@ -94,9 +133,9 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             return
         }
         
-        if fireReportButton.isSelected {
+        if fireReportTypeButton.isSelected {
             reportContent = "화재 신고"
-        } else if rescueReportButton.isSelected {
+        } else if rescueReportTypeButton.isSelected {
             reportContent = "구조, 구급 신고"
         }
         
@@ -115,9 +154,33 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     func applyDynamicfont() {
         placeContentTitle.dynamicFont(fontSize: 40, weight: .bold)
         reportContentTitle.dynamicFont(fontSize: 40, weight: .bold)
-        rescueReportButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
-        fireReportButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
+        rescueReportTypeButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
+        fireReportTypeButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
         reportButton.titleLabel?.dynamicFont(fontSize: 55, weight: .bold)
+    }
+    
+    // 화재 신고 타입 버튼 클릭
+    func fireReportTypeButtonUpdate() {
+        if fireReportTypeSelected == true {
+            fireReportTypeSelected = false
+            fireReportTypeButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            
+        } else if fireReportTypeSelected == false {
+            fireReportTypeSelected = true
+            fireReportTypeButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+        }
+    }
+    
+    // 구조,구급 신고 타입 버튼 클릭
+    func rescueReportTypeButtonUpdate() {
+        if rescueReportTypeSelected == true {
+            rescueReportTypeSelected = false
+            rescueReportTypeButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            
+        } else if rescueReportTypeSelected == false {
+            rescueReportTypeSelected = true
+            rescueReportTypeButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+        }
     }
     
     // 메시지 전송 변수 차단 케이스 함수

@@ -10,7 +10,7 @@ import UIKit
 
 class LocationSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-// MARK: - 전역함수
+// MARK: - 전역 변/상수
     
     let data = LocationDummyData.shared.location
     var dataToMove: String = ""

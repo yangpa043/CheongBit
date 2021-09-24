@@ -9,7 +9,7 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
 
-// MARK: - 전역함수
+// MARK: - 전역 변/상수
     let data = UserDummyData.shared.user
     
     override func viewDidLoad() {
