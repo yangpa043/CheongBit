@@ -159,7 +159,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="fireReportTypeButtonTapped:" destination="SBG-sK-nEL" eventType="touchUpInside" id="ekP-Hx-idg"/>
-                                                    <action selector="reportTypeButtonsTapped:" destination="SBG-sK-nEL" eventType="touchUpInside" id="7Vk-9A-oZK"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POm-XR-oOo">
@@ -171,7 +170,6 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="reportTypeButtonsTapped:" destination="SBG-sK-nEL" eventType="touchUpInside" id="tIY-Id-ljb"/>
                                                     <action selector="rescueReportTypeButtonTapped:" destination="SBG-sK-nEL" eventType="touchUpInside" id="JqM-B2-vIF"/>
                                                 </connections>
                                             </button>

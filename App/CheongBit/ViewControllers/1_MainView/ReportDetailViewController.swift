@@ -80,48 +80,28 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     // 화재 신고 타입 버튼 눌렸을 때
     @IBAction func fireReportTypeButtonTapped(_ sender: Any) {
-        fireReportTypeButtonUpdate()
+        if fireReportTypeSelected == false {
+            fireReportTypeButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+            fireReportTypeSelected = true
+            
+        } else {
+            fireReportTypeButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            fireReportTypeSelected = false
+        }
+        reportTypeButtonsTapped()
     }
     
     // 구조,구급 신고 타입 버튼 눌렸을 때
     @IBAction func rescueReportTypeButtonTapped(_ sender: Any) {
-        rescueReportTypeButtonUpdate()
-    }
-    
-    
-    // 체크박스 버튼으로 신고 타입 선택
-    @IBAction func reportTypeButtonsTapped(_ sender: Any) {
-        
-        print(fireReportTypeSelected, rescueReportTypeSelected)
-        
-//        if fireReportTypeSelected == true, rescueReportTypeSelected == true {
-//            reportTypeSelected = true
-//
-//            if reportTypeSelected == true, locationSelected == true {
-//                reportButton.isEnabled = true
-//            }
-//        }
-//        else if fireReportTypeSelected == true, rescueReportTypeSelected == false {
-//            reportTypeSelected = true
-//
-//            if reportTypeSelected == true, locationSelected == true {
-//                reportButton.isEnabled = true
-//            }
-//        } else if fireReportTypeSelected == false, rescueReportTypeSelected == true {
-//            reportTypeSelected = true
-//
-//            if reportTypeSelected == true, locationSelected == true {
-//                reportButton.isEnabled = true
-//            }
-//        }
-//        else if fireReportTypeSelected == false, rescueReportTypeSelected == false {
-//            reportTypeSelected = false
-//
-//            if reportTypeSelected == false, locationSelected == true {
-//                reportButton.isEnabled = false
-//            }
-//        }
-        
+        if rescueReportTypeSelected == false {
+            rescueReportTypeButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+            rescueReportTypeSelected = true
+            
+        } else {
+            rescueReportTypeButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            rescueReportTypeSelected = false
+        }
+        reportTypeButtonsTapped()
     }
     
     // 신고 버튼 눌렸을 때
@@ -161,26 +141,45 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     // 화재 신고 타입 버튼 클릭
     func fireReportTypeButtonUpdate() {
-        if fireReportTypeSelected == true {
-            fireReportTypeSelected = false
-            fireReportTypeButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            
-        } else if fireReportTypeSelected == false {
-            fireReportTypeSelected = true
-            fireReportTypeButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
-        }
+        
     }
     
     // 구조,구급 신고 타입 버튼 클릭
     func rescueReportTypeButtonUpdate() {
-        if rescueReportTypeSelected == true {
-            rescueReportTypeSelected = false
-            rescueReportTypeButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
-            
-        } else if rescueReportTypeSelected == false {
-            rescueReportTypeSelected = true
-            rescueReportTypeButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+        
+    }
+    
+    // 체크박스 버튼으로 신고 타입 선택
+    func reportTypeButtonsTapped() {
+        
+        if fireReportTypeSelected == true, rescueReportTypeSelected == true {
+            reportTypeSelected = true
+
+            if reportTypeSelected == true, locationSelected == true {
+                reportButton.isEnabled = true
+            }
         }
+        else if fireReportTypeSelected == true, rescueReportTypeSelected == false {
+            reportTypeSelected = true
+
+            if reportTypeSelected == true, locationSelected == true {
+                reportButton.isEnabled = true
+            }
+        } else if fireReportTypeSelected == false, rescueReportTypeSelected == true {
+            reportTypeSelected = true
+
+            if reportTypeSelected == true, locationSelected == true {
+                reportButton.isEnabled = true
+            }
+        }
+        else if fireReportTypeSelected == false, rescueReportTypeSelected == false {
+            reportTypeSelected = false
+
+            if reportTypeSelected == false, locationSelected == true {
+                reportButton.isEnabled = false
+            }
+        }
+        
     }
     
     // 메시지 전송 변수 차단 케이스 함수
