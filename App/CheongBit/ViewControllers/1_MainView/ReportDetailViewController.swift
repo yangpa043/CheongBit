@@ -107,6 +107,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // 신고 버튼 눌렸을 때
     @IBAction func reportButtonTapped(_ sender: Any) {
         
+        decideReportContent()
         // 메시지가 안 보내졌을 때 앱을 죽지 않도록 하는 가드
         guard MFMessageComposeViewController.canSendText() else {
             print("SMS services are not available")
@@ -137,16 +138,6 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         rescueReportTypeButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
         fireReportTypeButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
         reportButton.titleLabel?.dynamicFont(fontSize: 55, weight: .bold)
-    }
-    
-    // 화재 신고 타입 버튼 클릭
-    func fireReportTypeButtonUpdate() {
-        
-    }
-    
-    // 구조,구급 신고 타입 버튼 클릭
-    func rescueReportTypeButtonUpdate() {
-        
     }
     
     // 체크박스 버튼으로 신고 타입 선택
@@ -180,6 +171,19 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             }
         }
         
+    }
+    
+    func decideReportContent() {
+        let rescueString = "구조, 구급 신고"
+        let fireString = "화재 신고"
+        
+        if fireReportTypeSelected == true {
+            reportContent += fireString
+        }
+        
+        if rescueReportTypeSelected == true {
+            reportContent += rescueString
+        }
     }
     
     // 메시지 전송 변수 차단 케이스 함수
