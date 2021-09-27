@@ -26,6 +26,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     var fireReportTypeSelected: Bool = false
     // 신고 타입 중 구조,구급 신고 클릭
     var rescueReportTypeSelected: Bool = false
+    // 위치 셀 선택 Int
+    var selectLocationNumber:Int = 0
 
 // MARK: - Outlets
 
@@ -85,7 +87,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             fireReportTypeSelected = true
             
         } else {
-            fireReportTypeButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            fireReportTypeButton.setImage(UIImage(systemName: "square"), for: .normal)
             fireReportTypeSelected = false
         }
         reportTypeButtonsTapped()
@@ -98,7 +100,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             rescueReportTypeSelected = true
             
         } else {
-            rescueReportTypeButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+            rescueReportTypeButton.setImage(UIImage(systemName: "square"), for: .normal)
             rescueReportTypeSelected = false
         }
         reportTypeButtonsTapped()
@@ -143,39 +145,56 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // 체크박스 버튼으로 신고 타입 선택
     func reportTypeButtonsTapped() {
         
-        if fireReportTypeSelected == true, rescueReportTypeSelected == true {
-            reportTypeSelected = true
-
-            if reportTypeSelected == true, locationSelected == true {
+        let fire = fireReportTypeSelected
+        let rescue = rescueReportTypeSelected
+        let location = locationSelected
+        var reportOn = reportTypeSelected
+        
+        if fire == true, rescue == true {
+            reportOn = true
+            if reportOn == true, location == true {
                 reportButton.isEnabled = true
             }
-        }
-        else if fireReportTypeSelected == true, rescueReportTypeSelected == false {
-            reportTypeSelected = true
-
-            if reportTypeSelected == true, locationSelected == true {
+        } else if fire == true, rescue == false {
+            reportOn = true
+            if reportOn == true, location == true {
                 reportButton.isEnabled = true
             }
-        } else if fireReportTypeSelected == false, rescueReportTypeSelected == true {
-            reportTypeSelected = true
-
-            if reportTypeSelected == true, locationSelected == true {
+        } else if fire == false, rescue == true {
+            reportOn = true
+            if reportOn == true, location == true {
                 reportButton.isEnabled = true
             }
-        }
-        else if fireReportTypeSelected == false, rescueReportTypeSelected == false {
-            reportTypeSelected = false
-
-            if reportTypeSelected == false, locationSelected == true {
+        } else if fire == false, rescue == false {
+            reportOn = false
+            if reportOn == false, location == true {
                 reportButton.isEnabled = false
             }
         }
+        
+        //        switch(fireReportTypeSelected){
+        //        case true:
+        //            reportTypeSelected = true
+        //            reportButton.isEnabled = true
+        //        case false:
+        //
+        //        }
+        //        switch(rescueReportTypeSelected){
+        //        case true:
+        //            reportTypeSelected = true
+        //            reportButton.isEnabled = true
+        //        case false:
+        //        }
         
     }
     
     func decideReportContent() {
         let fireString = "\n화재 신고"
         let rescueString = "\n구조, 구급 신고"
+        
+        if locationSelected == true {
+            reportContent = data[selectLocationNumber].location
+        }
         
         if fireReportTypeSelected == true {
             reportContent += fireString
@@ -184,6 +203,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         if rescueReportTypeSelected == true {
             reportContent += rescueString
         }
+        
     }
     
     // 메시지 전송 변수 차단 케이스 함수
@@ -195,12 +215,15 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
                 dismiss(animated: true, completion: nil)
             case .sent:
                 print("sent message:", controller.body ?? "")
+                reportContent = ""
                 dismiss(animated: true, completion: nil)
             case .failed:
                 print("failed")
+                reportContent = ""
                 dismiss(animated: true, completion: nil)
             @unknown default:
                 print("unkown Error")
+                reportContent = ""
                 dismiss(animated: true, completion: nil)
             }
         }
@@ -230,7 +253,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             _ = selectedRow.map{ myString += "\($0)" }
             let myInt = Int(myString)
             locationInfoButton.setTitle("\(data[myInt!].name)  ⌵", for: .normal)
-            reportContent = data[myInt!].location
+            selectLocationNumber = myInt!
         }
     }
     
