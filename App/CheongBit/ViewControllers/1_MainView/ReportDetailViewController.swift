@@ -174,8 +174,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     }
     
     func decideReportContent() {
-        let rescueString = "구조, 구급 신고"
-        let fireString = "화재 신고"
+        let fireString = "\n화재 신고"
+        let rescueString = "\n구조, 구급 신고"
         
         if fireReportTypeSelected == true {
             reportContent += fireString
@@ -191,6 +191,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             switch result {
             case .cancelled:
                 print("cancelled")
+                reportContent = ""
                 dismiss(animated: true, completion: nil)
             case .sent:
                 print("sent message:", controller.body ?? "")
@@ -229,6 +230,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             _ = selectedRow.map{ myString += "\($0)" }
             let myInt = Int(myString)
             locationInfoButton.setTitle("\(data[myInt!].name)  ⌵", for: .normal)
+            reportContent = data[myInt!].location
         }
     }
     
