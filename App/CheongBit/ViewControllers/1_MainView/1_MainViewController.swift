@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MainViewController: UIViewController {
     
@@ -64,6 +65,8 @@ class MainViewController: UIViewController {
     // 마이크 스위치 함수
     func switchButtonUpdate() {
         if switchONorOFF == true{
+            requestMicrophonePermission()
+            
             micSwitch.setImage(UIImage(named: "switchOn"), for: .normal)
             micImage.image = UIImage(named: "micOn")
             micStatusLabel.text = "화재경보음 인식 중"
@@ -76,9 +79,24 @@ class MainViewController: UIViewController {
         }
     }
     
+    // 다이나믹 폰트
     func applyDynamicFont() {
         locationSelectButton.titleLabel?.dynamicFont(fontSize: 20, weight: .regular)
         micStatusLabel.dynamicFont(fontSize: 24, weight: .bold)
+    }
+    
+    // 마이크 권한
+    func requestMicrophonePermission() {
+        AVAudioSession.sharedInstance().requestRecordPermission({(granted: Bool)-> Void in
+            if granted {
+                print("Mic: 권한 허용")
+            } else {
+                print("Mic: 권한 거부")
+                if granted == false {
+                    
+                }
+            }
+        })
     }
 }
 
