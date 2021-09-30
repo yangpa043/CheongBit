@@ -12,8 +12,10 @@ class MainViewController: UIViewController {
     
 // MARK: - 전역 변/상수
     
+    // 경보 인식 스위치
     var switchONorOFF: Bool = false
-    //var otherViewLocationData: String = ""
+    // 마이크 권한 상태
+    var micPermissionStatus: Bool = true
 
 // MARK: - Outlets
     
@@ -30,7 +32,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         switchButtonUpdate()
         applyDynamicFont()
-        //locationSelectButton.setTitle("주소를 선택해주세요  ⌵", for: .normal)
+        requestMicrophonePermission()
         
         // 마이크 스텍뷰 디자인
         micONandOFFStackView.backgroundColor = #colorLiteral(red: 0, green: 0.4877254963, blue: 1, alpha: 1)
@@ -52,6 +54,10 @@ class MainViewController: UIViewController {
     
     // 마이크 스위치 버튼
     @IBAction func switchChanged(_ sender: UIButton) {
+        if micPermissionStatus == false {
+            switchONorOFF = true
+            switchButtonUpdate()
+        }
         switchButtonUpdate()
     }
     
@@ -64,14 +70,18 @@ class MainViewController: UIViewController {
     
     // 마이크 스위치 함수
     func switchButtonUpdate() {
+        // 스위치가 꺼져있을 때
         if switchONorOFF == true{
-            requestMicrophonePermission()
-            
+            if micPermissionStatus == false {
+                micCanceldAlert()
+            }
             micSwitch.setImage(UIImage(named: "switchOn"), for: .normal)
             micImage.image = UIImage(named: "micOn")
             micStatusLabel.text = "화재경보음 인식 중"
             switchONorOFF = false
-        } else {
+        }
+        // 스위치가 켜져있을 때
+        else {
             micSwitch.setImage(UIImage(named: "switchOff"), for: .normal)
             micImage.image = UIImage(named: "micOff")
             micStatusLabel.text = "인식 중이 아님"
@@ -90,13 +100,24 @@ class MainViewController: UIViewController {
         AVAudioSession.sharedInstance().requestRecordPermission({(granted: Bool)-> Void in
             if granted {
                 print("Mic: 권한 허용")
+                self.micPermissionStatus = true
             } else {
                 print("Mic: 권한 거부")
-                if granted == false {
-                    
-                }
+                self.micPermissionStatus = false
             }
         })
     }
+    
+    func micCanceldAlert() {
+        let micCanceled = UIAlertController(title: "마이크 권한 요청", message: "마이크 권한이 거절 되었습니다.\n설정>CheongBit 에서 허용 해주세요.", preferredStyle: UIAlertController.Style.alert)
+        let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
+        let goToSetting = UIAlertAction(title: "설정 가기", style: UIAlertAction.Style.default)
+        
+        micCanceled.addAction(alertCancel)
+        micCanceled.addAction(goToSetting)
+        
+        self.present(micCanceled, animated: true)
+    }
+    
 }
 
