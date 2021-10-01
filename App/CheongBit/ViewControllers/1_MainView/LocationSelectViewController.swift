@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import "CheongBit_Swift.h"
 
 class LocationSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -27,7 +26,6 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     
     //뒤로가기 버튼
     @IBAction func backButtonTapped(_ sender: Any) {
-        moveToMainVC()
         dismiss(animated: true, completion: nil)
         
     }
@@ -69,16 +67,6 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         selectedRow = [indexPath.row]
         otherViewLocationData = "\(dataToMove)"
         dismiss(animated: true, completion: nil)
-    }
-    
-    // 메인뷰로 주소 데이터 전달
-    func moveToMainVC() {
-//        let MainVC = UIStoryboard(name: "1_MainTab", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-        
-        //let mainVC = MainViewController()
-        //mainVC.otherViewLocationData = dataToMove
-        //print(MainVC.otherViewLocationData)
-        //self.present(MainVC, animated: false, completion: nil)
     }
     
 }

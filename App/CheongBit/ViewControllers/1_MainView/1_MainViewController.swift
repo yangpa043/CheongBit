@@ -68,6 +68,12 @@ class MainViewController: UIViewController {
     
 // MARK: - Functions
     
+//    let url = URL(string: UIApplication.shared.openSettingURLString)
+//    // 열 수 있는 url 이라면, 이동
+//    if UIApplication.shared.canOpenURL(url) {
+//        UIApplication.shared.opne(url)
+//    }
+    
     // 마이크 스위치 함수
     func switchButtonUpdate() {
         // 스위치가 꺼져있을 때
@@ -111,8 +117,10 @@ class MainViewController: UIViewController {
     func micCanceldAlert() {
         let micCanceled = UIAlertController(title: "마이크 권한 요청", message: "마이크 권한이 거절 되었습니다.\n설정>CheongBit 에서 허용 해주세요.", preferredStyle: UIAlertController.Style.alert)
         let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
-        let goToSetting = UIAlertAction(title: "설정 가기", style: UIAlertAction.Style.default)
-        
+        let goToSetting = UIAlertAction(title: "설정", style: UIAlertAction.Style.default) { _ in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+        }
+    
         micCanceled.addAction(alertCancel)
         micCanceled.addAction(goToSetting)
         
@@ -120,4 +128,3 @@ class MainViewController: UIViewController {
     }
     
 }
-
