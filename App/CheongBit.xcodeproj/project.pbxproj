@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7623B1662706E09200C1BE72 /* fireAlarmSoundMLModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 7623B1652706E09200C1BE72 /* fireAlarmSoundMLModel.mlpackage */; };
 		76349AB726E7332000BD7BAE /* LocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */; };
 		76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */; };
 		76B3552D26EAEC0D00957891 /* DummyDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* DummyDatas.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		234D94EF80E21F7ABDF9A0CE /* Pods-CheongBit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheongBit.release.xcconfig"; path = "Target Support Files/Pods-CheongBit/Pods-CheongBit.release.xcconfig"; sourceTree = "<group>"; };
+		7623B1652706E09200C1BE72 /* fireAlarmSoundMLModel.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = fireAlarmSoundMLModel.mlpackage; sourceTree = "<group>"; };
 		76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectViewController.swift; sourceTree = "<group>"; };
 		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = CheongBit/Cells/2_FriendsView/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		76B3552C26EAEC0D00957891 /* DummyDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDatas.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		D575487826CFF63000B2E602 /* CheongBit */ = {
 			isa = PBXGroup;
 			children = (
+				7623B1652706E09200C1BE72 /* fireAlarmSoundMLModel.mlpackage */,
 				D575487926CFF63000B2E602 /* AppDelegate.swift */,
 				D575487B26CFF63000B2E602 /* SceneDelegate.swift */,
 				76B3552C26EAEC0D00957891 /* DummyDatas.swift */,
@@ -297,6 +300,7 @@
 				D575487E26CFF63000B2E602 /* 1_MainViewController.swift in Sources */,
 				D5D8A70C26EEE35400A31EC2 /* ReportDetailViewController.swift in Sources */,
 				D5D8A6F426E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift in Sources */,
+				7623B1662706E09200C1BE72 /* fireAlarmSoundMLModel.mlpackage in Sources */,
 				D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */,
 				76B3552D26EAEC0D00957891 /* DummyDatas.swift in Sources */,
 				76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */,
