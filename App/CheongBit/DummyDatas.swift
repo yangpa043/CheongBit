@@ -45,3 +45,4 @@ class LocationDummyData {
 }
 
 var otherViewLocationData : String = "주소를 선택해주세요  ⌵"
+var firstSelectRowNumber : Int?

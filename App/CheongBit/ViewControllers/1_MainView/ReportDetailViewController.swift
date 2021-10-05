@@ -53,7 +53,6 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         }
         
         applyDynamicfont()
-        
         reportButton.isEnabled = false
         locationShowTableView.isHidden = locationSelectIsHidden
         
@@ -63,6 +62,19 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         // 라디오 버튼 디자인
         fireReportTypeButton.setTitle("  화재 신고",for: .normal)
         rescueReportTypeButton.setTitle("  구조, 구급 신고", for: .normal)
+    }
+    
+    
+    // 이미 장소가 선택되어 있을 때 locationInfoButton의 텍스트 바꾸기
+    override func viewWillAppear(_ animated: Bool) {
+        if firstSelectRowNumber == nil {
+            locationInfoButton.setTitle("장소를 선택해 주세요.  ⌵", for: .normal)
+        } else {
+            locationInfoButton.setTitle("\(data[firstSelectRowNumber!].name)  ⌵", for: .normal)
+            locationSelected = true
+            
+        }
+        
     }
     
 // MARK: - Actions
@@ -174,9 +186,15 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         let fireString = "\n화재 신고"
         let rescueString = "\n구조, 구급 신고"
         
+        // 이미 주소가 선택되어 있을 때 메시지 내용 추가
         if locationSelected == true {
-            reportContent = data[selectLocationNumber].location
+            if firstSelectRowNumber != nil {
+                reportContent = data[firstSelectRowNumber!].location
+            } else {
+                reportContent = data[selectLocationNumber].location
+            }
         }
+
         
         if fireReportTypeSelected == true {
             reportContent += fireString
@@ -241,6 +259,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     // 셀이 클릭 되었을 때
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        firstSelectRowNumber = nil
         
         selectedRow = [indexPath.row]
         

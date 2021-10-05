@@ -13,6 +13,8 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     
     let data = LocationDummyData.shared.location
     var dataToMove: String = ""
+    // 선택된 Row의 번호
+    var myInt: Int?
     
 // MARK: - Outlets
     
@@ -57,7 +59,7 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         didSet {
             var myString = ""
             _ = selectedRow.map{ myString += "\($0)" }
-            let myInt = Int(myString)
+            myInt = Int(myString)
             dataToMove = "\(data[myInt!].name)  ⌵"
         }
     }
@@ -66,6 +68,7 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         
         selectedRow = [indexPath.row]
         otherViewLocationData = "\(dataToMove)"
+        firstSelectRowNumber = myInt
         dismiss(animated: true, completion: nil)
     }
     
