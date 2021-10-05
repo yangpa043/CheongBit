@@ -143,48 +143,30 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     }
     
     // 체크박스 버튼으로 신고 타입 선택
+    // 코드 줄여야 함
     func reportTypeButtonsTapped() {
         
-        let fire = fireReportTypeSelected
-        let rescue = rescueReportTypeSelected
-        let location = locationSelected
-        var reportOn = reportTypeSelected
-        
-        if fire == true, rescue == true {
-            reportOn = true
-            if reportOn == true, location == true {
+        if fireReportTypeSelected == true, rescueReportTypeSelected == true {
+            reportTypeSelected = true
+            if reportTypeSelected == true, locationSelected == true {
                 reportButton.isEnabled = true
             }
-        } else if fire == true, rescue == false {
-            reportOn = true
-            if reportOn == true, location == true {
+        } else if fireReportTypeSelected == true, rescueReportTypeSelected == false {
+            reportTypeSelected = true
+            if reportTypeSelected == true, locationSelected == true {
                 reportButton.isEnabled = true
             }
-        } else if fire == false, rescue == true {
-            reportOn = true
-            if reportOn == true, location == true {
+        } else if fireReportTypeSelected == false, rescueReportTypeSelected == true {
+            reportTypeSelected = true
+            if reportTypeSelected == true, locationSelected == true {
                 reportButton.isEnabled = true
             }
-        } else if fire == false, rescue == false {
-            reportOn = false
-            if reportOn == false, location == true {
+        } else if fireReportTypeSelected == false, rescueReportTypeSelected == false {
+            reportTypeSelected = false
+            if reportTypeSelected == false, locationSelected == true {
                 reportButton.isEnabled = false
             }
         }
-        
-        //        switch(fireReportTypeSelected){
-        //        case true:
-        //            reportTypeSelected = true
-        //            reportButton.isEnabled = true
-        //        case false:
-        //
-        //        }
-        //        switch(rescueReportTypeSelected){
-        //        case true:
-        //            reportTypeSelected = true
-        //            reportButton.isEnabled = true
-        //        case false:
-        //        }
         
     }
     

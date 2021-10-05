@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// MARK: - 오토 폰트
 extension UILabel {
   func dynamicFont(fontSize size: CGFloat, weight: UIFont.Weight) {
     let currentFontName = self.font.fontName
