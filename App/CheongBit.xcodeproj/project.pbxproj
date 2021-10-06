@@ -11,6 +11,7 @@
 		76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */; };
 		76B3552D26EAEC0D00957891 /* DummyDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* DummyDatas.swift */; };
 		91ACC4DDF8650C3790D958AD /* Pods_CheongBit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6FE238AB843B83E051FE06 /* Pods_CheongBit.framework */; };
+		D537D930270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = D537D92F270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage */; };
 		D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487926CFF63000B2E602 /* AppDelegate.swift */; };
 		D575487C26CFF63000B2E602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487B26CFF63000B2E602 /* SceneDelegate.swift */; };
 		D575487E26CFF63000B2E602 /* 1_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487D26CFF63000B2E602 /* 1_MainViewController.swift */; };
@@ -35,6 +36,7 @@
 		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = CheongBit/Cells/2_FriendsView/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		76B3552C26EAEC0D00957891 /* DummyDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDatas.swift; sourceTree = "<group>"; };
 		BF6FE238AB843B83E051FE06 /* Pods_CheongBit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheongBit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D537D92F270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = "fireAlarmSoundClassifier 6.mlpackage"; path = "../../../../../../../../Desktop/fireAlarmSoundClassifier 6.mlpackage"; sourceTree = "<group>"; };
 		D575487626CFF63000B2E602 /* CheongBit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheongBit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D575487926CFF63000B2E602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D575487B26CFF63000B2E602 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		465294FB9DDCF1CB30E8B737 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				D575487726CFF63000B2E602 /* Products */,
 				F9B45621E03F9BAC8D857450 /* Pods-CheongBit.debug.xcconfig */,
 				234D94EF80E21F7ABDF9A0CE /* Pods-CheongBit.release.xcconfig */,
 			);
@@ -89,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				D575487826CFF63000B2E602 /* CheongBit */,
-				D575487726CFF63000B2E602 /* Products */,
 				465294FB9DDCF1CB30E8B737 /* Pods */,
 				3469B07677B03AFDB4970323 /* Frameworks */,
 			);
@@ -101,6 +103,7 @@
 				D575487626CFF63000B2E602 /* CheongBit.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D575487826CFF63000B2E602 /* CheongBit */ = {
@@ -123,6 +126,7 @@
 		D5AB1AF426F025F30058AE87 /* 1_MainView */ = {
 			isa = PBXGroup;
 			children = (
+				D537D92F270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage */,
 				D575487D26CFF63000B2E602 /* 1_MainViewController.swift */,
 				76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */,
 				D5D8A70B26EEE35400A31EC2 /* ReportDetailViewController.swift */,
@@ -299,6 +303,7 @@
 				D5D8A6F426E6FD3A00A31EC2 /* 2_FriendsTableViewController.swift in Sources */,
 				D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */,
 				76B3552D26EAEC0D00957891 /* DummyDatas.swift in Sources */,
+				D537D930270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage in Sources */,
 				76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */,
 				D5AB1AFD26F086020058AE87 /* LocationsTableViewCell.swift in Sources */,
 				D5D8A6F026E6ED0000A31EC2 /* DesignFile.swift in Sources */,
