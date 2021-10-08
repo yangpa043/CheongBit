@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */; };
 		76B3552D26EAEC0D00957891 /* DummyDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* DummyDatas.swift */; };
 		91ACC4DDF8650C3790D958AD /* Pods_CheongBit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6FE238AB843B83E051FE06 /* Pods_CheongBit.framework */; };
+		D5229E38270FE04D00F84685 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5229E37270FE04D00F84685 /* GoogleService-Info.plist */; };
 		D537D930270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = D537D92F270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage */; };
 		D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487926CFF63000B2E602 /* AppDelegate.swift */; };
 		D575487C26CFF63000B2E602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487B26CFF63000B2E602 /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = CheongBit/Cells/2_FriendsView/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		76B3552C26EAEC0D00957891 /* DummyDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDatas.swift; sourceTree = "<group>"; };
 		BF6FE238AB843B83E051FE06 /* Pods_CheongBit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheongBit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5229E37270FE04D00F84685 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D537D92F270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "fireAlarmSoundClassifier 6.mlpackage"; sourceTree = "<group>"; };
 		D575487626CFF63000B2E602 /* CheongBit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheongBit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D575487926CFF63000B2E602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				D5D8A6F626E7031D00A31EC2 /* Views */,
 				D575488226CFF63200B2E602 /* Assets.xcassets */,
 				D575488726CFF63200B2E602 /* Info.plist */,
+				D5229E37270FE04D00F84685 /* GoogleService-Info.plist */,
 			);
 			path = CheongBit;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				D575487226CFF63000B2E602 /* Sources */,
 				D575487326CFF63000B2E602 /* Frameworks */,
 				D575487426CFF63000B2E602 /* Resources */,
+				8F54C7C23B5E33F5DD09B515 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +266,7 @@
 				D575488326CFF63200B2E602 /* Assets.xcassets in Resources */,
 				D5D8A70526EEDEFA00A31EC2 /* 2_FriendsTab.storyboard in Resources */,
 				D575488126CFF63000B2E602 /* Main.storyboard in Resources */,
+				D5229E38270FE04D00F84685 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +293,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F54C7C23B5E33F5DD09B515 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheongBit/Pods-CheongBit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheongBit/Pods-CheongBit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CheongBit/Pods-CheongBit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
