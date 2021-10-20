@@ -6,7 +6,9 @@
 //
 
 import UIKit
+import AVKit
 import AVFoundation
+import SoundAnalysis
 
 class MainViewController: UIViewController {
     
@@ -20,6 +22,7 @@ class MainViewController: UIViewController {
 // MARK: - Outlets
     
     @IBOutlet weak var locationSelectButton: mainViewNavButton!
+    @IBOutlet weak var MLTableView: UITableView!
     @IBOutlet weak var micSwitch: UIButton!
     @IBOutlet weak var micImage: UIImageView!
     @IBOutlet weak var micStatusLabel: UILabel!
@@ -33,6 +36,7 @@ class MainViewController: UIViewController {
         switchButtonUpdate()
         applyDynamicFont()
         requestMicrophonePermission()
+        MLTableView.isHidden = true
         
         // 마이크 스텍뷰 디자인
         micONandOFFStackView.backgroundColor = #colorLiteral(red: 0, green: 0.4877254963, blue: 1, alpha: 1)
@@ -41,7 +45,6 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        locationSelectButton.setTitle("주소를 선택해주세요  ⌵", for: .normal)
         locationSelectButton.setTitle(otherViewLocationData, for: .normal)
     }
 
@@ -68,12 +71,6 @@ class MainViewController: UIViewController {
     
 // MARK: - Functions
     
-//    let url = URL(string: UIApplication.shared.openSettingURLString)
-//    // 열 수 있는 url 이라면, 이동
-//    if UIApplication.shared.canOpenURL(url) {
-//        UIApplication.shared.opne(url)
-//    }
-    
     // 마이크 스위치 함수
     func switchButtonUpdate() {
         // 스위치가 꺼져있을 때
@@ -85,6 +82,10 @@ class MainViewController: UIViewController {
             micImage.image = UIImage(named: "micOn")
             micStatusLabel.text = "화재경보음 인식 중"
             switchONorOFF = false
+            // ML On
+//            MLTableView.isHidden = false
+//            startAudioEngine()
+//            createClassificationRequest()
         }
         // 스위치가 켜져있을 때
         else {
@@ -92,6 +93,7 @@ class MainViewController: UIViewController {
             micImage.image = UIImage(named: "micOff")
             micStatusLabel.text = "인식 중이 아님"
             switchONorOFF = true
+            MLTableView.isHidden = true
         }
     }
     
@@ -127,4 +129,111 @@ class MainViewController: UIViewController {
         self.present(micCanceled, animated: true)
     }
     
+// MARK: - ML
+// MARK: - But Test
+    private let audioEngine = AVAudioEngine()
+    private var soundClassifier = fireAlarmSoundClassifier_6()
+    var streamAnalyzer: SNAudioStreamAnalyzer!
+    let queue = DispatchQueue(label: "TeamPdf.CheongBit", attributes: .concurrent)
+    var results = [(label: String, confidence: Float)]() {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.MLTableView.reloadData()
+            }
+        }
+    }
+    
+    private func startAudioEngine() {
+        audioEngine.prepare()
+        do {
+            try audioEngine.start()
+        } catch {
+            showAudioError()
+        }
+    }
+    
+    private func prepareForRecording() {
+        let inputNode = audioEngine.inputNode
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        streamAnalyzer = SNAudioStreamAnalyzer(format: recordingFormat)
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) {
+            [unowned self] (buffer, when) in
+            self.queue.async {
+                self.streamAnalyzer.analyze(buffer,atAudioFramePosition: when.sampleTime)
+            }
+        }
+        startAudioEngine()
+    }
+    
+    private func createClassificationRequest() {
+        do {
+            let request = try SNClassifySoundRequest(mlModel: soundClassifier.model)
+            try streamAnalyzer.add(request, withObserver: self)
+        } catch {
+            fatalError("error adding the classification request")
+        }
+    }
+
 }
+
+extension MainViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return results.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell")
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: "ResultCell")
+        }
+        
+        let result = results[indexPath.row]
+        let label = convert(id: result.label)
+        cell!.textLabel!.text = "\(label): \(result.confidence)"
+        return cell!
+    }
+    
+    private func convert(id: String) -> String {
+        let mapping = ["fireAlarm" : "fireAlarm", "normal" : "normal", "talkingSound" : "talkingSound"]
+        return mapping[id] ?? id
+    }
+    
+}
+
+extension MainViewController: SNResultsObserving {
+    func request(_ request: SNRequest, didProduce result: SNResult) {
+        guard let result = result as? SNClassificationResult else { return }
+        var temp = [(label: String, confidence: Float)]()
+        let sorted = result.classifications.sorted { (first, second) -> Bool in
+            return first.confidence > second.confidence
+        }
+        for classification in sorted {
+            let confidence = classification.confidence * 100
+            if confidence > 5 {
+                temp.append((label: classification.identifier, confidence: Float(confidence)))
+            }
+        }
+        results = temp
+    }
+}
+
+extension MainViewController {
+    
+    func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func showAudioError() {
+        let errorTitle = "Audio Error"
+        let errorMessage = "Recording is not possible at the moment."
+        self.showAlert(title: errorTitle, message: errorMessage)
+    }
+    
+}
+// ML end

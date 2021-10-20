@@ -61,17 +61,30 @@
                                     <segue destination="SBG-sK-nEL" kind="show" id="Rjd-Jo-jhZ"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8ft-sk-XMg">
+                                <rect key="frame" x="60" y="188" width="270" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="wQ6-5e-0FM"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="zNb-AT-MS6" id="yp8-OT-Wjl"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uUg-Ms-x4c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="k91-zu-IdK" firstAttribute="height" secondItem="uZV-b8-Spl" secondAttribute="height" multiplier="0.7" id="0tt-s1-g4m"/>
                             <constraint firstItem="Crw-Sk-Xv1" firstAttribute="centerY" secondItem="uUg-Ms-x4c" secondAttribute="centerY" multiplier="1.45" id="1tI-jb-Efb"/>
+                            <constraint firstItem="8ft-sk-XMg" firstAttribute="top" secondItem="uUg-Ms-x4c" secondAttribute="top" constant="100" id="9sp-x9-KYh"/>
                             <constraint firstItem="Crw-Sk-Xv1" firstAttribute="centerX" secondItem="yhW-BV-hyo" secondAttribute="centerX" id="BJ9-AI-0up"/>
                             <constraint firstItem="Crw-Sk-Xv1" firstAttribute="leading" secondItem="uUg-Ms-x4c" secondAttribute="leading" constant="70" id="RH6-Ym-JPB"/>
                             <constraint firstItem="uZV-b8-Spl" firstAttribute="leading" secondItem="uUg-Ms-x4c" secondAttribute="leading" constant="70" id="Rqp-Zg-2B3"/>
                             <constraint firstItem="uZV-b8-Spl" firstAttribute="centerY" secondItem="yhW-BV-hyo" secondAttribute="centerY" constant="-60" id="a8a-AQ-LCq"/>
+                            <constraint firstItem="uUg-Ms-x4c" firstAttribute="trailing" secondItem="8ft-sk-XMg" secondAttribute="trailing" constant="60" id="b6s-mL-hqg"/>
                             <constraint firstItem="uZV-b8-Spl" firstAttribute="centerX" secondItem="yhW-BV-hyo" secondAttribute="centerX" id="eZV-Ao-M1S"/>
+                            <constraint firstItem="8ft-sk-XMg" firstAttribute="leading" secondItem="uUg-Ms-x4c" secondAttribute="leading" constant="60" id="nWD-lS-IAI"/>
                             <constraint firstItem="tgP-vt-qPD" firstAttribute="height" secondItem="uZV-b8-Spl" secondAttribute="height" multiplier="0.2" id="zj1-ke-hww"/>
                         </constraints>
                     </view>
@@ -89,6 +102,7 @@
                         </button>
                     </navigationItem>
                     <connections>
+                        <outlet property="MLTableView" destination="8ft-sk-XMg" id="mKw-dp-jft"/>
                         <outlet property="locationSelectButton" destination="GPh-Pg-OsK" id="1AE-J6-WgP"/>
                         <outlet property="micImage" destination="k91-zu-IdK" id="YrC-kw-Ud0"/>
                         <outlet property="micONandOFFStackView" destination="uZV-b8-Spl" id="zCg-NC-jhL"/>
@@ -301,7 +315,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Db7-Pe-KNn">
                                 <rect key="frame" x="16" y="159" width="358" height="53.666666666666657"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEa-KR-YSr">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="주소를 검색하세요." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fEa-KR-YSr">
                                         <rect key="frame" x="0.0" y="0.0" width="294.33333333333331" height="53.666666666666664"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="fEa-KR-YSr" secondAttribute="height" multiplier="302:55" id="dMr-vq-rU9"/>
