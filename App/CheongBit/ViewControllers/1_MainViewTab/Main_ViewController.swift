@@ -83,9 +83,9 @@ class MainViewController: UIViewController {
             micStatusLabel.text = "화재경보음 인식 중"
             switchONorOFF = false
             // ML On
-//            MLTableView.isHidden = false
-//            startAudioEngine()
-//            createClassificationRequest()
+            MLTableView.isHidden = false
+            prepareForRecording()
+            createClassificationRequest()
         }
         // 스위치가 켜져있을 때
         else {
@@ -94,6 +94,7 @@ class MainViewController: UIViewController {
             micStatusLabel.text = "인식 중이 아님"
             switchONorOFF = true
             MLTableView.isHidden = true
+            audioEngine.stop()
         }
     }
     
@@ -129,8 +130,20 @@ class MainViewController: UIViewController {
         self.present(micCanceled, animated: true)
     }
     
+    func fireDetectAlert() {
+        let micCanceled = UIAlertController(title: "화재가 발생하였습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
+        let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
+
+        micCanceled.addAction(alertCancel)
+        
+        self.present(micCanceled, animated: true)
+    }
+
+
+
+    
 // MARK: - ML
-// MARK: - But Test
+// But Test
     private let audioEngine = AVAudioEngine()
     private var soundClassifier = fireAlarmSoundClassifier_6()
     var streamAnalyzer: SNAudioStreamAnalyzer!
@@ -212,9 +225,12 @@ extension MainViewController: SNResultsObserving {
             let confidence = classification.confidence * 100
             if confidence > 5 {
                 temp.append((label: classification.identifier, confidence: Float(confidence)))
+//                if classification.identifier == "fireAlarm"/*.contains("fire")*/ {
+//                    fireDetectAlert()
+//                }
             }
+            results = temp
         }
-        results = temp
     }
 }
 
