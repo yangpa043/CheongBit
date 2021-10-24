@@ -8,7 +8,6 @@ target 'GOYO' do
   # Pods for GOYO
 
 # add the Firebase pod for Google Analytics
-pod 'Firebase/Analytics'
 # or pod ‘Firebase/AnalyticsWithoutAdIdSupport’
 # for Analytics without IDFA collection capability
 

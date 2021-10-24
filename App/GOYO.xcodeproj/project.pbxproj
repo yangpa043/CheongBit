@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		76349AB726E7332000BD7BAE /* LocationSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */; };
 		76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */; };
 		76B3552D26EAEC0D00957891 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* Datas.swift */; };
-		91ACC4DDF8650C3790D958AD /* Pods_GOYO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6FE238AB843B83E051FE06 /* Pods_GOYO.framework */; };
 		D5229E38270FE04D00F84685 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5229E37270FE04D00F84685 /* GoogleService-Info.plist */; };
 		D537D930270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = D537D92F270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage */; };
 		D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487926CFF63000B2E602 /* AppDelegate.swift */; };
@@ -32,11 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		234D94EF80E21F7ABDF9A0CE /* Pods-GOYO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.release.xcconfig"; path = "Target Support Files/Pods-CheongBit/Pods-GOYO.release.xcconfig"; sourceTree = "<group>"; };
+		234D94EF80E21F7ABDF9A0CE /* Pods-GOYO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.release.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.release.xcconfig"; sourceTree = "<group>"; };
 		76349AB626E7332000BD7BAE /* LocationSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectViewController.swift; sourceTree = "<group>"; };
 		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = GOYO/Cells/2_FriendsView/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		76B3552C26EAEC0D00957891 /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
-		BF6FE238AB843B83E051FE06 /* Pods_GOYO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOYO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5229E37270FE04D00F84685 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D537D92F270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "fireAlarmSoundClassifier 6.mlpackage"; sourceTree = "<group>"; };
 		D575487626CFF63000B2E602 /* GOYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,7 +55,7 @@
 		D5D8A6F326E6FD3A00A31EC2 /* Main_FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_FriendsTableViewController.swift; sourceTree = "<group>"; };
 		D5D8A70426EEDEFA00A31EC2 /* 2_FriendsTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = 2_FriendsTab.storyboard; sourceTree = "<group>"; };
 		D5D8A70B26EEE35400A31EC2 /* ReportDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewController.swift; sourceTree = "<group>"; };
-		F9B45621E03F9BAC8D857450 /* Pods-GOYO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.debug.xcconfig"; path = "Target Support Files/Pods-CheongBit/Pods-GOYO.debug.xcconfig"; sourceTree = "<group>"; };
+		F9B45621E03F9BAC8D857450 /* Pods-GOYO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.debug.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91ACC4DDF8650C3790D958AD /* Pods_GOYO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +72,6 @@
 		3469B07677B03AFDB4970323 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BF6FE238AB843B83E051FE06 /* Pods_GOYO.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,7 +208,6 @@
 				D575487226CFF63000B2E602 /* Sources */,
 				D575487326CFF63000B2E602 /* Frameworks */,
 				D575487426CFF63000B2E602 /* Resources */,
-				8F54C7C23B5E33F5DD09B515 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,28 +283,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CheongBit-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-GOYO-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8F54C7C23B5E33F5DD09B515 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CheongBit/Pods-CheongBit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CheongBit/Pods-CheongBit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CheongBit/Pods-CheongBit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
