@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_CheongBitVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_CheongBitVersionString[];
+FOUNDATION_EXPORT double Pods_GOYOVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_GOYOVersionString[];
 

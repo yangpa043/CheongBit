@@ -1,6 +1,6 @@
 //
 //  design.swift
-//  CheongBit
+//  GOYO
 //
 //  Created by 짜미 on 2021/09/07.
 //

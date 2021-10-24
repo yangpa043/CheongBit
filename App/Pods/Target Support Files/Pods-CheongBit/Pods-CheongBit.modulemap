@@ -1,5 +1,5 @@
-framework module Pods_CheongBit {
-  umbrella header "Pods-CheongBit-umbrella.h"
+framework module Pods_GOYO {
+  umbrella header "Pods-GOYO-umbrella.h"
 
   export *
   module * { export * }

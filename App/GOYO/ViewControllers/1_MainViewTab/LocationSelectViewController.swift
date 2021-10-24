@@ -1,6 +1,6 @@
 //
 //  LocationSelectViewController.swift
-//  CheongBit
+//  GOYO
 //
 //  Created by 권은세 on 2021/09/07.
 //

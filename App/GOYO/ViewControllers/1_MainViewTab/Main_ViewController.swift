@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  CheongBit
+//  GOYO
 //
 //  Created by 짜미 on 2021/08/20.
 //
@@ -118,7 +118,7 @@ class MainViewController: UIViewController {
     }
     
     func micCanceldAlert() {
-        let micCanceled = UIAlertController(title: "마이크 권한 요청", message: "마이크 권한이 거절 되었습니다.\n설정>CheongBit 에서 허용 해주세요.", preferredStyle: UIAlertController.Style.alert)
+        let micCanceled = UIAlertController(title: "마이크 권한 요청", message: "마이크 권한이 거절 되었습니다.\n설정>GOYO 에서 허용 해주세요.", preferredStyle: UIAlertController.Style.alert)
         let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
         let goToSetting = UIAlertAction(title: "설정", style: UIAlertAction.Style.default) { _ in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
@@ -147,7 +147,7 @@ class MainViewController: UIViewController {
     private let audioEngine = AVAudioEngine()
     private var soundClassifier = fireAlarmSoundClassifier_6()
     var streamAnalyzer: SNAudioStreamAnalyzer!
-    let queue = DispatchQueue(label: "TeamPdf.CheongBit", attributes: .concurrent)
+    let queue = DispatchQueue(label: "TeamPdf.GOYO", attributes: .concurrent)
     var results = [(label: String, confidence: Float)]() {
         didSet {
             DispatchQueue.main.async { [weak self] in
