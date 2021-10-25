@@ -130,13 +130,13 @@ class MainViewController: UIViewController {
         self.present(micCanceled, animated: true)
     }
     
-    func fireDetectAlert() {
-        let micCanceled = UIAlertController(title: "화재가 발생하였습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
-        let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
+    func fireSenseAlert() {
+        let fireSense = UIAlertController(title: "화재가 발생하였습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
+        let fireCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
 
-        micCanceled.addAction(alertCancel)
+        fireSense.addAction(fireCancel)
         
-        self.present(micCanceled, animated: true)
+        self.present(fireSense, animated: true)
     }
 
 
@@ -226,7 +226,7 @@ extension MainViewController: SNResultsObserving {
             if confidence > 5 {
                 temp.append((label: classification.identifier, confidence: Float(confidence)))
 //                if classification.identifier == "fireAlarm"/*.contains("fire")*/ {
-//                    fireDetectAlert()
+//                    fireSenseAlert()
 //                }
             }
             results = temp

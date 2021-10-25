@@ -69,7 +69,7 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         selectedRow = [indexPath.row]
         otherViewLocationData = "\(dataToMove)"
         firstSelectRowNumber = myInt
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

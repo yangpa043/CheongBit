@@ -217,6 +217,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
                 print("sent message:", controller.body ?? "")
                 reportContent = ""
                 dismiss(animated: true, completion: nil)
+                reportSuccessAlert()
             case .failed:
                 print("failed")
                 reportContent = ""
@@ -227,6 +228,18 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
                 dismiss(animated: true, completion: nil)
             }
         }
+    
+    func reportSuccessAlert() {
+        let micCanceled = UIAlertController(title: "신고가 완료되었습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
+        let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
+        { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
+    
+        micCanceled.addAction(alertCancel)
+        
+        self.present(micCanceled, animated: true)
+    }
     
 // MARK: - TableView Delegate
     
