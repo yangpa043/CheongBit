@@ -3,32 +3,32 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>296557272623-e80q1r69eipkvh8ihq65325t4nkejnkb.apps.googleusercontent.com</string>
+	<string>528282762903-po6qqa53di3r9i8dhf63fgq4ggp539vp.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.296557272623-e80q1r69eipkvh8ihq65325t4nkejnkb</string>
+	<string>com.googleusercontent.apps.528282762903-po6qqa53di3r9i8dhf63fgq4ggp539vp</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCOgf3hh4tnRjHOls2t7TV2-N6nGvLiddw</string>
+	<string>AIzaSyC_wCPXaWqZu5_FhntcOENAL8_5Sj2XNgg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>296557272623</string>
+	<string>528282762903</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>TeamPdf.GOYO</string>
 	<key>PROJECT_ID</key>
-	<string>goyo-pdf</string>
+	<string>goyo-pdfyangpa</string>
 	<key>STORAGE_BUCKET</key>
-	<string>goyo-pdf.appspot.com</string>
+	<string>goyo-pdfyangpa.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:296557272623:ios:9651534e01c8c78f9f70da</string>
+	<string>1:528282762903:ios:1ef7ef13e7ae105f9b73d2</string>
 </dict>
 </plist>
