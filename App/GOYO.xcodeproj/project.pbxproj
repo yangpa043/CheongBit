@@ -40,7 +40,7 @@
 		8FEF8223CBF8F49A4BDE0CBD /* Pods-GOYO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.release.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.release.xcconfig"; sourceTree = "<group>"; };
 		D503BD192725466C009D4DEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D537D92F270D3CDA002071DE /* fireAlarmSoundClassifier 6.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "fireAlarmSoundClassifier 6.mlpackage"; sourceTree = "<group>"; };
-		D542211F27254376005D02CE /* GOYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D542211F27254376005D02CE /* GOYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = GOYO.app; path = "/Users/choejeonghyeon/Documents/Dev/GitHub/GOYO/App/build/Debug-iphoneos/GOYO.app"; sourceTree = "<absolute>"; };
 		D575487926CFF63000B2E602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D575487B26CFF63000B2E602 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D575487D26CFF63000B2E602 /* Main_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_ViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +95,6 @@
 				D575487826CFF63000B2E602 /* GOYO */,
 				3791B4297A618B344787DFC7 /* Pods */,
 				A27C27AA2ADBDEE70A512DDF /* Frameworks */,
-				D542211F27254376005D02CE /* GOYO.app */,
 			);
 			sourceTree = "<group>";
 		};
