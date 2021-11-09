@@ -143,9 +143,8 @@ class MainViewController: UIViewController {
 
     
 // MARK: - ML
-// But Test
     private let audioEngine = AVAudioEngine()
-    private var soundClassifier = fireAlarmSoundClassifier_6()
+    private var soundClassifier = fireAlarmSoundClassifier_7()
     var streamAnalyzer: SNAudioStreamAnalyzer!
     let queue = DispatchQueue(label: "TeamPdf.GOYO", attributes: .concurrent)
     var results = [(label: String, confidence: Float)]() {
@@ -208,7 +207,7 @@ extension MainViewController: UITableViewDataSource {
     }
     
     private func convert(id: String) -> String {
-        let mapping = ["fireAlarm" : "fireAlarm", "normal" : "normal", "talkingSound" : "talkingSound"]
+        let mapping = ["1_normal" : "normal", "2_fireAlarm" : "fireAlarm", "3_talkingSound" : "talkingSound"]
         return mapping[id] ?? id
     }
     
@@ -225,9 +224,14 @@ extension MainViewController: SNResultsObserving {
             let confidence = classification.confidence * 100
             if confidence > 5 {
                 temp.append((label: classification.identifier, confidence: Float(confidence)))
-//                if classification.identifier == "fireAlarm"/*.contains("fire")*/ {
-//                    fireSenseAlert()
-//                }
+                if classification.identifier == "2_fireAlarm"/*.contains("fire")*/{
+                    if confidence > 90 {
+                        print("감지")
+//                        audioEngine.stop()
+//                        streamAnalyzer.removeAllRequests()
+//                        fireSenseAlert()
+                    }
+                }
             }
             results = temp
         }

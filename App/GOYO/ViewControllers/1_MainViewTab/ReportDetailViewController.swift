@@ -158,24 +158,14 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // 코드 줄여야 함
     func reportTypeButtonsTapped() {
         
-        if fireReportTypeSelected == true, rescueReportTypeSelected == true {
+        if fireReportTypeSelected == true && rescueReportTypeSelected == true || fireReportTypeSelected == false && rescueReportTypeSelected == true || fireReportTypeSelected == true && rescueReportTypeSelected == false {
             reportTypeSelected = true
-            if reportTypeSelected == true, locationSelected == true {
+            if reportTypeSelected == true && locationSelected == true {
                 reportButton.isEnabled = true
             }
-        } else if fireReportTypeSelected == true, rescueReportTypeSelected == false {
-            reportTypeSelected = true
-            if reportTypeSelected == true, locationSelected == true {
-                reportButton.isEnabled = true
-            }
-        } else if fireReportTypeSelected == false, rescueReportTypeSelected == true {
-            reportTypeSelected = true
-            if reportTypeSelected == true, locationSelected == true {
-                reportButton.isEnabled = true
-            }
-        } else if fireReportTypeSelected == false, rescueReportTypeSelected == false {
+        } else {
             reportTypeSelected = false
-            if reportTypeSelected == false, locationSelected == true {
+            if reportTypeSelected == false && locationSelected == true {
                 reportButton.isEnabled = false
             }
         }

@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "64193D79-AC89-4249-A2DE-DA9E94309BBE": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "fireAlarmSoundClassifier 7.mlmodel",
+            "path": "com.apple.CoreML/fireAlarmSoundClassifier 7.mlmodel"
+        },
+        "8EEC7D9D-B282-474D-95DF-1001370AFD93": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        },
+        "CF0D922C-7943-4D0B-8C1D-51B21A3FEF29": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        }
+    },
+    "rootModelIdentifier": "64193D79-AC89-4249-A2DE-DA9E94309BBE"
+}
