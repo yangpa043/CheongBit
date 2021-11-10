@@ -80,23 +80,27 @@ class MainViewController: UIViewController {
             if micPermissionStatus == false {
                 micCanceldAlert()
             }
+            print(switchONorOFF)
             micSwitch.setImage(UIImage(named: "switchOn"), for: .normal)
             micImage.image = UIImage(named: "micOn")
             micStatusLabel.text = "화재경보음 인식 중"
             switchONorOFF = false
             // ML On
-            MLTableView.isHidden = false
+//            MLTableView.isHidden = false
             prepareForRecording()
             createClassificationRequest()
         }
         // 스위치가 켜져있을 때
         else {
+            print(switchONorOFF)
+            fireCount = 0
             micSwitch.setImage(UIImage(named: "switchOff"), for: .normal)
             micImage.image = UIImage(named: "micOff")
             micStatusLabel.text = "인식 중이 아님"
             switchONorOFF = true
-            MLTableView.isHidden = true
-            audioEngine.stop()
+            // ML OFF
+//            MLTableView.isHidden = true
+            releaseRecordingResouces()
         }
     }
     
@@ -138,7 +142,12 @@ class MainViewController: UIViewController {
 
         fireSense.addAction(fireCancel)
         
-        self.present(fireSense, animated: true)
+        // 메인쓰레드에서 동작하게 하는 함수 (앱의 UI를 바꾸는 코드는 메인쓰레드가 아닌 다른쓰레드에서는 동작 못 함)
+        DispatchQueue.main.async {
+            self.switchONorOFF = false
+            self.switchButtonUpdate()
+            self.present(fireSense, animated: true)
+        }
     }
 
 
@@ -177,6 +186,12 @@ class MainViewController: UIViewController {
             }
         }
         startAudioEngine()
+    }
+    
+    // 오디오 엔진 종료 함수
+    private func releaseRecordingResouces() {
+        audioEngine.inputNode.removeTap(onBus: 0)
+        audioEngine.stop()
     }
     
     private func createClassificationRequest() {
@@ -224,16 +239,16 @@ extension MainViewController: SNResultsObserving {
             return first.confidence > second.confidence
         }
         for classification in sorted {
+//            print(fireCount)
             let confidence = classification.confidence * 100
             if confidence > 5 {
                 temp.append((label: classification.identifier, confidence: Float(confidence)))
                 if classification.identifier == "2_fireAlarm"/*.contains("fire")*/{
                     if confidence > 90 {
                     fireCount += 1
-                        if fireCount >= 8 {
+                        if fireCount >= 6 {
                             print("감지")
-//                            audioEngine.stop()
-//                            streamAnalyzer.removeAllRequests()
+                            
                             fireSenseAlert()
                             
                         }
