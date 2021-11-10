@@ -137,7 +137,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         let composeViewController = MFMessageComposeViewController()
 
         composeViewController.messageComposeDelegate = self
-        composeViewController.recipients = ["01048227008"]
+        composeViewController.recipients = ["01057686469"]
         composeViewController.body = reportContent
         present(composeViewController, animated: true, completion: nil)
         

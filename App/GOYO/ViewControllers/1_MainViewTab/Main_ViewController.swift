@@ -18,6 +18,8 @@ class MainViewController: UIViewController {
     var switchONorOFF: Bool = false
     // 마이크 권한 상태
     var micPermissionStatus: Bool = true
+    // 화재 알림 감지 타이머
+    var fireCount = 0
 
 // MARK: - Outlets
     
@@ -214,6 +216,7 @@ extension MainViewController: UITableViewDataSource {
 }
 
 extension MainViewController: SNResultsObserving {
+    
     func request(_ request: SNRequest, didProduce result: SNResult) {
         guard let result = result as? SNClassificationResult else { return }
         var temp = [(label: String, confidence: Float)]()
@@ -226,14 +229,18 @@ extension MainViewController: SNResultsObserving {
                 temp.append((label: classification.identifier, confidence: Float(confidence)))
                 if classification.identifier == "2_fireAlarm"/*.contains("fire")*/{
                     if confidence > 90 {
-                        print("감지")
-//                        audioEngine.stop()
-//                        streamAnalyzer.removeAllRequests()
-//                        fireSenseAlert()
+                    fireCount += 1
+                        if fireCount >= 8 {
+                            print("감지")
+//                            audioEngine.stop()
+//                            streamAnalyzer.removeAllRequests()
+                            fireSenseAlert()
+                            
+                        }
                     }
                 }
+                results = temp
             }
-            results = temp
         }
     }
 }
