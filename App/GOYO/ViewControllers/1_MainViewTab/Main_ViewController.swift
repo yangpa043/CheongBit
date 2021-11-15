@@ -80,7 +80,7 @@ class MainViewController: UIViewController {
             if micPermissionStatus == false {
                 micCanceldAlert()
             }
-            print(switchONorOFF)
+            print("스위치 On")
             micSwitch.setImage(UIImage(named: "switchOn"), for: .normal)
             micImage.image = UIImage(named: "micOn")
             micStatusLabel.text = "화재경보음 인식 중"
@@ -92,7 +92,7 @@ class MainViewController: UIViewController {
         }
         // 스위치가 켜져있을 때
         else {
-            print(switchONorOFF)
+            print("스위치 Off")
             fireCount = 0
             micSwitch.setImage(UIImage(named: "switchOff"), for: .normal)
             micImage.image = UIImage(named: "micOff")
@@ -124,7 +124,7 @@ class MainViewController: UIViewController {
     }
     
     func micCanceldAlert() {
-        let micCanceled = UIAlertController(title: "마이크 권한 요청", message: "마이크 권한이 거절 되었습니다.\n설정>GOYO 에서 허용 해주세요.", preferredStyle: UIAlertController.Style.alert)
+        let micCanceled = UIAlertController(title: "마이크 권한 요청", message: "마이크 권한이 거절 되었습니다.\n설정 > GOYO 에서 허용 해주세요.", preferredStyle: UIAlertController.Style.alert)
         let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
         let goToSetting = UIAlertAction(title: "설정", style: UIAlertAction.Style.default) { _ in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
