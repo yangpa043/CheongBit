@@ -7,9 +7,7 @@ target 'GOYO' do
 
   # Pods for GOYO
   pod 'Firebase/Analytics'
-
-
-# add pods for desired Firebase products
-# https://firebase.google.com/docs/ios/setup#available-pods
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 end

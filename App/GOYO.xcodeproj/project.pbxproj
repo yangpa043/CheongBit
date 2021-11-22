@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22D9FA892D22A75DBB8CE5B4 /* Pods_GOYO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDE450B0B44A326E2B9137F /* Pods_GOYO.framework */; };
+		48EDB3284394D0BBC1B3770B /* Pods_GOYO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D2B13AE33E506DCF5D037D /* Pods_GOYO.framework */; };
 		76349AB726E7332000BD7BAE /* LocSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76349AB626E7332000BD7BAE /* LocSelectViewController.swift */; };
 		76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */; };
 		76B3552D26EAEC0D00957891 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* Datas.swift */; };
@@ -24,6 +24,7 @@
 		D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB1AF826F036EE0058AE87 /* Extension.swift */; };
 		D5AB1AFD26F086020058AE87 /* LocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB1AFC26F086020058AE87 /* LocationsTableViewCell.swift */; };
 		D5AB1B0626F179360058AE87 /* ReportDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB1B0526F179360058AE87 /* ReportDetailTableViewCell.swift */; };
+		D5ABD88527473F0800DA6ABE /* LocSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ABD88427473F0800DA6ABE /* LocSearchTableViewCell.swift */; };
 		D5D8A6F026E6ED0000A31EC2 /* DesignFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */; };
 		D5D8A6F226E6FC3900A31EC2 /* Main_MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A6F126E6FC3900A31EC2 /* Main_MyPageViewController.swift */; };
 		D5D8A6F426E6FD3A00A31EC2 /* Main_FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A6F326E6FD3A00A31EC2 /* Main_FriendsTableViewController.swift */; };
@@ -33,12 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BDE450B0B44A326E2B9137F /* Pods_GOYO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOYO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF2F125520C272FE7FC8681 /* Pods-GOYO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.release.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.release.xcconfig"; sourceTree = "<group>"; };
 		76349AB626E7332000BD7BAE /* LocSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocSelectViewController.swift; sourceTree = "<group>"; };
 		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = GOYO/Cells/2_FriendsView/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		76B3552C26EAEC0D00957891 /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
-		79B6C929DE698640781B2219 /* Pods-GOYO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.debug.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.debug.xcconfig"; sourceTree = "<group>"; };
-		8FEF8223CBF8F49A4BDE0CBD /* Pods-GOYO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.release.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.release.xcconfig"; sourceTree = "<group>"; };
+		85AFF045FC7CDB57354374BE /* Pods-GOYO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.debug.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.debug.xcconfig"; sourceTree = "<group>"; };
 		D503BD192725466C009D4DEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D53A17DC27380B2300E9888E /* GOYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D575487926CFF63000B2E602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,12 +54,14 @@
 		D5AB1AF826F036EE0058AE87 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		D5AB1AFC26F086020058AE87 /* LocationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsTableViewCell.swift; sourceTree = "<group>"; };
 		D5AB1B0526F179360058AE87 /* ReportDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailTableViewCell.swift; sourceTree = "<group>"; };
+		D5ABD88427473F0800DA6ABE /* LocSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocSearchTableViewCell.swift; sourceTree = "<group>"; };
 		D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFile.swift; sourceTree = "<group>"; };
 		D5D8A6F126E6FC3900A31EC2 /* Main_MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_MyPageViewController.swift; sourceTree = "<group>"; };
 		D5D8A6F326E6FD3A00A31EC2 /* Main_FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_FriendsTableViewController.swift; sourceTree = "<group>"; };
 		D5D8A70426EEDEFA00A31EC2 /* 2_FriendsTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = 2_FriendsTab.storyboard; sourceTree = "<group>"; };
 		D5D8A70B26EEE35400A31EC2 /* ReportDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewController.swift; sourceTree = "<group>"; };
 		D5FF6FE72739F4E000C79629 /* fireAlarmSoundClassifier 7.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "fireAlarmSoundClassifier 7.mlpackage"; sourceTree = "<group>"; };
+		E5D2B13AE33E506DCF5D037D /* Pods_GOYO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOYO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22D9FA892D22A75DBB8CE5B4 /* Pods_GOYO.framework in Frameworks */,
+				48EDB3284394D0BBC1B3770B /* Pods_GOYO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,16 +79,16 @@
 		3791B4297A618B344787DFC7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				79B6C929DE698640781B2219 /* Pods-GOYO.debug.xcconfig */,
-				8FEF8223CBF8F49A4BDE0CBD /* Pods-GOYO.release.xcconfig */,
+				85AFF045FC7CDB57354374BE /* Pods-GOYO.debug.xcconfig */,
+				6EF2F125520C272FE7FC8681 /* Pods-GOYO.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A27C27AA2ADBDEE70A512DDF /* Frameworks */ = {
+		CC1578EC317A4C6AE41FE541 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0BDE450B0B44A326E2B9137F /* Pods_GOYO.framework */,
+				E5D2B13AE33E506DCF5D037D /* Pods_GOYO.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -96,8 +98,8 @@
 			children = (
 				D575487826CFF63000B2E602 /* GOYO */,
 				3791B4297A618B344787DFC7 /* Pods */,
-				A27C27AA2ADBDEE70A512DDF /* Frameworks */,
 				D53A17DC27380B2300E9888E /* GOYO.app */,
+				CC1578EC317A4C6AE41FE541 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				D5AB1AFC26F086020058AE87 /* LocationsTableViewCell.swift */,
+				D5ABD88427473F0800DA6ABE /* LocSearchTableViewCell.swift */,
 				D5AB1B0526F179360058AE87 /* ReportDetailTableViewCell.swift */,
 			);
 			path = 1_MainView;
@@ -202,11 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D575488A26CFF63200B2E602 /* Build configuration list for PBXNativeTarget "GOYO" */;
 			buildPhases = (
-				0A617D426BE228F8B23EABAE /* [CP] Check Pods Manifest.lock */,
+				A8DEFAEE93022EB3BE8129EB /* [CP] Check Pods Manifest.lock */,
 				D575487226CFF63000B2E602 /* Sources */,
 				D575487326CFF63000B2E602 /* Frameworks */,
 				D575487426CFF63000B2E602 /* Resources */,
-				E79115A87ACA69233A6D4F37 /* [CP] Embed Pods Frameworks */,
+				BACCD7D4C3F4FF7029AB39D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,7 +270,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A617D426BE228F8B23EABAE /* [CP] Check Pods Manifest.lock */ = {
+		A8DEFAEE93022EB3BE8129EB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -289,7 +292,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E79115A87ACA69233A6D4F37 /* [CP] Embed Pods Frameworks */ = {
+		BACCD7D4C3F4FF7029AB39D7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,6 +330,7 @@
 				D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */,
 				D575487C26CFF63000B2E602 /* SceneDelegate.swift in Sources */,
 				D5AB1B0626F179360058AE87 /* ReportDetailTableViewCell.swift in Sources */,
+				D5ABD88527473F0800DA6ABE /* LocSearchTableViewCell.swift in Sources */,
 				D5FF6FE82739F4E000C79629 /* fireAlarmSoundClassifier 7.mlpackage in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,7 +475,7 @@
 		};
 		D575488B26CFF63200B2E602 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79B6C929DE698640781B2219 /* Pods-GOYO.debug.xcconfig */;
+			baseConfigurationReference = 85AFF045FC7CDB57354374BE /* Pods-GOYO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -491,7 +495,7 @@
 		};
 		D575488C26CFF63200B2E602 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FEF8223CBF8F49A4BDE0CBD /* Pods-GOYO.release.xcconfig */;
+			baseConfigurationReference = 6EF2F125520C272FE7FC8681 /* Pods-GOYO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

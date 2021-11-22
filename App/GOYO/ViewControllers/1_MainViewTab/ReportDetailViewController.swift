@@ -52,6 +52,9 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             self.tableViewHeight.constant = self.locationShowTableView.contentSize.height
         }
         
+        self.locationShowTableView.delegate = self
+        self.locationShowTableView.dataSource = self
+        
         applyDynamicfont()
         reportButton.isEnabled = false
         locationShowTableView.isHidden = locationSelectIsHidden

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LocationSearchResultDelegate {
+    func didSelectLocation(selectedAddress: SearchLocation?)
+}
+
 class LocationSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 // MARK: - 전역 변/상수
@@ -19,18 +23,28 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
 // MARK: - Outlets
     
     @IBOutlet weak var locationEnterLabel: UILabel!
+    @IBOutlet weak var SelectedLocListTable: UITableView!
     
+    
+// MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.SelectedLocListTable.delegate = self
+        self.SelectedLocListTable.dataSource = self
         
         applyDynamicFont()
     }
     
+    
+// MARK: - Actions
+    
     //뒤로가기 버튼
     @IBAction func backButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-        
     }
+    
+    
 
     
 // MARK: - Functions

@@ -252,10 +252,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="SBG-sK-nEL" id="HzF-Vk-ByQ"/>
-                                    <outlet property="delegate" destination="SBG-sK-nEL" id="i8D-2x-ky7"/>
-                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="⚠️걱정마세유 지금은 119로 신고 안갑니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2M-p9-1ka">
                                 <rect key="frame" x="40" y="573" width="291" height="21"/>
@@ -345,10 +341,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="YLi-JK-DSt" id="tPA-pQ-ExW"/>
-                                    <outlet property="delegate" destination="YLi-JK-DSt" id="hTB-Oh-t2L"/>
-                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQM-98-uPG">
                                 <rect key="frame" x="16" y="160" width="358" height="60"/>
@@ -380,6 +372,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7L7-lO-ob2"/>
                     <connections>
+                        <outlet property="SelectedLocListTable" destination="4wm-0Q-FHf" id="L6j-jJ-dqL"/>
                         <outlet property="locationEnterLabel" destination="WWD-ct-O00" id="zLx-0P-2BK"/>
                     </connections>
                 </viewController>
@@ -416,7 +409,10 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" 예) 종로구 동숭동 1-115, 대학로 116" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amc-pd-SAL">
                                         <rect key="frame" x="0.0" y="0.0" width="319.33333333333331" height="44.666666666666664"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="keyboardDoneButtonTapped:" destination="cg8-Tm-uef" eventType="editingDidEndOnExit" id="VjG-gH-Lwq"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfZ-GV-TdZ">
                                         <rect key="frame" x="319.33333333333331" y="0.0" width="44.666666666666686" height="44.666666666666664"/>
@@ -428,6 +424,9 @@
                                             <imageReference key="image" image="magnifyingglass" catalog="system" symbolScale="large"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="SearchButtonTapped:" destination="cg8-Tm-uef" eventType="touchUpInside" id="dwZ-Hq-Kvp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -437,20 +436,73 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4JB-7m-76t">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4JB-7m-76t">
                                 <rect key="frame" x="0.0" y="225.66666666666669" width="390" height="535.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="nFJ-JW-5MH">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="resultCell" rowHeight="77" id="nFJ-JW-5MH" customClass="LocSearchTableViewCell" customModule="GOYO" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nFJ-JW-5MH" id="6J6-en-JHV">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoj-uh-ZJ4">
+                                                    <rect key="frame" x="314" y="16" width="60" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="A8n-4Q-wbb"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="filled" title="선택"/>
+                                                    <connections>
+                                                        <action selector="selectButtonTapped:" destination="nFJ-JW-5MH" eventType="touchUpInside" id="AK9-PX-fb0"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도로명 주소 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ag9-cV-TfA">
+                                                    <rect key="frame" x="16" y="16" width="288" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="WqS-8G-LXD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지번 주소 내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh1-PT-axg">
+                                                    <rect key="frame" x="16" y="46" width="288" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="r2V-bD-Yiv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ag9-cV-TfA" firstAttribute="top" secondItem="6J6-en-JHV" secondAttribute="top" constant="16" id="DmN-00-HyO"/>
+                                                <constraint firstAttribute="bottom" secondItem="eh1-PT-axg" secondAttribute="bottom" constant="16" id="DpV-3e-1Cy"/>
+                                                <constraint firstItem="uoj-uh-ZJ4" firstAttribute="top" secondItem="6J6-en-JHV" secondAttribute="top" constant="16" id="MVn-9M-kyu"/>
+                                                <constraint firstAttribute="trailing" secondItem="uoj-uh-ZJ4" secondAttribute="trailing" constant="16" id="Np5-6r-Ztb"/>
+                                                <constraint firstItem="eh1-PT-axg" firstAttribute="leading" secondItem="6J6-en-JHV" secondAttribute="leading" constant="16" id="TCL-wR-WEG"/>
+                                                <constraint firstItem="uoj-uh-ZJ4" firstAttribute="leading" secondItem="ag9-cV-TfA" secondAttribute="trailing" constant="10" id="TR1-gn-tAO"/>
+                                                <constraint firstAttribute="trailing" secondItem="eh1-PT-axg" secondAttribute="trailing" constant="86" id="apu-HD-b1u"/>
+                                                <constraint firstItem="ag9-cV-TfA" firstAttribute="leading" secondItem="6J6-en-JHV" secondAttribute="leading" constant="16" id="iid-UW-SFx"/>
+                                                <constraint firstItem="eh1-PT-axg" firstAttribute="top" secondItem="ag9-cV-TfA" secondAttribute="bottom" constant="10" id="suW-6a-1Ls"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelJibunLoc" destination="eh1-PT-axg" id="2yF-8g-K0Z"/>
+                                            <outlet property="labelRoadLoc" destination="ag9-cV-TfA" id="gbl-WL-UQf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="chh-cT-GWA">
+                                <rect key="frame" x="170" y="397" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="M1C-us-EBE"/>
+                                    <constraint firstAttribute="height" constant="50" id="evx-0G-L4f"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fuo-Dh-6u0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -459,7 +511,9 @@
                             <constraint firstItem="4JB-7m-76t" firstAttribute="top" secondItem="rvR-MZ-PCq" secondAttribute="bottom" constant="30" id="Ee4-Z8-ykP"/>
                             <constraint firstItem="fuo-Dh-6u0" firstAttribute="trailing" secondItem="rvR-MZ-PCq" secondAttribute="trailing" constant="10" id="GV1-ZD-ILE"/>
                             <constraint firstItem="rvR-MZ-PCq" firstAttribute="top" secondItem="ifi-fp-fhU" secondAttribute="bottom" constant="15" id="OHv-HB-lEL"/>
+                            <constraint firstItem="chh-cT-GWA" firstAttribute="centerX" secondItem="TrX-TK-KlR" secondAttribute="centerX" id="XaF-9B-FDW"/>
                             <constraint firstItem="4JB-7m-76t" firstAttribute="leading" secondItem="fuo-Dh-6u0" secondAttribute="leading" id="XpJ-fU-6tK"/>
+                            <constraint firstItem="chh-cT-GWA" firstAttribute="centerY" secondItem="TrX-TK-KlR" secondAttribute="centerY" id="bNK-95-0fd"/>
                             <constraint firstItem="rvR-MZ-PCq" firstAttribute="leading" secondItem="fuo-Dh-6u0" secondAttribute="leading" constant="16" id="fAw-uf-CaW"/>
                             <constraint firstItem="fuo-Dh-6u0" firstAttribute="bottom" secondItem="4JB-7m-76t" secondAttribute="bottom" id="pti-O7-R2e"/>
                             <constraint firstItem="fuo-Dh-6u0" firstAttribute="trailing" secondItem="4JB-7m-76t" secondAttribute="trailing" id="r34-on-1CF"/>
@@ -470,10 +524,15 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="indicator" destination="chh-cT-GWA" id="9oJ-am-GNc"/>
+                        <outlet property="resultTable" destination="4JB-7m-76t" id="mTU-Pa-ddx"/>
+                        <outlet property="textFieldLoc" destination="amc-pd-SAL" id="Rnx-ZZ-kgp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZ6-JA-SzW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2633.8461538461538" y="-448.57819905213267"/>
+            <point key="canvasLocation" x="2632.8000000000002" y="-449.26108374384239"/>
         </scene>
         <!--홈-->
         <scene sceneID="fYs-Dn-gPE">
