@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct User {
     var userImage: String
@@ -27,10 +28,11 @@ class UserDummyData {
 }
 
 
-struct Location {
+public struct Location {
     var location: String
     var name: String
 }
+
 class LocationDummyData {
     static let shared = LocationDummyData()
     
@@ -45,5 +47,5 @@ class LocationDummyData {
     ]
 }
 
-var otherViewLocationData : String = "주소를 선택해주세요  ⌵"
-var firstSelectRowNumber : Int?
+var otherViewLocationData: String = "주소를 선택해주세요  ⌵"
+var firstSelectRowNumber: Int?

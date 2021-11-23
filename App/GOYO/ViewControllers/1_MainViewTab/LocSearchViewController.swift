@@ -85,12 +85,12 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
                 print("is_end : \(JSON(value)["meta"]["is_end"])")
                 print("documents : \(JSON(value)["documents"])")
                 
-                if let addressList = JSON(value)["documents"].array {
-                    for item in addressList {
+                if let LocationList = JSON(value)["documents"].array {
+                    for item in LocationList {
                         
                         let LocationName = item["address_name"].string ?? ""
-                        let jibunLocation = item["address"]["address_name"].string ?? "없음"
-                        let roadLocation = item["road_address"]["address_name"].string ?? "없음"
+                        let jibunLocation = item["address"]["address_name"].string ?? "지번 주소 없음"
+                        let roadLocation = item["road_address"]["address_name"].string ?? "도로명 주소 없음"
                         let depthOneName = self.generateDeptFirstLoc(loc: item["address"]["region_1depth_name"].string ?? "")
                         let depthTwoName = item["address"]["region_2depth_name"].string ?? ""
                         let depthThreeName = item["address"]["region_3depth_name"].string ?? ""
@@ -135,7 +135,7 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
     
     func didSelectOK(didSelectItem: SearchLocation?) {
         print("selected : \(didSelectItem?.locationName ?? "unknown")")
-        delegate?.didSelectLocation(selectedAddress: didSelectItem)
+        delegate?.didSelectLocation(selectedLocation: didSelectItem)
         self.navigationController?.popViewController(animated: true)
     }
     

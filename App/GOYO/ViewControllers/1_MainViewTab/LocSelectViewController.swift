@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LocationSearchResultDelegate {
-    func didSelectLocation(selectedAddress: SearchLocation?)
+    func didSelectLocation(selectedLocation: SearchLocation?)
 }
 
 class LocationSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
