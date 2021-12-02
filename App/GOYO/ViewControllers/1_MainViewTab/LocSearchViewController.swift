@@ -12,18 +12,26 @@ import SwiftyJSON
 
 class LocSearchViewController: UIViewController, ResultCellDelegate, UITableViewDelegate, UITableViewDataSource {
     
-// MARK: - 전역 변/상수
+    // MARK: - VC let/var
+    
     private var resultList = [SearchLocation]()
     var delegate: LocationSearchResultDelegate?
     
-// MARK: - Outlets
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var textFieldLoc: UITextField!
     @IBOutlet weak var resultTable: UITableView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
-// MARK: - ViewDidLoad
+    
+    // MARK: - VCLifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 옵저버 등록
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLocationNotification(_:)), name: NSNotification.Name("receivedLocation"), object: nil)
         
         self.indicator.isHidden = true
         
@@ -31,11 +39,10 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
         
         self.resultTable.delegate = self
         self.resultTable.dataSource = self
-//        self.resultTable.separatorInset = .zero
-//        self.resultTable.separatorStyle = .none
     }
-
-// MARK: - Actions
+    
+    
+    // MARK: - Actions
     
     // Back 버튼
     @IBAction func xButtonTapped(_ sender: Any) {
@@ -61,9 +68,19 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
         self.doSearchLocation(keyword: textFieldLoc.text ?? "" , page: 0)
     }
     
+    @objc func didRecieveLocationNotification(_ notification: Notification) {
+        print("receivedLocation 받았음")
+        guard let location: String = notification.userInfo?["Location"] as? String else { return }
+        
+        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "LocEditViewController") as! LocEditViewController
+        vcName.locationName = location
+        vcName.modalTransitionStyle = .coverVertical
+        self.present(vcName, animated: true, completion: nil)
+    }
     
-// MARK: - Functions
-
+    
+    // MARK: - Functions
+    
     func doSearchLocation(keyword: String, page: Int) {
         let headers: HTTPHeaders = [
             "Authorization": "KakaoAK cfb37488fa79ab6fb481894551bb3e79"
@@ -131,7 +148,8 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
         }
     }
     
-    // tableView Delegate
+    
+    // MARK: - tableView Delegate
     
     func didSelectOK(didSelectItem: SearchLocation?) {
         print("selected : \(didSelectItem?.locationName ?? "unknown")")

@@ -13,20 +13,22 @@ protocol LocationSearchResultDelegate {
 
 class LocationSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-// MARK: - 전역 변/상수
+    // MARK: - VC let/var
     
     let data = LocationDummyData.shared.location
     var dataToMove: String = ""
     // 선택된 Row의 번호
     var myInt: Int?
     
-// MARK: - Outlets
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var locationEnterLabel: UILabel!
     @IBOutlet weak var SelectedLocListTable: UITableView!
     
     
-// MARK: - ViewDidLoad
+    // MARK: - VCLifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,7 +39,7 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     
-// MARK: - Actions
+    // MARK: - Actions
     
     //뒤로가기 버튼
     @IBAction func backButtonTapped(_ sender: Any) {
@@ -45,15 +47,14 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     
-
-    
-// MARK: - Functions
+    // MARK: - Functions
     
     func applyDynamicFont() {
         locationEnterLabel.dynamicFont(fontSize: 35, weight: .regular)
     }
     
-// MARK: - TableView Delegate
+    
+    // MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
@@ -62,10 +63,10 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationsTableViewCell
         let location = data[indexPath.row]
-
+        
         cell.locationNameLabel.text = location.name
         cell.locationLabel.text = location.location
-
+        
         return cell
     }
     

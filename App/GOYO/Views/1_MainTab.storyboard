@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--MainViewController-->
         <scene sceneID="9jn-nF-zz6">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="zNb-AT-MS6" customClass="MainViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MainViewController" storyboardIdentifier="MainViewController" title="MainViewController" id="zNb-AT-MS6" customClass="MainViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yhW-BV-hyo">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="673.84615384615381" y="-161.37440758293837"/>
         </scene>
-        <!--신고하기-->
+        <!--ReportDetailViewController-->
         <scene sceneID="66m-6w-0lH">
             <objects>
-                <viewController id="SBG-sK-nEL" customClass="ReportDetailViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="ReportDetailViewController" storyboardIdentifier="ReportDetailViewController" title="ReportDetailViewController" id="SBG-sK-nEL" customClass="ReportDetailViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BEW-TX-QIJ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -260,11 +260,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="tf0-nN-50Q">
+                                <rect key="frame" x="170" y="397" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="VwS-dA-gSp"/>
+                                    <constraint firstAttribute="height" constant="50" id="pSH-V4-DvZ"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qGS-RG-EWK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qGS-RG-EWK" firstAttribute="bottom" secondItem="du5-yG-CqQ" secondAttribute="bottom" constant="30" id="3oN-LV-vGS"/>
+                            <constraint firstItem="tf0-nN-50Q" firstAttribute="centerY" secondItem="BEW-TX-QIJ" secondAttribute="centerY" id="7nb-jV-9AZ"/>
                             <constraint firstItem="ecL-uf-teV" firstAttribute="top" secondItem="s4y-LJ-oZ9" secondAttribute="bottom" id="ANN-Jc-S6L"/>
                             <constraint firstItem="s4y-LJ-oZ9" firstAttribute="top" secondItem="qGS-RG-EWK" secondAttribute="top" constant="60" id="AY6-k2-zgQ"/>
                             <constraint firstItem="2Ha-oY-SRA" firstAttribute="leading" secondItem="qGS-RG-EWK" secondAttribute="leading" constant="40" id="DLl-2y-45o"/>
@@ -276,11 +284,13 @@
                             <constraint firstItem="du5-yG-CqQ" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="rTR-al-cOi"/>
                             <constraint firstItem="s4y-LJ-oZ9" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="tO4-DJ-70R"/>
                             <constraint firstItem="2Ha-oY-SRA" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="wMR-rj-3dQ"/>
+                            <constraint firstItem="tf0-nN-50Q" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="zKi-Um-Mqu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="신고하기" id="bQr-bv-BOB"/>
                     <connections>
                         <outlet property="fireReportTypeButton" destination="bah-iF-6Wu" id="Hrl-Ru-oWS"/>
+                        <outlet property="indicator" destination="tf0-nN-50Q" id="GhX-WS-Pbg"/>
                         <outlet property="locationInfoButton" destination="Q6p-1k-Pqo" id="zHa-le-CTc"/>
                         <outlet property="locationShowTableView" destination="ecL-uf-teV" id="urP-uB-cLO"/>
                         <outlet property="placeContentTitle" destination="idi-wJ-Nhv" id="PGT-Jq-JEh"/>
@@ -294,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="1798.4615384615383" y="196.91943127962085"/>
         </scene>
-        <!--Location Select View Controller-->
+        <!--LocationSelectViewController-->
         <scene sceneID="ps6-by-ia2">
             <objects>
-                <viewController id="YLi-JK-DSt" customClass="LocationSelectViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LocationSelectViewController" storyboardIdentifier="LocationSelectViewController" title="LocationSelectViewController" id="YLi-JK-DSt" customClass="LocationSelectViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0N3-Es-Aav">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -380,10 +390,10 @@
             </objects>
             <point key="canvasLocation" x="1800" y="-447.86729857819904"/>
         </scene>
-        <!--Loc Search View Controller-->
+        <!--LocSearchViewController-->
         <scene sceneID="81K-DJ-VdO">
             <objects>
-                <viewController id="cg8-Tm-uef" customClass="LocSearchViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LocSearchViewController" storyboardIdentifier="LocSearchViewController" title="LocSearchViewController" id="cg8-Tm-uef" customClass="LocSearchViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TrX-TK-KlR">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -534,10 +544,10 @@
             </objects>
             <point key="canvasLocation" x="2632.8000000000002" y="-449.26108374384239"/>
         </scene>
-        <!--View Controller-->
+        <!--LocEditViewController-->
         <scene sceneID="PNC-gX-wCo">
             <objects>
-                <viewController storyboardIdentifier="LocEditViewController" id="qJQ-Ok-202" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LocEditViewController" storyboardIdentifier="LocEditViewController" title="LocEditViewController" id="qJQ-Ok-202" customClass="LocEditViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TjI-EV-nKB">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -664,6 +674,11 @@
                             <constraint firstItem="Vqv-b5-Cbu" firstAttribute="leading" secondItem="Txo-TL-w7N" secondAttribute="leading" constant="20" id="vbM-KG-TKz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="LocationTextField" destination="3xy-R9-bAi" id="dFT-aG-tne"/>
+                        <outlet property="locDetailTextField" destination="cAC-ub-GB4" id="r8U-Io-1Nx"/>
+                        <outlet property="locNicknameTextField" destination="bbm-ev-s6O" id="VtJ-AE-Rrn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nU-KZ-lzJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

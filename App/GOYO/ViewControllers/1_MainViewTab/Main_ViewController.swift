@@ -12,7 +12,7 @@ import SoundAnalysis
 
 class MainViewController: UIViewController {
     
-// MARK: - 전역 변/상수
+    // MARK: - VC let/var
     
     // 경보 인식 스위치
     var switchONorOFF: Bool = false
@@ -20,8 +20,9 @@ class MainViewController: UIViewController {
     var micPermissionStatus: Bool = true
     // 화재 알림 감지 타이머
     var fireCount = 0
-
-// MARK: - Outlets
+    
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var locationSelectButton: mainViewNavButton!
     @IBOutlet weak var MLTableView: UITableView!
@@ -31,7 +32,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var micONandOFFStackView: UIStackView!
     
     
-// MARK: - viewDidLoad
+    // MARK: - VCLifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +50,9 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         locationSelectButton.setTitle(otherViewLocationData, for: .normal)
     }
-
-// MARK: - Actions
+    
+    
+    // MARK: - Actions
     
     // 주소설정버튼
     @IBAction func locationSelectbuttonTapped(_ sender: UIButton) {
@@ -71,7 +73,8 @@ class MainViewController: UIViewController {
         
     }
     
-// MARK: - Functions
+    
+    // MARK: - Functions
     
     // 마이크 스위치 함수
     func switchButtonUpdate() {
@@ -86,7 +89,6 @@ class MainViewController: UIViewController {
             micStatusLabel.text = "화재경보음 인식 중"
             switchONorOFF = false
             // ML On
-//            MLTableView.isHidden = false
             prepareForRecording()
             createClassificationRequest()
         }
@@ -99,7 +101,6 @@ class MainViewController: UIViewController {
             micStatusLabel.text = "인식 중이 아님"
             switchONorOFF = true
             // ML OFF
-//            MLTableView.isHidden = true
             releaseRecordingResouces()
         }
     }
@@ -129,7 +130,7 @@ class MainViewController: UIViewController {
         let goToSetting = UIAlertAction(title: "설정", style: UIAlertAction.Style.default) { _ in
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
         }
-    
+        
         micCanceled.addAction(alertCancel)
         micCanceled.addAction(goToSetting)
         
@@ -139,7 +140,7 @@ class MainViewController: UIViewController {
     func fireSenseAlert() {
         let fireSense = UIAlertController(title: "화재가 발생하였습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
         let fireCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
-
+        
         fireSense.addAction(fireCancel)
         
         // 메인쓰레드에서 동작하게 하는 함수 (앱의 UI를 바꾸는 코드는 메인쓰레드가 아닌 다른쓰레드에서는 동작 못 함)
@@ -149,11 +150,10 @@ class MainViewController: UIViewController {
             self.present(fireSense, animated: true)
         }
     }
-
-
-
     
-// MARK: - ML
+    
+    // MARK: - ML
+    
     private let audioEngine = AVAudioEngine()
     private var soundClassifier = fireAlarmSoundClassifier_7()
     var streamAnalyzer: SNAudioStreamAnalyzer!
@@ -202,7 +202,7 @@ class MainViewController: UIViewController {
             fatalError("error adding the classification request")
         }
     }
-
+    
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -239,13 +239,13 @@ extension MainViewController: SNResultsObserving {
             return first.confidence > second.confidence
         }
         for classification in sorted {
-//            print(fireCount)
+            //print(fireCount)
             let confidence = classification.confidence * 100
             if confidence > 5 {
                 temp.append((label: classification.identifier, confidence: Float(confidence)))
                 if classification.identifier == "2_fireAlarm"/*.contains("fire")*/{
                     if confidence > 90 {
-                    fireCount += 1
+                        fireCount += 1
                         if fireCount >= 6 {
                             print("감지")
                             

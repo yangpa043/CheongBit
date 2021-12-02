@@ -38,6 +38,9 @@ class LocSearchTableViewCell: UITableViewCell {
 
     @IBAction func selectButtonTapped(_ sender: Any) {
         self.delegate?.didSelectOK(didSelectItem: self.item)
+        let userInfo: [AnyHashable: Any?] = ["Location": self.item?.roadLoc]
+        NotificationCenter.default.post(name: NSNotification.Name("receivedLocation"), object: nil, userInfo: userInfo)
+
     }
     
 }

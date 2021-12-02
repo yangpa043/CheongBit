@@ -10,7 +10,7 @@ import MessageUI
 
 class ReportDetailViewController: UIViewController, MFMessageComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
-// MARK: - 전역 변/상수
+    // MARK: - VC let/var
     
     // 위치데이터 shared
     let data = LocationDummyData.shared.location
@@ -28,21 +28,23 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     var rescueReportTypeSelected: Bool = false
     // 위치 셀 선택 Int
     var selectLocationNumber:Int = 0
-
-// MARK: - Outlets
-
+    
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var placeContentTitle: UILabel!
     @IBOutlet weak var reportContentTitle: UILabel!
     @IBOutlet weak var locationInfoButton: UIButton!
     @IBOutlet weak var fireReportTypeButton: UIButton!
     @IBOutlet weak var rescueReportTypeButton: UIButton!
     @IBOutlet weak var reportButton: reportButton!
-    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     //tableViewOutlets
     @IBOutlet weak var locationShowTableView: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
-// MARK: - viewDidLoad
+    
+    // MARK: - VCLifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +53,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         DispatchQueue.main.async {
             self.tableViewHeight.constant = self.locationShowTableView.contentSize.height
         }
+        
+        self.indicator.isHidden = true
         
         self.locationShowTableView.delegate = self
         self.locationShowTableView.dataSource = self
@@ -80,7 +84,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         
     }
     
-// MARK: - Actions
+    
+    // MARK: - Actions
     
     // 장소를 선택해 주세요 버튼 눌렸을 때
     @IBAction func locationSelectTapped(_ sender: UIButton) {
@@ -124,7 +129,11 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // 신고 버튼 눌렸을 때
     @IBAction func reportButtonTapped(_ sender: Any) {
         
+        self.indicator.isHidden = false
+        self.indicator.startAnimating()
+        
         decideReportContent()
+        
         // 메시지가 안 보내졌을 때 앱을 죽지 않도록 하는 가드
         guard MFMessageComposeViewController.canSendText() else {
             print("SMS services are not available")
@@ -138,7 +147,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         }
         
         let composeViewController = MFMessageComposeViewController()
-
+        
         composeViewController.messageComposeDelegate = self
         composeViewController.recipients = ["01057686469"]
         composeViewController.body = reportContent
@@ -146,7 +155,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         
     }
     
-// MARK: - functions
+    
+    // MARK: - functions
     
     // 폰 크기에 따라서 폰트 바뀌는 함수
     func applyDynamicfont() {
@@ -157,8 +167,12 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         reportButton.titleLabel?.dynamicFont(fontSize: 55, weight: .bold)
     }
     
+    func stopIndicator() {
+        self.indicator.isHidden = true
+        self.indicator.stopAnimating()
+    }
+    
     // 체크박스 버튼으로 신고 타입 선택
-    // 코드 줄여야 함
     func reportTypeButtonsTapped() {
         
         if fireReportTypeSelected == true && rescueReportTypeSelected == true || fireReportTypeSelected == false && rescueReportTypeSelected == true || fireReportTypeSelected == true && rescueReportTypeSelected == false {
@@ -187,7 +201,6 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
                 reportContent = data[selectLocationNumber].location
             }
         }
-
         
         if fireReportTypeSelected == true {
             reportContent += fireString
@@ -201,26 +214,33 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     // 메시지 전송 변수 차단 케이스 함수
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
-            switch result {
-            case .cancelled:
-                print("cancelled")
-                reportContent = ""
-                dismiss(animated: true, completion: nil)
-            case .sent:
-                print("sent message:", controller.body ?? "")
-                reportContent = ""
-                dismiss(animated: true, completion: nil)
-                reportSuccessAlert()
-            case .failed:
-                print("failed")
-                reportContent = ""
-                dismiss(animated: true, completion: nil)
-            @unknown default:
-                print("unkown Error")
-                reportContent = ""
-                dismiss(animated: true, completion: nil)
-            }
+        switch result {
+        case .cancelled:
+            stopIndicator()
+            print("cancelled")
+            reportContent = ""
+            dismiss(animated: true, completion: nil)
+            
+        case .sent:
+            stopIndicator()
+            print("sent message:", controller.body ?? "")
+            reportContent = ""
+            dismiss(animated: true, completion: nil)
+            reportSuccessAlert()
+            
+        case .failed:
+            stopIndicator()
+            print("failed")
+            reportContent = ""
+            dismiss(animated: true, completion: nil)
+            
+        @unknown default:
+            stopIndicator()
+            print("unkown Error")
+            reportContent = ""
+            dismiss(animated: true, completion: nil)
         }
+    }
     
     func reportSuccessAlert() {
         let micCanceled = UIAlertController(title: "신고가 완료되었습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
@@ -228,13 +248,14 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         { _ in
             self.navigationController?.popViewController(animated: true)
         }
-    
+        
         micCanceled.addAction(alertCancel)
         
         self.present(micCanceled, animated: true)
     }
     
-// MARK: - TableView Delegate
+    
+    // MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         data.count
@@ -244,12 +265,12 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationShowCell", for: indexPath) as! ReportDetailTableViewCell
         let location = data[indexPath.row]
-
+        
         cell.locationNameLabel.text = location.name
         cell.locationLabel.text = location.location
         cell.locationLabel.dynamicFont(fontSize: 18, weight: .regular)
         cell.locationNameLabel.dynamicFont(fontSize: 24, weight: .regular)
-
+        
         return cell
     }
     
