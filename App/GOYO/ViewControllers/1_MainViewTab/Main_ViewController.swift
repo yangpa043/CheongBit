@@ -56,7 +56,7 @@ class MainViewController: UIViewController {
     
     // 주소설정버튼
     @IBAction func locationSelectbuttonTapped(_ sender: UIButton) {
-        print("locationButtonTapped")
+        
     }
     
     // 마이크 스위치 버튼

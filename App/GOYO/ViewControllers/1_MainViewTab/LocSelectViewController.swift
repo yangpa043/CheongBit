@@ -15,7 +15,6 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     
     // MARK: - VC let/var
     
-    let data = LocationDummyData.shared.location
     var dataToMove: String = ""
     // 선택된 Row의 번호
     var myInt: Int?
@@ -38,6 +37,10 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         applyDynamicFont()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.SelectedLocListTable.reloadData()
+    }
+    
     
     // MARK: - Actions
     
@@ -57,12 +60,12 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     // MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return SelectedLocData.shared.location.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationsTableViewCell
-        let location = data[indexPath.row]
+        let location = SelectedLocData.shared.location[indexPath.row]
         
         cell.locationNameLabel.text = location.name
         cell.locationLabel.text = location.location
@@ -75,7 +78,7 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
             var myString = ""
             _ = selectedRow.map{ myString += "\($0)" }
             myInt = Int(myString)
-            dataToMove = "\(data[myInt!].name)  ⌵"
+            dataToMove = "\(SelectedLocData.shared.location[myInt!].name)  ⌵"
         }
     }
     

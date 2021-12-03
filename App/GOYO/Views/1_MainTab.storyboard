@@ -289,6 +289,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="신고하기" id="bQr-bv-BOB"/>
                     <connections>
+                        <outlet property="dontWorryLabel" destination="h2M-p9-1ka" id="yH9-hw-9gL"/>
                         <outlet property="fireReportTypeButton" destination="bah-iF-6Wu" id="Hrl-Ru-oWS"/>
                         <outlet property="indicator" destination="tf0-nN-50Q" id="GhX-WS-Pbg"/>
                         <outlet property="locationInfoButton" destination="Q6p-1k-Pqo" id="zHa-le-CTc"/>
@@ -362,7 +363,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="cg8-Tm-uef" kind="modal" id="G2o-YH-EUl"/>
+                                    <segue destination="cg8-Tm-uef" kind="modal" modalPresentationStyle="fullScreen" id="G2o-YH-EUl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -395,11 +396,11 @@
             <objects>
                 <viewController restorationIdentifier="LocSearchViewController" storyboardIdentifier="LocSearchViewController" title="LocSearchViewController" id="cg8-Tm-uef" customClass="LocSearchViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TrX-TK-KlR">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ux-Wg-oOd">
-                                <rect key="frame" x="16" y="15" width="35" height="35"/>
+                                <rect key="frame" x="16" y="54" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="UUg-M2-b5e"/>
                                     <constraint firstAttribute="width" constant="35" id="YaQ-dP-Mrh"/>
@@ -414,7 +415,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rvR-MZ-PCq">
-                                <rect key="frame" x="16" y="122.00000000000001" width="364" height="44.666666666666671"/>
+                                <rect key="frame" x="16" y="161" width="364" height="44.666666666666657"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" 예) 종로구 동숭동 1-115, 대학로 116" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="amc-pd-SAL">
                                         <rect key="frame" x="0.0" y="0.0" width="319.33333333333331" height="44.666666666666664"/>
@@ -441,13 +442,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소를 검색하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifi-fp-fhU">
-                                <rect key="frame" x="16" y="65" width="257.66666666666669" height="42"/>
+                                <rect key="frame" x="16" y="104" width="257.66666666666669" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="4JB-7m-76t">
-                                <rect key="frame" x="0.0" y="196.66666666666669" width="390" height="544.33333333333326"/>
+                                <rect key="frame" x="0.0" y="235.66666666666669" width="390" height="525.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="resultCell" rowHeight="77" id="nFJ-JW-5MH" customClass="LocSearchTableViewCell" customModule="GOYO" customModuleProvider="target">
@@ -507,7 +508,7 @@
                                 </prototypes>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="chh-cT-GWA">
-                                <rect key="frame" x="170" y="370" width="50" height="50"/>
+                                <rect key="frame" x="170" y="397" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="M1C-us-EBE"/>
                                     <constraint firstAttribute="height" constant="50" id="evx-0G-L4f"/>
@@ -528,7 +529,7 @@
                             <constraint firstItem="fuo-Dh-6u0" firstAttribute="bottom" secondItem="4JB-7m-76t" secondAttribute="bottom" id="pti-O7-R2e"/>
                             <constraint firstItem="fuo-Dh-6u0" firstAttribute="trailing" secondItem="4JB-7m-76t" secondAttribute="trailing" id="r34-on-1CF"/>
                             <constraint firstItem="ifi-fp-fhU" firstAttribute="leading" secondItem="fuo-Dh-6u0" secondAttribute="leading" constant="16" id="ssS-34-3wM"/>
-                            <constraint firstItem="4ux-Wg-oOd" firstAttribute="top" secondItem="fuo-Dh-6u0" secondAttribute="top" constant="15" id="y5g-Jc-OKC"/>
+                            <constraint firstItem="4ux-Wg-oOd" firstAttribute="top" secondItem="fuo-Dh-6u0" secondAttribute="top" constant="10" id="y5g-Jc-OKC"/>
                             <constraint firstItem="ifi-fp-fhU" firstAttribute="top" secondItem="4ux-Wg-oOd" secondAttribute="bottom" constant="15" id="zDy-hP-FfA"/>
                         </constraints>
                     </view>
@@ -573,7 +574,11 @@
                                             <constraint firstAttribute="height" constant="40" id="bvL-yY-hGu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="checkEditing:" destination="qJQ-Ok-202" eventType="editingChanged" id="mvp-d1-MSW"/>
+                                            <action selector="keyboardDoneButtonTapped:" destination="qJQ-Ok-202" eventType="editingDidEndOnExit" id="Vsy-qc-Y2k"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -598,7 +603,11 @@
                                             <constraint firstAttribute="height" constant="40" id="G4z-dO-Bbl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="checkEditing:" destination="qJQ-Ok-202" eventType="editingChanged" id="UfU-4V-ELx"/>
+                                            <action selector="keyboardDoneButtonTapped:" destination="qJQ-Ok-202" eventType="editingDidEndOnExit" id="cU8-zC-POy"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -625,7 +634,11 @@
                                             <constraint firstAttribute="height" constant="40" id="GVj-9C-1uR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="checkEditing:" destination="qJQ-Ok-202" eventType="editingChanged" id="MJf-81-DfB"/>
+                                            <action selector="keyboardDoneButtonTapped:" destination="qJQ-Ok-202" eventType="editingDidEndOnExit" id="JGM-Il-M02"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -650,6 +663,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="완료하기"/>
+                                <connections>
+                                    <action selector="editCompleteButtonTapped:" destination="qJQ-Ok-202" eventType="touchUpInside" id="upL-u0-StM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Txo-TL-w7N"/>
@@ -676,6 +692,7 @@
                     </view>
                     <connections>
                         <outlet property="LocationTextField" destination="3xy-R9-bAi" id="dFT-aG-tne"/>
+                        <outlet property="completeButton" destination="TEk-aM-1al" id="Kp8-WI-OLW"/>
                         <outlet property="locDetailTextField" destination="cAC-ub-GB4" id="r8U-Io-1Nx"/>
                         <outlet property="locNicknameTextField" destination="bbm-ev-s6O" id="VtJ-AE-Rrn"/>
                     </connections>

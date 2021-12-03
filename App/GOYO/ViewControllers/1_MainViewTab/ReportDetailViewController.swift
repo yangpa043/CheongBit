@@ -13,7 +13,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // MARK: - VC let/var
     
     // 위치데이터 shared
-    let data = LocationDummyData.shared.location
+    let data = SelectedLocData.shared.location
     // 신고 메시지 내용
     var reportContent: String = ""
     // 위치 선택 테이블뷰 표시 Bool 값
@@ -43,6 +43,9 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     @IBOutlet weak var locationShowTableView: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     
+    // ⚠️걱정마세유 지금은 119로 신고 안갑니다.
+    @IBOutlet weak var dontWorryLabel: UILabel!
+   
     
     // MARK: - VCLifeCycle
     
@@ -71,9 +74,11 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         rescueReportTypeButton.setTitle("  구조, 구급 신고", for: .normal)
     }
     
-    
-    // 이미 장소가 선택되어 있을 때 locationInfoButton의 텍스트 바꾸기
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.locationShowTableView.reloadData()
+        
+        // 이미 장소가 선택되어 있을 때 locationInfoButton의 텍스트 바꾸기
         if firstSelectRowNumber == nil {
             locationInfoButton.setTitle("장소를 선택해 주세요.  ⌵", for: .normal)
         } else {
@@ -93,8 +98,10 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         // 버튼 눌렀을때 테이블 뷰 꺼졋다 켜졋다
         if locationSelectIsHidden == true {
             locationSelectIsHidden = false
+            dontWorryLabel.isHidden = true
         } else {
             locationSelectIsHidden = true
+            dontWorryLabel.isHidden = false
         }
         
         locationShowTableView.isHidden = locationSelectIsHidden
