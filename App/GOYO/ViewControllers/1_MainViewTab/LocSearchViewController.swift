@@ -50,22 +50,11 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
     }
     
     @IBAction func SearchButtonTapped(_ sender: Any) {
-        self.resultList.removeAll()
-        
-        self.indicator.isHidden = false
-        self.indicator.startAnimating()
-        
-        self.doSearchLocation(keyword: textFieldLoc.text ?? "" , page: 0)
-        self.view.endEditing(true)
+        doSearch()
     }
     
     @IBAction func keyboardDoneButtonTapped(_ sender: Any) {
-        self.resultList.removeAll()
-        
-        self.indicator.isHidden = false
-        self.indicator.startAnimating()
-        
-        self.doSearchLocation(keyword: textFieldLoc.text ?? "" , page: 0)
+        doSearch()
     }
     
     @objc func didRecieveLocationNotification(_ notification: Notification) {
@@ -121,6 +110,17 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
                 print(error)
             }
         })
+    }
+    
+    func doSearch() {
+        self.resultList.removeAll()
+        
+        self.indicator.isHidden = false
+        self.indicator.startAnimating()
+        
+        self.doSearchLocation(keyword: textFieldLoc.text ?? "" , page: 0)
+        self.view.endEditing(true)
+        
     }
     
     private func generateDeptFirstLoc(loc: String) -> String {

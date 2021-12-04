@@ -239,7 +239,7 @@ extension MainViewController: SNResultsObserving {
             return first.confidence > second.confidence
         }
         for classification in sorted {
-            //print(fireCount)
+//            print(fireCount)
             let confidence = classification.confidence * 100
             if confidence > 5 {
                 temp.append((label: classification.identifier, confidence: Float(confidence)))

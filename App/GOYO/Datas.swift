@@ -43,6 +43,7 @@ class SelectedLocData {
         Location(location: "충청북도 흥덕구 가경동 서현서로 21-3", name: "우유 집"),
         Location(location: "경기도 용인시 수지구 신봉2로 34-4", name: "양파 전집"),
         Location(location: "대구광역시 달서구 조안남로16길 19", name: "두부 집"),
+        Location(location: "서울 마포구 신공덕동159", name: "호랑이굴")
     ]
 }
 
