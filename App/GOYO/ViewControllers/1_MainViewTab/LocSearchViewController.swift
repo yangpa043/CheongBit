@@ -105,6 +105,15 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
                     }
                 }
                 
+                if self.resultList.isEmpty == true {
+                    let noResult = UIAlertController(title: "검색 결과가 없습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
+                    let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
+                    
+                    noResult.addAction(alertCancel)
+                    
+                    self.present(noResult, animated: true)
+                }
+                
                 self.resultTable.reloadData()
             case .failure(let error):
                 print(error)
