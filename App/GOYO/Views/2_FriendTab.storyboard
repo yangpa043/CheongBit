@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p6w-T7-U8h">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -16,7 +16,7 @@
                     <tabBarItem key="tabBarItem" title="친구 상태" image="person.2" catalog="system" selectedImage="person.2.fill" id="m7G-x2-I0B"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qe3-eX-XLl">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -27,12 +27,12 @@
             </objects>
             <point key="canvasLocation" x="948" y="-156"/>
         </scene>
-        <!--Friend Status View Controller-->
+        <!--FriendStatusViewController-->
         <scene sceneID="Z2F-Gl-ozr">
             <objects>
-                <viewController id="yZL-tB-kS8" customClass="FriendStatusViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="FriendStatusViewController" storyboardIdentifier="FriendStatusViewController" title="FriendStatusViewController" id="yZL-tB-kS8" customClass="FriendStatusViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iyt-OV-fS4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="gfj-2E-amW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
