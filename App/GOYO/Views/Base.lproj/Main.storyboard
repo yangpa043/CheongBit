@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ch5-fy-Di7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ch5-fy-Di7">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="818" y="-80"/>
         </scene>
-        <!--2_FriendsTab-->
+        <!--2_FriendTab-->
         <scene sceneID="aE0-fW-WJR">
             <objects>
-                <viewControllerPlaceholder storyboardName="2_FriendsTab" referencedIdentifier="2_FriendsTab" id="nBk-SS-JBj" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="2_FriendTab" referencedIdentifier="2_FriendTab" id="nBk-SS-JBj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="UL0-uO-x23"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkY-TP-rbp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -116,6 +116,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="m8Q-7f-e29" id="GbE-9j-DdG"/>
+                        <outlet property="loginButton" destination="ElL-C7-wEf" id="JqS-Bf-VnL"/>
                         <outlet property="pwTextField" destination="rRt-Nh-0Df" id="gaH-3W-mNi"/>
                     </connections>
                 </viewController>

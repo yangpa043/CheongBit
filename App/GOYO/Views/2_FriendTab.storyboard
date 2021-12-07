@@ -12,7 +12,7 @@
         <!--친구 상태-->
         <scene sceneID="YoF-2j-y4I">
             <objects>
-                <navigationController restorationIdentifier="2_FriendsTab" storyboardIdentifier="2_FriendsTab" id="p6w-T7-U8h" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="2_FriendTab" storyboardIdentifier="2_FriendTab" id="p6w-T7-U8h" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="친구 상태" image="person.2" catalog="system" selectedImage="person.2.fill" id="m7G-x2-I0B"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qe3-eX-XLl">
