@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="948" y="-156"/>
         </scene>
-        <!--View Controller-->
+        <!--Friend Status View Controller-->
         <scene sceneID="Z2F-Gl-ozr">
             <objects>
-                <viewController id="yZL-tB-kS8" sceneMemberID="viewController">
+                <viewController id="yZL-tB-kS8" customClass="FriendStatusViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iyt-OV-fS4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

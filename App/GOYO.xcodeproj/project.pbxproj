@@ -14,6 +14,7 @@
 		D50221A4275706AC0041B4C5 /* LocEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50221A3275706AC0041B4C5 /* LocEditViewController.swift */; };
 		D503BD1A2725466C009D4DEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D503BD192725466C009D4DEA /* GoogleService-Info.plist */; };
 		D507BC8D275DAC5D005B9876 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507BC8C275DAC5D005B9876 /* LoginViewController.swift */; };
+		D513D05D275EE69A006BB682 /* Main_FriendStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D513D05C275EE69A006BB682 /* Main_FriendStatusViewController.swift */; };
 		D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487926CFF63000B2E602 /* AppDelegate.swift */; };
 		D575487C26CFF63000B2E602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487B26CFF63000B2E602 /* SceneDelegate.swift */; };
 		D575487E26CFF63000B2E602 /* Main_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487D26CFF63000B2E602 /* Main_ViewController.swift */; };
@@ -29,7 +30,7 @@
 		D5ABD88527473F0800DA6ABE /* LocSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5ABD88427473F0800DA6ABE /* LocSearchTableViewCell.swift */; };
 		D5D8A6F026E6ED0000A31EC2 /* DesignFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */; };
 		D5D8A6F226E6FC3900A31EC2 /* Main_MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A6F126E6FC3900A31EC2 /* Main_MyPageViewController.swift */; };
-		D5D8A70526EEDEFA00A31EC2 /* 2_FriendsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D8A70426EEDEFA00A31EC2 /* 2_FriendsTab.storyboard */; };
+		D5D8A70526EEDEFA00A31EC2 /* 2_FriendTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5D8A70426EEDEFA00A31EC2 /* 2_FriendTab.storyboard */; };
 		D5D8A70C26EEE35400A31EC2 /* ReportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D8A70B26EEE35400A31EC2 /* ReportDetailViewController.swift */; };
 		D5FF6FE82739F4E000C79629 /* fireAlarmSoundClassifier 7.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = D5FF6FE72739F4E000C79629 /* fireAlarmSoundClassifier 7.mlpackage */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		D50221A3275706AC0041B4C5 /* LocEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocEditViewController.swift; sourceTree = "<group>"; };
 		D503BD192725466C009D4DEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D507BC8C275DAC5D005B9876 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D513D05C275EE69A006BB682 /* Main_FriendStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Main_FriendStatusViewController.swift; path = GOYO/ViewControllers/2_FriendViewTab/Main_FriendStatusViewController.swift; sourceTree = SOURCE_ROOT; };
 		D53A17DC27380B2300E9888E /* GOYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D575487926CFF63000B2E602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D575487B26CFF63000B2E602 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +62,7 @@
 		D5ABD88427473F0800DA6ABE /* LocSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocSearchTableViewCell.swift; sourceTree = "<group>"; };
 		D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFile.swift; sourceTree = "<group>"; };
 		D5D8A6F126E6FC3900A31EC2 /* Main_MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_MyPageViewController.swift; sourceTree = "<group>"; };
-		D5D8A70426EEDEFA00A31EC2 /* 2_FriendsTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = 2_FriendsTab.storyboard; sourceTree = "<group>"; };
+		D5D8A70426EEDEFA00A31EC2 /* 2_FriendTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = 2_FriendTab.storyboard; sourceTree = "<group>"; };
 		D5D8A70B26EEE35400A31EC2 /* ReportDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewController.swift; sourceTree = "<group>"; };
 		D5FF6FE72739F4E000C79629 /* fireAlarmSoundClassifier 7.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "fireAlarmSoundClassifier 7.mlpackage"; sourceTree = "<group>"; };
 		E5D2B13AE33E506DCF5D037D /* Pods_GOYO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOYO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,11 +138,12 @@
 			path = 1_MainViewTab;
 			sourceTree = "<group>";
 		};
-		D5AB1AF626F0261E0058AE87 /* 2_FriendsViewTab */ = {
+		D5AB1AF626F0261E0058AE87 /* 2_FriendViewTab */ = {
 			isa = PBXGroup;
 			children = (
+				D513D05C275EE69A006BB682 /* Main_FriendStatusViewController.swift */,
 			);
-			path = 2_FriendsViewTab;
+			path = 2_FriendViewTab;
 			sourceTree = "<group>";
 		};
 		D5AB1AF726F026360058AE87 /* 3_MyPageViewTab */ = {
@@ -183,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				D5AB1AF426F025F30058AE87 /* 1_MainViewTab */,
-				D5AB1AF626F0261E0058AE87 /* 2_FriendsViewTab */,
+				D5AB1AF626F0261E0058AE87 /* 2_FriendViewTab */,
 				D5AB1AF726F026360058AE87 /* 3_MyPageViewTab */,
 			);
 			path = ViewControllers;
@@ -194,7 +197,7 @@
 			children = (
 				D575487F26CFF63000B2E602 /* Main.storyboard */,
 				D5AB1AF026EF02900058AE87 /* 1_MainTab.storyboard */,
-				D5D8A70426EEDEFA00A31EC2 /* 2_FriendsTab.storyboard */,
+				D5D8A70426EEDEFA00A31EC2 /* 2_FriendTab.storyboard */,
 				D5AB1AF226EF02A80058AE87 /* 3_MyPageTab.storyboard */,
 				D575488426CFF63200B2E602 /* LaunchScreen.storyboard */,
 			);
@@ -264,7 +267,7 @@
 				D5AB1AF326EF02A80058AE87 /* 3_MyPageTab.storyboard in Resources */,
 				D5AB1AF126EF02900058AE87 /* 1_MainTab.storyboard in Resources */,
 				D575488326CFF63200B2E602 /* Assets.xcassets in Resources */,
-				D5D8A70526EEDEFA00A31EC2 /* 2_FriendsTab.storyboard in Resources */,
+				D5D8A70526EEDEFA00A31EC2 /* 2_FriendTab.storyboard in Resources */,
 				D575488126CFF63000B2E602 /* Main.storyboard in Resources */,
 				D503BD1A2725466C009D4DEA /* GoogleService-Info.plist in Resources */,
 			);
@@ -324,6 +327,7 @@
 				D575487E26CFF63000B2E602 /* Main_ViewController.swift in Sources */,
 				D5D8A70C26EEE35400A31EC2 /* ReportDetailViewController.swift in Sources */,
 				D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */,
+				D513D05D275EE69A006BB682 /* Main_FriendStatusViewController.swift in Sources */,
 				D50221A4275706AC0041B4C5 /* LocEditViewController.swift in Sources */,
 				76B3552D26EAEC0D00957891 /* Datas.swift in Sources */,
 				76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */,
