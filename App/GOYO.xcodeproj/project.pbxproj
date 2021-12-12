@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		48EDB3284394D0BBC1B3770B /* Pods_GOYO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D2B13AE33E506DCF5D037D /* Pods_GOYO.framework */; };
+		66067D2327667175005AF896 /* NanumGothic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 66067D1F27667174005AF896 /* NanumGothic.otf */; };
+		66067D2427667175005AF896 /* NanumGothicExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 66067D2027667175005AF896 /* NanumGothicExtraBold.otf */; };
+		66067D2527667175005AF896 /* NanumGothicBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 66067D2127667175005AF896 /* NanumGothicBold.otf */; };
+		66067D2627667175005AF896 /* NanumGothicLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 66067D2227667175005AF896 /* NanumGothicLight.otf */; };
 		76349AB726E7332000BD7BAE /* LocSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76349AB626E7332000BD7BAE /* LocSelectViewController.swift */; };
 		76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */; };
 		76B3552D26EAEC0D00957891 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* Datas.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66067D1F27667174005AF896 /* NanumGothic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothic.otf; path = ../../../../NanumGothic.otf; sourceTree = "<group>"; };
+		66067D2027667175005AF896 /* NanumGothicExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicExtraBold.otf; path = ../../../../NanumGothicExtraBold.otf; sourceTree = "<group>"; };
+		66067D2127667175005AF896 /* NanumGothicBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicBold.otf; path = ../../../../NanumGothicBold.otf; sourceTree = "<group>"; };
+		66067D2227667175005AF896 /* NanumGothicLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NanumGothicLight.otf; path = ../../../../NanumGothicLight.otf; sourceTree = "<group>"; };
 		6EF2F125520C272FE7FC8681 /* Pods-GOYO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.release.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.release.xcconfig"; sourceTree = "<group>"; };
 		76349AB626E7332000BD7BAE /* LocSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocSelectViewController.swift; sourceTree = "<group>"; };
 		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = GOYO/Cells/2_FriendsView/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -110,6 +118,10 @@
 		D575487826CFF63000B2E602 /* GOYO */ = {
 			isa = PBXGroup;
 			children = (
+				66067D1F27667174005AF896 /* NanumGothic.otf */,
+				66067D2127667175005AF896 /* NanumGothicBold.otf */,
+				66067D2027667175005AF896 /* NanumGothicExtraBold.otf */,
+				66067D2227667175005AF896 /* NanumGothicLight.otf */,
 				D575487926CFF63000B2E602 /* AppDelegate.swift */,
 				D575487B26CFF63000B2E602 /* SceneDelegate.swift */,
 				76B3552C26EAEC0D00957891 /* Datas.swift */,
@@ -265,10 +277,14 @@
 			files = (
 				D575488626CFF63200B2E602 /* LaunchScreen.storyboard in Resources */,
 				D5AB1AF326EF02A80058AE87 /* 3_MyPageTab.storyboard in Resources */,
+				66067D2427667175005AF896 /* NanumGothicExtraBold.otf in Resources */,
 				D5AB1AF126EF02900058AE87 /* 1_MainTab.storyboard in Resources */,
+				66067D2327667175005AF896 /* NanumGothic.otf in Resources */,
 				D575488326CFF63200B2E602 /* Assets.xcassets in Resources */,
 				D5D8A70526EEDEFA00A31EC2 /* 2_FriendTab.storyboard in Resources */,
+				66067D2627667175005AF896 /* NanumGothicLight.otf in Resources */,
 				D575488126CFF63000B2E602 /* Main.storyboard in Resources */,
+				66067D2527667175005AF896 /* NanumGothicBold.otf in Resources */,
 				D503BD1A2725466C009D4DEA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

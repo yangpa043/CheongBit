@@ -26,25 +26,29 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var locationSelectButton: mainViewNavButton!
     @IBOutlet weak var MLTableView: UITableView!
-    @IBOutlet weak var micSwitch: UIButton!
+    @IBOutlet weak var micSwitch: UISwitch!
     @IBOutlet weak var micImage: UIImageView!
     @IBOutlet weak var micStatusLabel: UILabel!
     @IBOutlet weak var micONandOFFStackView: UIStackView!
+    @IBOutlet weak var mainView: ViewDesign!
     
     
     // MARK: - VCLifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = #colorLiteral(red: 0.9997131228, green: 0.9688497186, blue: 0.8411275744, alpha: 1)
         switchButtonUpdate()
         applyDynamicFont()
         requestMicrophonePermission()
         MLTableView.isHidden = true
-        
         // 마이크 스텍뷰 디자인
-        micONandOFFStackView.backgroundColor = #colorLiteral(red: 0, green: 0.4877254963, blue: 1, alpha: 1)
-        micONandOFFStackView.layer.cornerRadius = micONandOFFStackView.frame.width/15
+//        micONandOFFStackView.layer.cornerRadius = micONandOFFStackView.frame.width/15
         micONandOFFStackView.layer.masksToBounds = false
+        micSwitch.transform = CGAffineTransform(scaleX: 2.5, y: 2.5)
+        micSwitch.thumbTintColor = #colorLiteral(red: 0.9997131228, green: 0.9688497186, blue: 0.8411275744, alpha: 1)
+        micSwitch.onTintColor = #colorLiteral(red: 0.1098039216, green: 0.1019607843, blue: 0.2235294118, alpha: 1)
+        micSwitch.tintColor = #colorLiteral(red: 0.6627865434, green: 0.6705468297, blue: 0.7195122242, alpha: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +64,7 @@ class MainViewController: UIViewController {
     }
     
     // 마이크 스위치 버튼
-    @IBAction func switchChanged(_ sender: UIButton) {
+    @IBAction func switchChanged(_ sender: UISwitch) {
         if micPermissionStatus == false {
             switchONorOFF = true
             switchButtonUpdate()
@@ -84,9 +88,9 @@ class MainViewController: UIViewController {
                 micCanceldAlert()
             }
             print("스위치 On")
-            micSwitch.setImage(UIImage(named: "switchOn"), for: .normal)
+//            micSwitch.setImage(UIImage(named: "switchOn"), for: .normal)
             micImage.image = UIImage(named: "micOn")
-            micStatusLabel.text = "화재경보음 인식 중"
+            micStatusLabel.text = "고요가 소리를 듣는 중.."
             switchONorOFF = false
             // ML On
             prepareForRecording()
@@ -96,9 +100,9 @@ class MainViewController: UIViewController {
         else {
             print("스위치 Off")
             fireCount = 0
-            micSwitch.setImage(UIImage(named: "switchOff"), for: .normal)
+//            micSwitch.setImage(UIImage(named: "switchOff"), for: .normal)
             micImage.image = UIImage(named: "micOff")
-            micStatusLabel.text = "인식 중이 아님"
+            micStatusLabel.text = "고요가 자고 있습니다."
             switchONorOFF = true
             // ML OFF
             releaseRecordingResouces()

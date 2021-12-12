@@ -12,7 +12,7 @@ import UIKit
 class whiteText: UILabel {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        textColor = #colorLiteral(red: 0.1098039216, green: 0.1019607843, blue: 0.2235294118, alpha: 1)
     }
 }
 
@@ -23,10 +23,10 @@ class whiteText: UILabel {
 class reportButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
+        backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.1019607843, blue: 0.2235294118, alpha: 1)
+        tintColor = #colorLiteral(red: 0.9997131228, green: 0.9688497186, blue: 0.8411275744, alpha: 1)
         
-        layer.cornerRadius = 25;
-        backgroundColor = #colorLiteral(red: 0, green: 0.4877254963, blue: 1, alpha: 1)
-        tintColor = UIColor.white
+        
     }
 }
 
@@ -34,6 +34,15 @@ class reportButton: UIButton {
 class mainViewNavButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        tintColor = #colorLiteral(red: 0, green: 0.4877254963, blue: 1, alpha: 1)
+        tintColor = #colorLiteral(red: 0.1098039216, green: 0.1019607843, blue: 0.2235294118, alpha: 1)
+    }
+}
+
+//기본 배경설정
+class ViewDesign: UIView {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        backgroundColor = #colorLiteral(red: 0.9997131228, green: 0.9688497186, blue: 0.8411275744, alpha: 1)
+//        tintColor = #colorLiteral(red: 0.1098039216, green: 0.1019607843, blue: 0.2235294118, alpha: 1)
     }
 }

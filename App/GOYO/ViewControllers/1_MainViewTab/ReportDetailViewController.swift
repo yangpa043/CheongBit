@@ -171,7 +171,6 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         reportContentTitle.dynamicFont(fontSize: 40, weight: .bold)
         rescueReportTypeButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
         fireReportTypeButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
-        reportButton.titleLabel?.dynamicFont(fontSize: 55, weight: .bold)
     }
     
     func stopIndicator() {
