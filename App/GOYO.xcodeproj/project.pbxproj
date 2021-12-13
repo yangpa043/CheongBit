@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		48EDB3284394D0BBC1B3770B /* Pods_GOYO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D2B13AE33E506DCF5D037D /* Pods_GOYO.framework */; };
-		66067D282766C633005AF896 /* nanumGothic in Resources */ = {isa = PBXBuildFile; fileRef = 66067D272766C633005AF896 /* nanumGothic */; };
+		66067D282766C633005AF896 /* Font in Resources */ = {isa = PBXBuildFile; fileRef = 66067D272766C633005AF896 /* Font */; };
 		76349AB726E7332000BD7BAE /* LocSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76349AB626E7332000BD7BAE /* LocSelectViewController.swift */; };
 		76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */; };
 		76B3552D26EAEC0D00957891 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* Datas.swift */; };
@@ -37,7 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		66067D272766C633005AF896 /* nanumGothic */ = {isa = PBXFileReference; lastKnownFileType = folder; path = nanumGothic; sourceTree = "<group>"; };
+		66067D272766C633005AF896 /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
 		6EF2F125520C272FE7FC8681 /* Pods-GOYO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.release.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.release.xcconfig"; sourceTree = "<group>"; };
 		76349AB626E7332000BD7BAE /* LocSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocSelectViewController.swift; sourceTree = "<group>"; };
 		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = GOYO/Cells/2_FriendsView/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -112,7 +112,7 @@
 		D575487826CFF63000B2E602 /* GOYO */ = {
 			isa = PBXGroup;
 			children = (
-				66067D272766C633005AF896 /* nanumGothic */,
+				66067D272766C633005AF896 /* Font */,
 				D575487926CFF63000B2E602 /* AppDelegate.swift */,
 				D575487B26CFF63000B2E602 /* SceneDelegate.swift */,
 				76B3552C26EAEC0D00957891 /* Datas.swift */,
@@ -266,7 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66067D282766C633005AF896 /* nanumGothic in Resources */,
+				66067D282766C633005AF896 /* Font in Resources */,
 				D575488626CFF63200B2E602 /* LaunchScreen.storyboard in Resources */,
 				D5AB1AF326EF02A80058AE87 /* 3_MyPageTab.storyboard in Resources */,
 				D5AB1AF126EF02900058AE87 /* 1_MainTab.storyboard in Resources */,
