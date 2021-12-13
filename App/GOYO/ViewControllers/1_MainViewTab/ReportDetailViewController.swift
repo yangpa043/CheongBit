@@ -167,10 +167,12 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     // 폰 크기에 따라서 폰트 바뀌는 함수
     func applyDynamicfont() {
-        placeContentTitle.dynamicFont(fontSize: 40, weight: .bold)
-        reportContentTitle.dynamicFont(fontSize: 40, weight: .bold)
-        rescueReportTypeButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
-        fireReportTypeButton.titleLabel?.dynamicFont(fontSize: 31, weight: .regular)
+        placeContentTitle.dynamicFont(fontSize:30 , weight: .thin)
+        locationInfoButton
+            .titleLabel?.dynamicFont(fontSize: 24, weight: .thin)
+        reportContentTitle.dynamicFont(fontSize: 30, weight: .thin)
+        rescueReportTypeButton.titleLabel?.dynamicFont(fontSize: 24, weight: .thin)
+        fireReportTypeButton.titleLabel?.dynamicFont(fontSize: 24, weight: .thin)
     }
     
     func stopIndicator() {

@@ -111,8 +111,8 @@ class MainViewController: UIViewController {
     
     // 다이나믹 폰트
     func applyDynamicFont() {
-        locationSelectButton.titleLabel?.dynamicFont(fontSize: 20, weight: .regular)
-        micStatusLabel.dynamicFont(fontSize: 24, weight: .bold)
+        locationSelectButton.titleLabel?.dynamicFont(fontSize: 20, weight: .thin)
+        micStatusLabel.dynamicFont(fontSize: 24, weight: .thin)
     }
     
     // 마이크 권한
