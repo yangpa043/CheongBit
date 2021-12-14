@@ -45,7 +45,7 @@ class MainViewController: UIViewController {
         // 마이크 스텍뷰 디자인
 //        micONandOFFStackView.layer.cornerRadius = micONandOFFStackView.frame.width/15
         micONandOFFStackView.layer.masksToBounds = false
-        micSwitch.transform = CGAffineTransform(scaleX: 2.5, y: 2.5)
+        micSwitch.transform = CGAffineTransform(scaleX: 2, y: 2)
         micSwitch.thumbTintColor = #colorLiteral(red: 0.9997131228, green: 0.9688497186, blue: 0.8411275744, alpha: 1)
         micSwitch.onTintColor = #colorLiteral(red: 0.1098039216, green: 0.1019607843, blue: 0.2235294118, alpha: 1)
         micSwitch.tintColor = #colorLiteral(red: 0.6627865434, green: 0.6705468297, blue: 0.7195122242, alpha: 1)
@@ -112,7 +112,7 @@ class MainViewController: UIViewController {
     // 다이나믹 폰트
     func applyDynamicFont() {
         locationSelectButton.titleLabel?.dynamicFont(fontSize: 20, weight: .thin)
-        micStatusLabel.dynamicFont(fontSize: 24, weight: .thin)
+        micStatusLabel.dynamicFont(fontSize: 24, weight: .semibold)
     }
     
     // 마이크 권한
