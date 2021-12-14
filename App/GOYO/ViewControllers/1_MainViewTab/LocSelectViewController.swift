@@ -13,7 +13,7 @@ protocol LocationSearchResultDelegate {
 
 class LocationSelectViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: - VC let/var
+    // MARK: - Variables
     
     var dataToMove: String = ""
     // 선택된 Row의 번호
@@ -26,7 +26,7 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     @IBOutlet weak var SelectedLocListTable: UITableView!
     
     
-    // MARK: - VCLifeCycle
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

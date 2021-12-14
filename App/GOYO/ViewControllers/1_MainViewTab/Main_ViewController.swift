@@ -12,7 +12,7 @@ import SoundAnalysis
 
 class MainViewController: UIViewController {
     
-    // MARK: - VC let/var
+    // MARK: - Variables
     
     // 경보 인식 스위치
     var switchONorOFF: Bool = false
@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var mainView: ViewDesign!
     
     
-    // MARK: - VCLifeCycle
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

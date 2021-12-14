@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class LocSearchViewController: UIViewController, ResultCellDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: - VC let/var
+    // MARK: - Variables
     
     private var resultList = [SearchLocation]()
     var delegate: LocationSearchResultDelegate?
@@ -25,7 +25,7 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     
-    // MARK: - VCLifeCycle
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

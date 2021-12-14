@@ -10,7 +10,7 @@ import MessageUI
 
 class ReportDetailViewController: UIViewController, MFMessageComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    // MARK: - VC let/var
+    // MARK: - Variables
     
     // 위치데이터 shared
     let data = SelectedLocData.shared.location
@@ -47,7 +47,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     @IBOutlet weak var dontWorryLabel: UILabel!
    
     
-    // MARK: - VCLifeCycle
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -9,7 +9,7 @@ import UIKit
 
 class LocEditViewController: UIViewController {
     
-    // MARK: - VC let/var
+    // MARK: - Variables
     
     var locationName: String?
     
@@ -22,7 +22,7 @@ class LocEditViewController: UIViewController {
     @IBOutlet weak var completeButton: UIButton!
     
     
-    // MARK: - VCLifeCycle
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
