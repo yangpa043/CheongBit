@@ -18,6 +18,7 @@ class SelectedLocData {
     static let shared = SelectedLocData()
     
     var location: [Location] = [
+        Location(location: "현재 나의 위치를 조회하여 신고합니다.", name: "현재 나의 위치"),
         Location(location: "서울특별시 종로구 이화동 대학로 116", name: "학교"),
         Location(location: "서울특별시 성북구 성북로5길 45-4", name: "기숙사"),
         Location(location: "경기도 양평군 양서면 양수로 177-6", name: "집"),
@@ -28,5 +29,3 @@ class SelectedLocData {
     ]
 }
 
-var otherViewLocationData: String = "주소를 선택해주세요  ⌵"
-var firstSelectRowNumber: Int?

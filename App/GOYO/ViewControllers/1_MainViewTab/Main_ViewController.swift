@@ -52,7 +52,7 @@ class MainViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        locationSelectButton.setTitle(otherViewLocationData, for: .normal)
+        
     }
     
     

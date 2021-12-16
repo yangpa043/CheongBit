@@ -15,7 +15,6 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     
     // MARK: - Variables
     
-    var dataToMove: String = ""
     // 선택된 Row의 번호
     var myInt: Int?
     
@@ -73,20 +72,8 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
     
-    var selectedRow : [Int] = [] {
-        didSet {
-            var myString = ""
-            _ = selectedRow.map{ myString += "\($0)" }
-            myInt = Int(myString)
-            dataToMove = "\(SelectedLocData.shared.location[myInt!].name)  ⌵"
-        }
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        selectedRow = [indexPath.row]
-        otherViewLocationData = "\(dataToMove)"
-        firstSelectRowNumber = myInt
         self.navigationController?.popViewController(animated: true)
     }
     

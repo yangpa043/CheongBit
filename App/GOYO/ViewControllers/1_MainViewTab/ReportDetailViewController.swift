@@ -75,17 +75,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         self.locationShowTableView.reloadData()
-        
-        // 이미 장소가 선택되어 있을 때 locationInfoButton의 텍스트 바꾸기
-        if firstSelectRowNumber == nil {
-            locationInfoButton.setTitle("장소를 선택해 주세요.  ⌵", for: .normal)
-        } else {
-            locationInfoButton.setTitle("\(data[firstSelectRowNumber!].name)  ⌵", for: .normal)
-            locationSelected = true
-            
-        }
         
     }
     
@@ -197,17 +187,14 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         
     }
     
+    // 화재 신고 내용 입력 함수
     func decideReportContent() {
         let fireString = "\n화재 신고"
         let rescueString = "\n구조, 구급 신고"
         
         // 이미 주소가 선택되어 있을 때 메시지 내용 추가
         if locationSelected == true {
-            if firstSelectRowNumber != nil {
-                reportContent = data[firstSelectRowNumber!].location
-            } else {
-                reportContent = data[selectLocationNumber].location
-            }
+            reportContent = data[selectLocationNumber].location
         }
         
         if fireReportTypeSelected == true {
@@ -294,8 +281,6 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     // 셀이 클릭 되었을 때
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        firstSelectRowNumber = nil
         
         selectedRow = [indexPath.row]
         
