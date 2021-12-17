@@ -61,7 +61,7 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
         print("receivedLocation 받았음")
         guard let location: String = notification.userInfo?["Location"] as? String else { return }
         
-        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "LocEditViewController") as! LocEditViewController
+        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "LocAddEditViewController") as! LocAddEditViewController
         vcName.locationName = location
         vcName.modalTransitionStyle = .coverVertical
         self.present(vcName, animated: true, completion: nil)

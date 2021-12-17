@@ -24,7 +24,6 @@ class MainViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var locationSelectButton: mainViewNavButton!
     @IBOutlet weak var MLTableView: UITableView!
     @IBOutlet weak var micSwitch: UISwitch!
     @IBOutlet weak var micImage: UIImageView!
@@ -111,7 +110,6 @@ class MainViewController: UIViewController {
     
     // 다이나믹 폰트
     func applyDynamicFont() {
-        locationSelectButton.titleLabel?.dynamicFont(fontSize: 20, weight: .thin)
         micStatusLabel.dynamicFont(fontSize: 24, weight: .semibold)
     }
     

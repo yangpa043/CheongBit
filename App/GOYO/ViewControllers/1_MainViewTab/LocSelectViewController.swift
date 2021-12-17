@@ -21,7 +21,6 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     
     // MARK: - Outlets
     
-    @IBOutlet weak var locationEnterLabel: UILabel!
     @IBOutlet weak var SelectedLocListTable: UITableView!
     
     
@@ -29,6 +28,8 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.SelectedLocListTable.delegate = self
         self.SelectedLocListTable.dataSource = self
@@ -48,11 +49,16 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func editButtonTapped(_ sender: Any) {
+        let tableViewEditingMode = SelectedLocListTable.isEditing
+        SelectedLocListTable.setEditing(tableViewEditingMode, animated: true)
+    }
+    
     
     // MARK: - Functions
     
     func applyDynamicFont() {
-        locationEnterLabel.dynamicFont(fontSize: 35, weight: .regular)
+        
     }
     
     
@@ -68,13 +74,32 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         
         cell.locationNameLabel.text = location.name
         cell.locationLabel.text = location.location
+        cell.showsReorderControl = true
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.navigationController?.popViewController(animated: true)
+        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "LocAddEditViewController") as! LocAddEditViewController
+        vcName.locationName = SelectedLocData.shared.location[indexPath.row].location
+        vcName.locationDetail = SelectedLocData.shared.location[indexPath.row].locationDetail
+        vcName.locationNickname = SelectedLocData.shared.location[indexPath.row].name
+        vcName.modalTransitionStyle = .coverVertical
+        self.present(vcName, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            SelectedLocData.shared.location.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        } else if editingStyle == .insert {
+            
+        }
     }
     
 }

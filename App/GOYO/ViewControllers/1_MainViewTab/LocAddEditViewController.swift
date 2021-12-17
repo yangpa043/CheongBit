@@ -1,5 +1,5 @@
 //
-//  LocEditViewController.swift
+//  LocAddEditViewController.swift
 //  GOYO
 //
 //  Created by 짜미 on 2021/12/01.
@@ -7,11 +7,14 @@
 
 import UIKit
 
-class LocEditViewController: UIViewController {
+class LocAddEditViewController: UIViewController {
     
     // MARK: - Variables
     
     var locationName: String?
+    var locationDetail: String?
+    var locationNickname: String?
+    var location: Location?
     
     
     // MARK: - Outlets
@@ -33,6 +36,8 @@ class LocEditViewController: UIViewController {
         if let locationName = locationName {
             print("받았다!", locationName)
             LocationTextField.text = locationName
+            locDetailTextField.text = locationDetail
+            locNicknameTextField.text = locationNickname
         }
     }
     
@@ -40,7 +45,8 @@ class LocEditViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func editCompleteButtonTapped(_ sender: Any) {
-        SelectedLocData.shared.location.append(Location(location: "\(self.LocationTextField.text ?? "") \(self.locDetailTextField.text ?? "")", name: self.locNicknameTextField.text ?? ""))
+        
+        SelectedLocData.shared.location.append(Location(location: "\(self.LocationTextField.text ?? "") \(self.locDetailTextField.text ?? "")", locationDetail: "\(self.locDetailTextField.text ?? "")", name: self.locNicknameTextField.text ?? ""))
         
         self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
