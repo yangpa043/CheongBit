@@ -8,9 +8,9 @@
 import UIKit
 
 class LocationsTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var locationLabel: UILabel!
+    
     @IBOutlet weak var locationNameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +22,11 @@ class LocationsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.layer.borderWidth = 0.5
+        contentView.layer.borderColor = UIColor.lightGray.cgColor
+    }
 }

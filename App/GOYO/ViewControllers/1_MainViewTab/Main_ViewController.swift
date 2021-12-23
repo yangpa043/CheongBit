@@ -66,6 +66,7 @@ class MainViewController: UIViewController {
     @IBAction func switchChanged(_ sender: UISwitch) {
         if micPermissionStatus == false {
             switchONorOFF = true
+            sender.isOn = false
             switchButtonUpdate()
         }
         switchButtonUpdate()
@@ -141,7 +142,7 @@ class MainViewController: UIViewController {
     
     func fireSenseAlert() {
         let fireSense = UIAlertController(title: "화재를 감지하였습니다.\n신고하시겠습니까?", message: "", preferredStyle: UIAlertController.Style.alert)
-        let fireCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.default)
+        let fireCancel = UIAlertAction(title: "취소", style: UIAlertAction.Style.default)
         let report = UIAlertAction(title: "신고", style: UIAlertAction.Style.default) { _ in
             let vcName = self.storyboard?.instantiateViewController(withIdentifier: "ReportDetailViewController") as! ReportDetailViewController
             self.navigationController?.pushViewController(vcName, animated: true)
@@ -152,6 +153,7 @@ class MainViewController: UIViewController {
         
         // 메인쓰레드에서 동작하게 하는 함수 (앱의 UI를 바꾸는 코드는 메인쓰레드가 아닌 다른쓰레드에서는 동작 못 함)
         DispatchQueue.main.async {
+            self.micSwitch.isOn = false
             self.switchONorOFF = false
             self.switchButtonUpdate()
             self.present(fireSense, animated: true)

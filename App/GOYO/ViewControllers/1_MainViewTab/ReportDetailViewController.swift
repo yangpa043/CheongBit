@@ -16,8 +16,6 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     let data = SelectedLocData.shared.location
     // 신고 메시지 내용
     var reportContent: String = ""
-    // 위치 선택 테이블뷰 표시 Bool 값
-    var locationSelectIsHidden: Bool = true
     // 위치 선택 테이블뷰 셀 선택 Bool 값
     var locationSelected: Bool = false
     // 신고 타입 선택 완료 Bool 값
@@ -25,10 +23,9 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // 신고 타입 중 화재 신고 클릭
     var fireReportTypeSelected: Bool = false
     // 신고 타입 중 구조,구급 신고 클릭
-    var rescueReportTypeSelected: Bool = false
+    var rescueReportTypeSelected: Bool = true
     // 위치 셀 선택 Int
     var selectLocationNumber:Int = 0
-    
     
     // MARK: - Outlets
     
@@ -64,10 +61,11 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         
         applyDynamicfont()
         reportButton.isEnabled = false
-        locationShowTableView.isHidden = locationSelectIsHidden
+        locationShowTableView.isHidden = false
         
-        // 네비 바 백버튼 텍스트 수정
-        self.navigationController?.navigationBar.topItem?.title = "홈"
+        rescueReportTypeTapped()
+        fireReportTypeTapped()
+        reportTypeButtonsTapped()
         
         // 라디오 버튼 디자인
         fireReportTypeButton.setTitle("  화재 신고",for: .normal)
@@ -86,40 +84,24 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     @IBAction func locationSelectTapped(_ sender: UIButton) {
         
         // 버튼 눌렀을때 테이블 뷰 꺼졋다 켜졋다
-        if locationSelectIsHidden == true {
-            locationSelectIsHidden = false
+        if locationShowTableView.isHidden == true {
+            locationShowTableView.isHidden = false
             dontWorryLabel.isHidden = true
         } else {
-            locationSelectIsHidden = true
+            locationShowTableView.isHidden = true
             dontWorryLabel.isHidden = false
         }
-        
-        locationShowTableView.isHidden = locationSelectIsHidden
     }
     
     // 화재 신고 타입 버튼 눌렸을 때
     @IBAction func fireReportTypeButtonTapped(_ sender: Any) {
-        if fireReportTypeSelected == false {
-            fireReportTypeButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
-            fireReportTypeSelected = true
-            
-        } else {
-            fireReportTypeButton.setImage(UIImage(systemName: "square"), for: .normal)
-            fireReportTypeSelected = false
-        }
+        fireReportTypeTapped()
         reportTypeButtonsTapped()
     }
     
     // 구조,구급 신고 타입 버튼 눌렸을 때
     @IBAction func rescueReportTypeButtonTapped(_ sender: Any) {
-        if rescueReportTypeSelected == false {
-            rescueReportTypeButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
-            rescueReportTypeSelected = true
-            
-        } else {
-            rescueReportTypeButton.setImage(UIImage(systemName: "square"), for: .normal)
-            rescueReportTypeSelected = false
-        }
+        rescueReportTypeTapped()
         reportTypeButtonsTapped()
     }
     
@@ -168,6 +150,28 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     func stopIndicator() {
         self.indicator.isHidden = true
         self.indicator.stopAnimating()
+    }
+    
+    func rescueReportTypeTapped() {
+        if rescueReportTypeSelected == false {
+            rescueReportTypeButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+            rescueReportTypeSelected = true
+            
+        } else {
+            rescueReportTypeButton.setImage(UIImage(systemName: "square"), for: .normal)
+            rescueReportTypeSelected = false
+        }
+    }
+    
+    func fireReportTypeTapped() {
+        if fireReportTypeSelected == false {
+            fireReportTypeButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal)
+            fireReportTypeSelected = true
+            
+        } else {
+            fireReportTypeButton.setImage(UIImage(systemName: "square"), for: .normal)
+            fireReportTypeSelected = false
+        }
     }
     
     // 체크박스 버튼으로 신고 타입 선택
@@ -262,7 +266,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         let location = data[indexPath.row]
         
         cell.locationNameLabel.text = location.name
-        cell.locationLabel.text = location.location
+        cell.locationLabel.text = "\(location.location) \(location.locationDetail)"
         cell.locationLabel.dynamicFont(fontSize: 18, weight: .regular)
         cell.locationNameLabel.dynamicFont(fontSize: 24, weight: .regular)
         
@@ -284,9 +288,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         
         selectedRow = [indexPath.row]
         
-        locationSelectIsHidden = true
+        locationShowTableView.isHidden = true
         locationSelected = true
-        locationShowTableView.isHidden = locationSelectIsHidden
         
         if reportTypeSelected == true, locationSelected == true {
             

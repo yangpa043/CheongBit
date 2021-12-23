@@ -11,8 +11,8 @@
 		66067D282766C633005AF896 /* Font in Resources */ = {isa = PBXBuildFile; fileRef = 66067D272766C633005AF896 /* Font */; };
 		76349AB726E7332000BD7BAE /* LocSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76349AB626E7332000BD7BAE /* LocSelectViewController.swift */; };
 		76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */; };
-		76B3552D26EAEC0D00957891 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* Datas.swift */; };
-		D50221A4275706AC0041B4C5 /* LocEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50221A3275706AC0041B4C5 /* LocEditViewController.swift */; };
+		76B3552D26EAEC0D00957891 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* Data.swift */; };
+		D50221A4275706AC0041B4C5 /* LocAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50221A3275706AC0041B4C5 /* LocAddEditViewController.swift */; };
 		D503BD1A2725466C009D4DEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D503BD192725466C009D4DEA /* GoogleService-Info.plist */; };
 		D507BC8D275DAC5D005B9876 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D507BC8C275DAC5D005B9876 /* LoginViewController.swift */; };
 		D513D05D275EE69A006BB682 /* Main_FriendStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D513D05C275EE69A006BB682 /* Main_FriendStatusViewController.swift */; };
@@ -41,9 +41,9 @@
 		6EF2F125520C272FE7FC8681 /* Pods-GOYO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.release.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.release.xcconfig"; sourceTree = "<group>"; };
 		76349AB626E7332000BD7BAE /* LocSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocSelectViewController.swift; sourceTree = "<group>"; };
 		76B3552A26EAE13700957891 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FriendsTableViewCell.swift; path = GOYO/Cells/2_FriendsView/FriendsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		76B3552C26EAEC0D00957891 /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
+		76B3552C26EAEC0D00957891 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		85AFF045FC7CDB57354374BE /* Pods-GOYO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.debug.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.debug.xcconfig"; sourceTree = "<group>"; };
-		D50221A3275706AC0041B4C5 /* LocEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocEditViewController.swift; sourceTree = "<group>"; };
+		D50221A3275706AC0041B4C5 /* LocAddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocAddEditViewController.swift; sourceTree = "<group>"; };
 		D503BD192725466C009D4DEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D507BC8C275DAC5D005B9876 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D513D05C275EE69A006BB682 /* Main_FriendStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Main_FriendStatusViewController.swift; path = GOYO/ViewControllers/2_FriendViewTab/Main_FriendStatusViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -115,7 +115,7 @@
 				66067D272766C633005AF896 /* Font */,
 				D575487926CFF63000B2E602 /* AppDelegate.swift */,
 				D575487B26CFF63000B2E602 /* SceneDelegate.swift */,
-				76B3552C26EAEC0D00957891 /* Datas.swift */,
+				76B3552C26EAEC0D00957891 /* Data.swift */,
 				D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */,
 				D5AB1AF826F036EE0058AE87 /* Extension.swift */,
 				D5D8A6F526E6FF0900A31EC2 /* ViewControllers */,
@@ -135,7 +135,7 @@
 				D575487D26CFF63000B2E602 /* Main_ViewController.swift */,
 				76349AB626E7332000BD7BAE /* LocSelectViewController.swift */,
 				D593B793273CB275005784DB /* LocSearchViewController.swift */,
-				D50221A3275706AC0041B4C5 /* LocEditViewController.swift */,
+				D50221A3275706AC0041B4C5 /* LocAddEditViewController.swift */,
 				D5D8A70B26EEE35400A31EC2 /* ReportDetailViewController.swift */,
 			);
 			path = 1_MainViewTab;
@@ -198,11 +198,11 @@
 		D5D8A6F626E7031D00A31EC2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D575488426CFF63200B2E602 /* LaunchScreen.storyboard */,
 				D575487F26CFF63000B2E602 /* Main.storyboard */,
 				D5AB1AF026EF02900058AE87 /* 1_MainTab.storyboard */,
 				D5D8A70426EEDEFA00A31EC2 /* 2_FriendTab.storyboard */,
 				D5AB1AF226EF02A80058AE87 /* 3_MyPageTab.storyboard */,
-				D575488426CFF63200B2E602 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,8 +332,8 @@
 				D5D8A70C26EEE35400A31EC2 /* ReportDetailViewController.swift in Sources */,
 				D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */,
 				D513D05D275EE69A006BB682 /* Main_FriendStatusViewController.swift in Sources */,
-				D50221A4275706AC0041B4C5 /* LocEditViewController.swift in Sources */,
-				76B3552D26EAEC0D00957891 /* Datas.swift in Sources */,
+				D50221A4275706AC0041B4C5 /* LocAddEditViewController.swift in Sources */,
+				76B3552D26EAEC0D00957891 /* Data.swift in Sources */,
 				76B3552B26EAE13700957891 /* FriendsTableViewCell.swift in Sources */,
 				D5AB1AFD26F086020058AE87 /* LocationsTableViewCell.swift in Sources */,
 				D5D8A6F026E6ED0000A31EC2 /* DesignFile.swift in Sources */,

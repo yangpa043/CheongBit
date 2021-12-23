@@ -15,6 +15,7 @@ class LocAddEditViewController: UIViewController {
     var locationDetail: String?
     var locationNickname: String?
     var location: Location?
+    var userSelectedRow: Int?
     
     
     // MARK: - Outlets
@@ -46,9 +47,25 @@ class LocAddEditViewController: UIViewController {
     
     @IBAction func editCompleteButtonTapped(_ sender: Any) {
         
-        SelectedLocData.shared.location.append(Location(location: "\(self.LocationTextField.text ?? "") \(self.locDetailTextField.text ?? "")", locationDetail: "\(self.locDetailTextField.text ?? "")", name: self.locNicknameTextField.text ?? ""))
+        // 주소 편집 할 때에
+        if let userSelectedRow = userSelectedRow {
+            
+            SelectedLocData.shared.location[userSelectedRow].location = LocationTextField.text!
+            SelectedLocData.shared.location[userSelectedRow].locationDetail = locDetailTextField.text!
+            SelectedLocData.shared.location[userSelectedRow].name = locNicknameTextField.text ?? ""
+            
+            NotificationCenter.default.post(name: NSNotification.Name("locationEditComplete"), object: nil)
+            
+            print(SelectedLocData.shared.location[userSelectedRow])
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
+        // 주소 추가 할 때에
+        else {
+            SelectedLocData.shared.location.append(Location(location: "\(self.LocationTextField.text ?? "")", locationDetail: "\(self.locDetailTextField.text ?? "")", name: self.locNicknameTextField.text ?? ""))
+            
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
         
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func keyboardDoneButtonTapped(_ sender: Any) {

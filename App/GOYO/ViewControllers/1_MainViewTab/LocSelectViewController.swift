@@ -29,7 +29,7 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        NotificationCenter.default.addObserver(self, selector: #selector(didLocationEditCompleteNotification(_:)), name: NSNotification.Name("locationEditComplete"), object: nil)
         
         self.SelectedLocListTable.delegate = self
         self.SelectedLocListTable.dataSource = self
@@ -61,6 +61,10 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         
     }
     
+    @objc func didLocationEditCompleteNotification(_ notification: Notification) {
+        self.SelectedLocListTable.reloadData()
+    }
+    
     
     // MARK: - TableView Delegate
     
@@ -73,14 +77,9 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         let location = SelectedLocData.shared.location[indexPath.row]
         
         cell.locationNameLabel.text = location.name
-        cell.locationLabel.text = location.location
-        cell.showsReorderControl = true
+        cell.locationLabel.text = "\(location.location) \(location.locationDetail)"
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -89,17 +88,8 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         vcName.locationName = SelectedLocData.shared.location[indexPath.row].location
         vcName.locationDetail = SelectedLocData.shared.location[indexPath.row].locationDetail
         vcName.locationNickname = SelectedLocData.shared.location[indexPath.row].name
-        vcName.modalTransitionStyle = .coverVertical
+        vcName.userSelectedRow = indexPath.row
         self.present(vcName, animated: true, completion: nil)
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            SelectedLocData.shared.location.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        } else if editingStyle == .insert {
-            
-        }
     }
     
 }
