@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var MLTableView: UITableView!
     @IBOutlet weak var micSwitch: UISwitch!
-    @IBOutlet weak var micImage: UIImageView!
+    @IBOutlet weak var goyoImage: UIImageView!
     @IBOutlet weak var micStatusLabel: UILabel!
     @IBOutlet weak var micONandOFFStackView: UIStackView!
     @IBOutlet weak var mainView: ViewDesign!
@@ -42,7 +42,6 @@ class MainViewController: UIViewController {
         requestMicrophonePermission()
         MLTableView.isHidden = true
         // 마이크 스텍뷰 디자인
-//        micONandOFFStackView.layer.cornerRadius = micONandOFFStackView.frame.width/15
         micONandOFFStackView.layer.masksToBounds = false
         micSwitch.transform = CGAffineTransform(scaleX: 2, y: 2)
         micSwitch.thumbTintColor = #colorLiteral(red: 0.9997131228, green: 0.9688497186, blue: 0.8411275744, alpha: 1)
@@ -88,9 +87,8 @@ class MainViewController: UIViewController {
                 micCanceldAlert()
             }
             print("스위치 On")
-//            micSwitch.setImage(UIImage(named: "switchOn"), for: .normal)
-            micImage.image = UIImage(named: "micOn")
-            micStatusLabel.text = "고요가 소리를 듣는 중.."
+            goyoImage.image = UIImage(named: "goyoOn")
+            micStatusLabel.text = "고요가 경보 소리를 듣는 중.."
             switchONorOFF = false
             // ML On
             prepareForRecording()
@@ -100,8 +98,7 @@ class MainViewController: UIViewController {
         else {
             print("스위치 Off")
             fireCount = 0
-//            micSwitch.setImage(UIImage(named: "switchOff"), for: .normal)
-            micImage.image = UIImage(named: "micOff")
+            goyoImage.image = UIImage(named: "goyoOff")
             micStatusLabel.text = "고요가 자고 있습니다."
             switchONorOFF = true
             // ML OFF

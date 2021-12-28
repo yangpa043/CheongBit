@@ -44,7 +44,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ujp-4M-Uvn">
                                         <rect key="frame" x="18" y="0.0" width="292.66666666666669" height="351"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="micOff" translatesAutoresizingMaskIntoConstraints="NO" id="k91-zu-IdK">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goyoOff" translatesAutoresizingMaskIntoConstraints="NO" id="k91-zu-IdK">
                                                 <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="317"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="292.67000000000002" id="wm6-kx-XUV"/>
@@ -106,7 +106,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title=" " id="RGB-XW-5Md">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="map.fill" catalog="system" id="Q4C-aU-8Qu">
+                        <barButtonItem key="rightBarButtonItem" title="주소 설정" id="Q4C-aU-8Qu">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="YLi-JK-DSt" kind="show" id="yvr-gD-oTu"/>
@@ -115,8 +115,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="MLTableView" destination="8ft-sk-XMg" id="mKw-dp-jft"/>
+                        <outlet property="goyoImage" destination="k91-zu-IdK" id="Glx-Zm-4yw"/>
                         <outlet property="mainView" destination="yhW-BV-hyo" id="BM3-Cw-Sg3"/>
-                        <outlet property="micImage" destination="k91-zu-IdK" id="YrC-kw-Ud0"/>
                         <outlet property="micONandOFFStackView" destination="uZV-b8-Spl" id="zCg-NC-jhL"/>
                         <outlet property="micStatusLabel" destination="EjY-0R-nJN" id="dgf-Yc-agv"/>
                         <outlet property="micSwitch" destination="cMa-Tq-MBH" id="kyW-bh-RqX"/>
@@ -767,11 +767,10 @@
     <color key="tintColor" red="0.10980392160000001" green="0.1019607843" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="goyoOff" width="5422" height="7668"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="map.fill" catalog="system" width="128" height="110"/>
-        <image name="micOff" width="5422" height="7668"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">

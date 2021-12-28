@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Network
 
 class LocSearchViewController: UIViewController, ResultCellDelegate, UITableViewDelegate, UITableViewDataSource {
     
@@ -16,6 +17,8 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
     
     private var resultList = [SearchLocation]()
     var delegate: LocationSearchResultDelegate?
+    // 네트워크 연결 여부 bool 값
+    var checkNetworkValue: Bool = false
     
     
     // MARK: - Outlets
@@ -29,6 +32,8 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        checkNetworkStart()
         
         // 옵저버 등록
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveLocationNotification(_:)), name: NSNotification.Name("receivedLocation"), object: nil)
@@ -50,7 +55,18 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
     }
     
     @IBAction func SearchButtonTapped(_ sender: Any) {
-        doSearch()
+        
+        if checkNetworkValue == true{
+            doSearch()
+        } else {
+            let cantConnectNetwork = UIAlertController(title: "네트워크가 연결되어 있지 않아요.", message: "네트워크 연결 후 다시 시도해주세요.", preferredStyle: UIAlertController.Style.alert)
+            let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
+            
+            cantConnectNetwork.addAction(alertCancel)
+            
+            self.present(cantConnectNetwork, animated: true)
+        }
+        
     }
     
     @IBAction func keyboardDoneButtonTapped(_ sender: Any) {
@@ -70,6 +86,22 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
     
     // MARK: - Functions
     
+    // 네트워크 연결 여부 함수
+    let monitor = NWPathMonitor()
+    func checkNetworkStart() {
+        self.monitor.start(queue: DispatchQueue.global())
+        self.monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied { // 네트워크가 연결된 경우
+                print("[Network Connected]")
+                self.checkNetworkValue = true
+            } else { // 네트워크가 연결되지 않은 경우
+                print("[Network Not Connected]")
+                self.checkNetworkValue = false
+            }
+        }
+    }
+    
+    // rest api 검색
     func doSearchLocation(keyword: String, page: Int) {
         let headers: HTTPHeaders = [
             "Authorization": "KakaoAK cfb37488fa79ab6fb481894551bb3e79"
