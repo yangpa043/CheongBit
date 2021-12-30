@@ -32,8 +32,6 @@ class LocAddEditViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        completeButtonDisalbe()
-        
         if let locationName = locationName {
             print("받았다!", locationName)
             LocationTextField.text = locationName
@@ -42,34 +40,21 @@ class LocAddEditViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        completeButtonDisalbe()
+    }
     
     // MARK: - Actions
     
     @IBAction func editCompleteButtonTapped(_ sender: Any) {
         
-        // 주소 편집 할 때에
-        if let userSelectedRow = userSelectedRow {
-            
-            SelectedLocData.shared.location[userSelectedRow].location = LocationTextField.text!
-            SelectedLocData.shared.location[userSelectedRow].locationDetail = locDetailTextField.text!
-            SelectedLocData.shared.location[userSelectedRow].name = locNicknameTextField.text ?? ""
-            
-            NotificationCenter.default.post(name: NSNotification.Name("locationEditComplete"), object: nil)
-            
-            print(SelectedLocData.shared.location[userSelectedRow])
-            self.presentingViewController?.dismiss(animated: true, completion: nil)
-        }
-        // 주소 추가 할 때에
-        else {
-            SelectedLocData.shared.location.append(Location(location: "\(self.LocationTextField.text ?? "")", locationDetail: "\(self.locDetailTextField.text ?? "")", name: self.locNicknameTextField.text ?? ""))
-            
-            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-        }
+        appendCell()
         
     }
     
     @IBAction func keyboardDoneButtonTapped(_ sender: Any) {
         self.view.endEditing(true)
+        completeButtonDisalbe()
     }
     
     @IBAction func checkEditing(_ sender: Any) {
@@ -82,6 +67,36 @@ class LocAddEditViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
           self.view.endEditing(true)
 
+    }
+    
+    func appendCell() {
+        if let userSelectedRow = userSelectedRow { // 주소 편집 할 때에
+            
+            if locNicknameTextField.hasText == true {
+                SelectedLocData.shared.location[userSelectedRow].location = LocationTextField.text!
+                SelectedLocData.shared.location[userSelectedRow].locationDetail = locDetailTextField.text!
+                SelectedLocData.shared.location[userSelectedRow].name = locNicknameTextField.text!
+            } else {
+                SelectedLocData.shared.location[userSelectedRow].location = LocationTextField.text!
+                SelectedLocData.shared.location[userSelectedRow].locationDetail = locDetailTextField.text!
+                SelectedLocData.shared.location[userSelectedRow].name = LocationTextField.text!
+            }
+            
+            
+            NotificationCenter.default.post(name: NSNotification.Name("locationEditComplete"), object: nil)
+            
+            print(SelectedLocData.shared.location[userSelectedRow])
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
+            
+        } else { // 주소 추가 할 때에
+            if locNicknameTextField.hasText == true {
+                SelectedLocData.shared.location.append(Location(location: "\(self.LocationTextField.text ?? "")", locationDetail: "\(self.locDetailTextField.text ?? "")", name: self.locNicknameTextField.text ?? ""))
+            } else {
+                SelectedLocData.shared.location.append(Location(location: "\(self.LocationTextField.text ?? "")", locationDetail: "\(self.locDetailTextField.text ?? "")", name: self.LocationTextField.text ?? ""))
+            }
+            
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        }
     }
     
     // 완료버튼 활성화

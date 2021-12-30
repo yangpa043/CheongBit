@@ -73,6 +73,10 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
         doSearch()
     }
     
+    
+    // MARK: - Functions
+    
+    // 주소 선택 후 LocAddEditVC에 데이터 보내는 노티
     @objc func didRecieveLocationNotification(_ notification: Notification) {
         print("receivedLocation 받았음")
         guard let location: String = notification.userInfo?["Location"] as? String else { return }
@@ -82,9 +86,6 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
         vcName.modalTransitionStyle = .coverVertical
         self.present(vcName, animated: true, completion: nil)
     }
-    
-    
-    // MARK: - Functions
     
     // 네트워크 연결 여부 함수
     let monitor = NWPathMonitor()

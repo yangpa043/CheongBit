@@ -266,7 +266,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         let location = data[indexPath.row]
         
         cell.locationNameLabel.text = location.name
-        cell.locationLabel.text = "\(location.location) \(location.locationDetail)"
+        cell.locationLabel.text = location.location
         cell.locationLabel.dynamicFont(fontSize: 18, weight: .regular)
         cell.locationNameLabel.dynamicFont(fontSize: 24, weight: .regular)
         
