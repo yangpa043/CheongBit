@@ -88,6 +88,12 @@
                                     <outlet property="dataSource" destination="zNb-AT-MS6" id="yp8-OT-Wjl"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚠️ 현재는 개발자에게 신고가 들어갑니다 ^^" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2h-7h-ULB">
+                                <rect key="frame" x="44.666666666666657" y="629.66666666666663" width="300.66666666666674" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uUg-Ms-x4c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -102,7 +108,9 @@
                             <constraint firstItem="uZV-b8-Spl" firstAttribute="centerY" secondItem="yhW-BV-hyo" secondAttribute="centerY" constant="-60" id="a8a-AQ-LCq"/>
                             <constraint firstItem="uUg-Ms-x4c" firstAttribute="trailing" secondItem="8ft-sk-XMg" secondAttribute="trailing" constant="60" id="b6s-mL-hqg"/>
                             <constraint firstItem="uZV-b8-Spl" firstAttribute="centerX" secondItem="yhW-BV-hyo" secondAttribute="centerX" id="eZV-Ao-M1S"/>
+                            <constraint firstItem="L2h-7h-ULB" firstAttribute="centerX" secondItem="yhW-BV-hyo" secondAttribute="centerX" id="j1P-xh-vVf"/>
                             <constraint firstItem="8ft-sk-XMg" firstAttribute="leading" secondItem="uUg-Ms-x4c" secondAttribute="leading" constant="60" id="nWD-lS-IAI"/>
+                            <constraint firstItem="Crw-Sk-Xv1" firstAttribute="top" secondItem="L2h-7h-ULB" secondAttribute="bottom" constant="5" id="nbZ-vZ-31d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title=" " id="RGB-XW-5Md">
@@ -210,17 +218,17 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ecL-uf-teV">
-                                <rect key="frame" x="40" y="249" width="310" height="320"/>
+                                <rect key="frame" x="20" y="249" width="350" height="400"/>
                                 <color key="backgroundColor" red="0.99971312280000002" green="0.96884971860000002" blue="0.84112757439999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="Zpg-2l-C6T"/>
+                                    <constraint firstAttribute="height" constant="400" id="Zpg-2l-C6T"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationShowCell" id="wNn-bG-HwZ" customClass="ReportDetailTableViewCell" customModule="GOYO" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="310" height="76"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="350" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wNn-bG-HwZ" id="5uD-hv-zan">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9UF-gB-jTH">
@@ -262,8 +270,8 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚠️현재는 119 신고 기능이 비활성화 되었습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2M-p9-1ka">
-                                <rect key="frame" x="32.666666666666657" y="629.66666666666663" width="324.66666666666674" height="20.333333333333371"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚠️ 현재는 개발자에게 신고가 들어갑니다 ^^" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2M-p9-1ka">
+                                <rect key="frame" x="44.666666666666657" y="629.66666666666663" width="300.66666666666674" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -284,7 +292,7 @@
                             <constraint firstItem="ecL-uf-teV" firstAttribute="top" secondItem="s4y-LJ-oZ9" secondAttribute="bottom" id="ANN-Jc-S6L"/>
                             <constraint firstItem="s4y-LJ-oZ9" firstAttribute="top" secondItem="qGS-RG-EWK" secondAttribute="top" constant="60" id="AY6-k2-zgQ"/>
                             <constraint firstItem="2Ha-oY-SRA" firstAttribute="leading" secondItem="qGS-RG-EWK" secondAttribute="leading" constant="40" id="DLl-2y-45o"/>
-                            <constraint firstItem="ecL-uf-teV" firstAttribute="leading" secondItem="qGS-RG-EWK" secondAttribute="leading" constant="40" id="JMb-cE-3FX"/>
+                            <constraint firstItem="ecL-uf-teV" firstAttribute="leading" secondItem="qGS-RG-EWK" secondAttribute="leading" constant="20" id="JMb-cE-3FX"/>
                             <constraint firstItem="ecL-uf-teV" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="K0W-cn-Ybz"/>
                             <constraint firstItem="du5-yG-CqQ" firstAttribute="top" secondItem="h2M-p9-1ka" secondAttribute="bottom" constant="5" id="Sxs-wV-PCX"/>
                             <constraint firstItem="s4y-LJ-oZ9" firstAttribute="leading" secondItem="qGS-RG-EWK" secondAttribute="leading" constant="40" id="T8O-vg-l2G"/>
@@ -585,8 +593,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ZxY-zm-rGa">
                                 <rect key="frame" x="20" y="84" width="350" height="77.333333333333314"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도로명 주소" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQE-st-eGP">
-                                        <rect key="frame" x="0.0" y="0.0" width="118.33333333333333" height="31.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도로명 주소*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQE-st-eGP">
+                                        <rect key="frame" x="0.0" y="0.0" width="129" height="31.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -615,8 +623,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="foB-9C-9QO">
                                 <rect key="frame" x="20" y="191.33333333333334" width="350" height="77.333333333333343"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상세 주소" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-4b-1Bh">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="31.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상세 주소*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-4b-1Bh">
+                                        <rect key="frame" x="0.0" y="0.0" width="106.66666666666667" height="31.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -720,10 +728,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="LocationTextField" destination="3xy-R9-bAi" id="dFT-aG-tne"/>
                         <outlet property="completeButton" destination="TEk-aM-1al" id="Kp8-WI-OLW"/>
+                        <outlet property="locDetailLabel" destination="gRt-4b-1Bh" id="A6f-aU-efu"/>
                         <outlet property="locDetailTextField" destination="cAC-ub-GB4" id="r8U-Io-1Nx"/>
                         <outlet property="locNicknameTextField" destination="bbm-ev-s6O" id="VtJ-AE-Rrn"/>
+                        <outlet property="locationLabel" destination="WQE-st-eGP" id="XDg-ti-qLl"/>
+                        <outlet property="locationTextField" destination="3xy-R9-bAi" id="4KM-s4-LPX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nU-KZ-lzJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

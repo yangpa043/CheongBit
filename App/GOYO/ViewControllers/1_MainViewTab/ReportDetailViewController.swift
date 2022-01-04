@@ -7,13 +7,14 @@
 
 import UIKit
 import MessageUI
+import CoreLocation
+import Alamofire
+import SwiftyJSON
 
-class ReportDetailViewController: UIViewController, MFMessageComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ReportDetailViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Variables
     
-    // 위치데이터 shared
-    let data = SelectedLocData.shared.location
     // 신고 메시지 내용
     var reportContent: String = ""
     // 위치 선택 테이블뷰 셀 선택 Bool 값
@@ -25,7 +26,11 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // 신고 타입 중 구조,구급 신고 클릭
     var rescueReportTypeSelected: Bool = true
     // 위치 셀 선택 Int
-    var selectLocationNumber:Int = 0
+    var selectLocationNumber: Int = 0
+    // 현위치 신고
+    let currentLocManger = CLLocationManager()
+    var latitude: Double = 0.0 // 위도
+    var longitude: Double = 0.0 // 경도
     
     // MARK: - Outlets
     
@@ -42,7 +47,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     // ⚠️걱정마세유 지금은 119로 신고 안갑니다.
     @IBOutlet weak var dontWorryLabel: UILabel!
-   
+    
     
     // MARK: - LifeCycle
     
@@ -59,6 +64,10 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         self.locationShowTableView.delegate = self
         self.locationShowTableView.dataSource = self
         
+        currentLocManger.delegate = self
+        currentLocManger.desiredAccuracy = kCLLocationAccuracyBest
+        currentLocManger.distanceFilter = 2
+        
         applyDynamicfont()
         reportButton.isEnabled = false
         locationShowTableView.isHidden = false
@@ -72,22 +81,35 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         rescueReportTypeButton.setTitle("  구조, 구급 신고", for: .normal)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.locationShowTableView.reloadData()
         
+        if CLLocationManager.locationServicesEnabled() { // 위치서비스 권한 체크
+            currentLocManger.startUpdatingLocation()
+        } else {
+            print("위치서비스가 꺼져있어요")
+        }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        currentLocManger.stopUpdatingLocation()
+        
+        // 현위치 cell 삭제하기
+        if (SelectedLocData.shared.location.firstIndex(where: { $0.name == "현위치" }) != nil) {
+            SelectedLocData.shared.location.removeAll(where: { $0.name == "현위치"})
+        }
+    }
     
     // MARK: - Actions
     
     // 장소를 선택해 주세요 버튼 눌렸을 때
     @IBAction func locationSelectTapped(_ sender: UIButton) {
         
-        // 버튼 눌렀을때 테이블 뷰 꺼졋다 켜졋다
-        if locationShowTableView.isHidden == true {
+        if locationShowTableView.isHidden == true { // 테이블뷰 on
             locationShowTableView.isHidden = false
             dontWorryLabel.isHidden = true
-        } else {
+        } else { // 테이블뷰 off
             locationShowTableView.isHidden = true
             dontWorryLabel.isHidden = false
         }
@@ -196,10 +218,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         let fireString = "\n화재 신고"
         let rescueString = "\n구조, 구급 신고"
         
-        // 이미 주소가 선택되어 있을 때 메시지 내용 추가
-        if locationSelected == true {
-            reportContent = data[selectLocationNumber].location
-        }
+        reportContent = SelectedLocData.shared.location[selectLocationNumber].location
         
         if fireReportTypeSelected == true {
             reportContent += fireString
@@ -208,6 +227,50 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         if rescueReportTypeSelected == true {
             reportContent += rescueString
         }
+    }
+    
+    // 현위치 좌표 조회 함수
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("didCheckCurrentLocation")
+        if let location = locations.first {
+            latitude = location.coordinate.latitude
+            longitude = location.coordinate.longitude
+            doSearchLocationCoordinates(latitude: latitude, longitude: longitude)
+        }
+    }
+    
+    // 위도 경도 받아오기 에러
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
+    // 좌표 주소편환 api 함수
+    func doSearchLocationCoordinates(latitude: Double, longitude: Double) {
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "KakaoAK cfb37488fa79ab6fb481894551bb3e79"
+        ]
+        
+        let parameters: [String: Any] = [
+            "x": longitude,
+            "y": latitude,
+            "input_coord": "WGS84"
+        ]
+        
+        AF.request("https://dapi.kakao.com/v2/local/geo/coord2address.json", method: .get, parameters: parameters, headers: headers).responseJSON(completionHandler: { response in
+            switch response.result {
+            case.success(let value): // api 성공
+                if JSON(value)["documents"].arrayValue.count > 0, let Location = JSON(value)["documents"][0]["address"]["address_name"].string { // api값이 있을 경우
+                    print("좌표주소: \(Location)")
+                    SelectedLocData.shared.location[0].location = Location
+                    self.locationShowTableView.reloadData()
+                } else { // 값이 없을 경우
+                    print("non value")
+                }
+            case.failure(let error): // api 실패
+                print(error)
+            }
+        })
         
     }
     
@@ -257,13 +320,13 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data.count
+        SelectedLocData.shared.location.count
     }
     
     // cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationShowCell", for: indexPath) as! ReportDetailTableViewCell
-        let location = data[indexPath.row]
+        let location = SelectedLocData.shared.location[indexPath.row]
         
         cell.locationNameLabel.text = location.name
         cell.locationLabel.text = location.location
@@ -278,7 +341,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             var myString = ""
             _ = selectedRow.map{ myString += "\($0)" }
             let myInt = Int(myString)
-            locationInfoButton.setTitle("\(data[myInt!].name)  ⌵", for: .normal)
+            locationInfoButton.setTitle("\(SelectedLocData.shared.location[myInt!].name)  ⌵", for: .normal)
             selectLocationNumber = myInt!
         }
     }

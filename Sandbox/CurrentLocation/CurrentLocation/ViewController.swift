@@ -40,18 +40,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            print("didUpdateLocations")
-            if let location = locations.first {
-                latitudeLabel.text = "위도: \(location.coordinate.latitude)"
-                longitudeLabel.text = "경도: \(location.coordinate.longitude)"
-                locationManger.stopUpdatingLocation()
-            }
+        print("didUpdateLocations")
+        if let location = locations.first {
+            latitudeLabel.text = "위도: \(location.coordinate.latitude)"
+            longitudeLabel.text = "경도: \(location.coordinate.longitude)"
+            locationManger.stopUpdatingLocation()
         }
-        
-        // 위도 경도 받아오기 에러
-        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            print(error)
-        }
+    }
+    
+    // 위도 경도 받아오기 에러
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
     
     let findLocation = CLLocation(latitude: 37.576029, longitude: 126.976920)
     let geocoder = CLGeocoder()

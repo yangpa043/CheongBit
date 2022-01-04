@@ -9,6 +9,7 @@ import UIKit
 import AVKit
 import AVFoundation
 import SoundAnalysis
+import CoreLocation
 
 class MainViewController: UIViewController {
     
@@ -36,10 +37,19 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 권한 요청
+        requestMicrophonePermission()
+        CLLocationManager().requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            print("위치서비스 On")
+        } else {
+            print("위치서비스 Off")
+        }
+        
         self.view.backgroundColor = #colorLiteral(red: 0.9997131228, green: 0.9688497186, blue: 0.8411275744, alpha: 1)
         switchButtonUpdate()
         applyDynamicFont()
-        requestMicrophonePermission()
         MLTableView.isHidden = true
         // 마이크 스텍뷰 디자인
         micONandOFFStackView.layer.masksToBounds = false
@@ -70,7 +80,7 @@ class MainViewController: UIViewController {
     
     // 신고버튼
     @IBAction func reportButtonTapped(_ sender: UIButton) {
-        
+        SelectedLocData.shared.location.insert(Location(location: "현재 위치를 기반으로 신고합니다.", locationDetail: "", name: "현위치"), at: 0)
     }
     
     

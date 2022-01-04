@@ -76,6 +76,11 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
     
     // MARK: - Functions
     
+    // 화면터치로 키보드 내리기
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+          self.view.endEditing(true)
+    }
+    
     // 주소 선택 후 LocAddEditVC에 데이터 보내는 노티
     @objc func didRecieveLocationNotification(_ notification: Notification) {
         print("receivedLocation 받았음")
@@ -109,6 +114,7 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
         ]
         
         let parameters: [String: Any] = [
+            "analyze_type": "similar",
             "query": keyword,
             "page": page,
             "size": 20
@@ -160,7 +166,7 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
         self.indicator.isHidden = false
         self.indicator.startAnimating()
         
-        self.doSearchLocation(keyword: textFieldLoc.text ?? "" , page: 0)
+        self.doSearchLocation(keyword: textFieldLoc.text ?? "" , page: 1)
         self.view.endEditing(true)
         
     }
