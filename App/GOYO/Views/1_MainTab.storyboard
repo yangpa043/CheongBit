@@ -112,6 +112,11 @@
                             <constraint firstItem="8ft-sk-XMg" firstAttribute="leading" secondItem="uUg-Ms-x4c" secondAttribute="leading" constant="60" id="nWD-lS-IAI"/>
                             <constraint firstItem="Crw-Sk-Xv1" firstAttribute="top" secondItem="L2h-7h-ULB" secondAttribute="bottom" constant="5" id="nbZ-vZ-31d"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="L2h-7h-ULB"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title=" " id="RGB-XW-5Md">
                         <barButtonItem key="rightBarButtonItem" title="주소 설정" id="Q4C-aU-8Qu">
@@ -305,6 +310,11 @@
                             <constraint firstItem="2Ha-oY-SRA" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="wMR-rj-3dQ"/>
                             <constraint firstItem="tf0-nN-50Q" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="zKi-Um-Mqu"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="h2M-p9-1ka"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="신고하기" id="bQr-bv-BOB"/>
                     <connections>
