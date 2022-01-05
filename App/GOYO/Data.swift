@@ -19,7 +19,7 @@ class SelectedLocData {
     static let shared = SelectedLocData()
     
     var location: [Location] = [
-        Location(location: "경기 양평군 양수로 177-6", locationDetail: "702호", name: "샘플 주소 1"),
-        Location(location: "울산 울주군 청량읍 삼정로 92", locationDetail: "207-905", name: "샘플 주소 2")
+        Location(location: "경기 양평군 양수로 177-6", locationDetail: "702호", name: "우리 집"),
+        Location(location: "서울 종로구 대학로 116", locationDetail: "공공일호 4층", name: "거캠")
     ]
 }
