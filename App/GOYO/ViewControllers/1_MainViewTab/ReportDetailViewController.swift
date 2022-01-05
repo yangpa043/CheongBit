@@ -34,7 +34,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     // MARK: - Outlets
     
-    @IBOutlet weak var placeContentTitle: UILabel!
+    @IBOutlet weak var locationContentTitle: UILabel!
     @IBOutlet weak var reportContentTitle: UILabel!
     @IBOutlet weak var locationInfoButton: UIButton!
     @IBOutlet weak var fireReportTypeButton: UIButton!
@@ -161,10 +161,9 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     // 폰 크기에 따라서 폰트 바뀌는 함수
     func applyDynamicfont() {
-        placeContentTitle.dynamicFont(fontSize:30 , weight: .thin)
-        locationInfoButton
-            .titleLabel?.dynamicFont(fontSize: 24, weight: .thin)
-        reportContentTitle.dynamicFont(fontSize: 30, weight: .thin)
+        locationContentTitle.dynamicFont(fontSize:30 , weight: .semibold)
+        locationInfoButton.titleLabel?.dynamicFont(fontSize: 24, weight: .thin)
+        reportContentTitle.dynamicFont(fontSize: 30, weight: .semibold)
         rescueReportTypeButton.titleLabel?.dynamicFont(fontSize: 24, weight: .thin)
         fireReportTypeButton.titleLabel?.dynamicFont(fontSize: 24, weight: .thin)
     }

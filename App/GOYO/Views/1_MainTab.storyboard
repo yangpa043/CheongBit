@@ -311,9 +311,9 @@
                         <outlet property="dontWorryLabel" destination="h2M-p9-1ka" id="yH9-hw-9gL"/>
                         <outlet property="fireReportTypeButton" destination="bah-iF-6Wu" id="Hrl-Ru-oWS"/>
                         <outlet property="indicator" destination="tf0-nN-50Q" id="GhX-WS-Pbg"/>
+                        <outlet property="locationContentTitle" destination="idi-wJ-Nhv" id="dmL-pG-hdn"/>
                         <outlet property="locationInfoButton" destination="Q6p-1k-Pqo" id="zHa-le-CTc"/>
                         <outlet property="locationShowTableView" destination="ecL-uf-teV" id="urP-uB-cLO"/>
-                        <outlet property="placeContentTitle" destination="idi-wJ-Nhv" id="PGT-Jq-JEh"/>
                         <outlet property="reportButton" destination="du5-yG-CqQ" id="7lZ-cW-jcc"/>
                         <outlet property="reportContentTitle" destination="2sR-Ja-c51" id="JNF-bY-uhs"/>
                         <outlet property="rescueReportTypeButton" destination="POm-XR-oOo" id="hT2-1E-IkO"/>

@@ -63,11 +63,6 @@ class MainViewController: UIViewController {
     
     // MARK: - Actions
     
-    // 주소설정버튼
-    @IBAction func locationSelectbuttonTapped(_ sender: UIButton) {
-        
-    }
-    
     // 마이크 스위치 버튼
     @IBAction func switchChanged(_ sender: UISwitch) {
         if micPermissionStatus == false {
