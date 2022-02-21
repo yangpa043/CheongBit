@@ -150,7 +150,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         let composeViewController = MFMessageComposeViewController()
         
         composeViewController.messageComposeDelegate = self
-        composeViewController.recipients = ["01095955434"]
+        composeViewController.recipients = ["01057686469"]
         composeViewController.body = reportContent
         present(composeViewController, animated: true, completion: nil)
         
@@ -328,8 +328,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         let location = SelectedLocData.shared.location[indexPath.row]
         
         cell.locationNameLabel.text = location.name
-        cell.locationLabel.text = location.location
-        cell.locationLabel.dynamicFont(fontSize: 18, weight: .regular)
+        cell.locationLabel.text = "\(location.location) \(location.locationDetail)"
+        cell.locationLabel.dynamicFont(fontSize: 17, weight: .regular)
         cell.locationNameLabel.dynamicFont(fontSize: 24, weight: .regular)
         
         return cell
