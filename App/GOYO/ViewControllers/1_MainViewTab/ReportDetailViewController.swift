@@ -10,6 +10,7 @@ import MessageUI
 import CoreLocation
 import Alamofire
 import SwiftyJSON
+import CoreMIDI
 
 class ReportDetailViewController: UIViewController, MFMessageComposeViewControllerDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource {
     
