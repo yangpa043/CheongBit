@@ -33,6 +33,6 @@ class ReportDetailTableViewCell: UITableViewCell {
         super.layoutSubviews()
         
         contentView.layer.cornerRadius = 5
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 3, left: 0, bottom: 3, right: 0))
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0))
     }
 }

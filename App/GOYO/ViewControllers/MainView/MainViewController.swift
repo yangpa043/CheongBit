@@ -47,7 +47,7 @@ class MainViewController: UIViewController {
             print("위치서비스 Off")
         }
         
-        self.view.backgroundColor = #colorLiteral(red: 0.9997131228, green: 0.9688497186, blue: 0.8411275744, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 1, green: 0.968627451, blue: 0.8392156863, alpha: 1)
         switchButtonUpdate()
         applyDynamicFont()
         MLTableView.isHidden = true
@@ -75,7 +75,7 @@ class MainViewController: UIViewController {
     
     // 신고버튼
     @IBAction func reportButtonTapped(_ sender: UIButton) {
-        SelectedLocData.shared.location.insert(Location(location: "현재 위치를 기반으로 신고합니다.", locationDetail: "", name: "현위치"), at: 0)
+        SelectedLocData.shared.location.insert(Location(location: "위치서비스를 받을 수 없습니다.", locationDetail: "", name: "현위치"), at: 0)
     }
     
     

@@ -64,6 +64,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         
         self.locationShowTableView.delegate = self
         self.locationShowTableView.dataSource = self
+        locationShowTableView.layer.cornerRadius = 5.0
         
         currentLocManger.delegate = self
         currentLocManger.desiredAccuracy = kCLLocationAccuracyBest
@@ -78,8 +79,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         reportTypeButtonsTapped()
         
         // 라디오 버튼 디자인
-        fireReportTypeButton.setTitle("  화재 신고",for: .normal)
-        rescueReportTypeButton.setTitle("  구조, 구급 신고", for: .normal)
+        fireReportTypeButton.setTitle("  화재가 발생하였습니다.",for: .normal)
+        rescueReportTypeButton.setTitle("  구조/구급이 필요합니다.", for: .normal)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -215,8 +216,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     // 화재 신고 내용 입력 함수
     func decideReportContent() {
-        let fireString = "\n화재 신고"
-        let rescueString = "\n구조, 구급 신고"
+        let fireString = "\n[화재 발생]"
+        let rescueString = "\n[구조,구급 필요]"
         
         reportContent = SelectedLocData.shared.location[selectLocationNumber].location
         
