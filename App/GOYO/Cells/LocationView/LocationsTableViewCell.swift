@@ -26,7 +26,5 @@ class LocationsTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        contentView.layer.borderWidth = 0.5
-        contentView.layer.borderColor = UIColor.lightGray.cgColor
     }
 }

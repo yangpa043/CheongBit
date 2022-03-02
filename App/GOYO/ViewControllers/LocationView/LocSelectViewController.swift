@@ -21,8 +21,8 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     
     // MARK: - Outlets
     
-    @IBOutlet weak var SelectedLocListTable: UITableView!
-    
+    @IBOutlet weak var selectedLocListTable: UITableView!
+    @IBOutlet weak var tableViewEditButton: UIBarButtonItem!
     
     // MARK: - LifeCycle
     
@@ -31,28 +31,31 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         
         NotificationCenter.default.addObserver(self, selector: #selector(didLocationEditCompleteNotification(_:)), name: NSNotification.Name("locationEditComplete"), object: nil)
         
-        self.SelectedLocListTable.delegate = self
-        self.SelectedLocListTable.dataSource = self
+        self.selectedLocListTable.delegate = self
+        self.selectedLocListTable.dataSource = self
+        selectedLocListTable.separatorInset.left = 0
         
         applyDynamicFont()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.SelectedLocListTable.reloadData()
+        self.selectedLocListTable.reloadData()
     }
     
     
     // MARK: - Actions
     
-    //뒤로가기 버튼
-    @IBAction func backButtonTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    // tableView 편집버튼
+    @IBAction func tableViewEdit(_ sender: Any) {
+        if selectedLocListTable.isEditing {
+            tableViewEditButton.title = "편집"
+            selectedLocListTable.setEditing(false, animated: true)
+        } else {
+            tableViewEditButton.title = "완료"
+            selectedLocListTable.setEditing(true, animated: true)
+        }
     }
     
-    @IBAction func editButtonTapped(_ sender: Any) {
-        let tableViewEditingMode = SelectedLocListTable.isEditing
-        SelectedLocListTable.setEditing(tableViewEditingMode, animated: true)
-    }
     
     
     // MARK: - Functions
@@ -62,7 +65,7 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     @objc func didLocationEditCompleteNotification(_ notification: Notification) {
-        self.SelectedLocListTable.reloadData()
+        self.selectedLocListTable.reloadData()
     }
     
     
@@ -92,4 +95,14 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         self.present(vcName, animated: true, completion: nil)
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            SelectedLocData.shared.location.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 }

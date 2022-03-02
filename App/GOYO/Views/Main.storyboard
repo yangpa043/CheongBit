@@ -96,7 +96,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uUg-Ms-x4c"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uZV-b8-Spl" firstAttribute="top" secondItem="uUg-Ms-x4c" secondAttribute="top" constant="45" id="2VU-Ws-udN"/>
                             <constraint firstItem="8ft-sk-XMg" firstAttribute="top" secondItem="uUg-Ms-x4c" secondAttribute="top" constant="567" id="9sp-x9-KYh"/>
@@ -733,15 +733,15 @@
                                     <segue destination="cg8-Tm-uef" kind="modal" modalPresentationStyle="fullScreen" id="G2o-YH-EUl"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4wm-0Q-FHf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4wm-0Q-FHf">
                                 <rect key="frame" x="0.0" y="203" width="390" height="558"/>
                                 <color key="backgroundColor" red="0.99971312280000002" green="0.96884971860000002" blue="0.84112757439999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="locationCell" rowHeight="66" id="nvO-3M-Xub" customClass="LocationsTableViewCell" customModule="GOYO" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="locationCell" rowHeight="66" id="nvO-3M-Xub" customClass="LocationsTableViewCell" customModule="GOYO" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nvO-3M-Xub" id="IaI-cf-RX2">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="361.33333333333331" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fat-lC-4P4">
@@ -759,22 +759,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UwY-KV-RMg">
-                                                    <rect key="frame" x="357.66666666666669" y="22" width="12.333333333333314" height="22.333333333333329"/>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.99971312280000002" green="0.96884971860000002" blue="0.84112757439999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="fat-lC-4P4" firstAttribute="leading" secondItem="IaI-cf-RX2" secondAttribute="leading" constant="20" id="G4h-kh-R2j"/>
-                                                <constraint firstItem="UwY-KV-RMg" firstAttribute="centerY" secondItem="IaI-cf-RX2" secondAttribute="centerY" id="IID-Fo-yqz"/>
                                                 <constraint firstAttribute="bottom" secondItem="YMe-tI-ykh" secondAttribute="bottom" constant="12" id="Ncf-AJ-G3R"/>
-                                                <constraint firstAttribute="trailing" secondItem="UwY-KV-RMg" secondAttribute="trailing" constant="20" id="O2z-li-ZG4"/>
-                                                <constraint firstItem="UwY-KV-RMg" firstAttribute="top" secondItem="IaI-cf-RX2" secondAttribute="top" constant="20" id="QjB-Rc-Kmz"/>
                                                 <constraint firstItem="YMe-tI-ykh" firstAttribute="leading" secondItem="IaI-cf-RX2" secondAttribute="leading" constant="20" id="uWR-08-QQ7"/>
                                                 <constraint firstItem="fat-lC-4P4" firstAttribute="top" secondItem="IaI-cf-RX2" secondAttribute="top" constant="12" id="zfF-3A-VIp"/>
                                                 <constraint firstItem="YMe-tI-ykh" firstAttribute="top" secondItem="fat-lC-4P4" secondAttribute="bottom" constant="5" id="zjK-7w-e0N"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="locationLabel" destination="YMe-tI-ykh" id="t7Y-Yh-4kM"/>
                                             <outlet property="locationNameLabel" destination="fat-lC-4P4" id="2xG-Nr-kkA"/>
@@ -795,9 +790,16 @@
                             <constraint firstItem="MQM-98-uPG" firstAttribute="leading" secondItem="V8z-GN-pCe" secondAttribute="leading" constant="16" id="yC8-cg-SxB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="신고 주소 설정" id="7L7-lO-ob2"/>
+                    <navigationItem key="navigationItem" title="신고 주소 설정" id="7L7-lO-ob2">
+                        <barButtonItem key="rightBarButtonItem" title="편집" id="gcF-tH-ZxH">
+                            <connections>
+                                <action selector="tableViewEdit:" destination="YLi-JK-DSt" id="Swz-or-5wc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="SelectedLocListTable" destination="4wm-0Q-FHf" id="L6j-jJ-dqL"/>
+                        <outlet property="selectedLocListTable" destination="4wm-0Q-FHf" id="PhE-x2-34f"/>
+                        <outlet property="tableViewEditButton" destination="gcF-tH-ZxH" id="bWo-cS-4md"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJa-Cb-nVj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1163,7 +1165,6 @@
     </scenes>
     <color key="tintColor" red="0.10980392160000001" green="0.1019607843" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="goyoOff" width="5422" height="7668"/>
         <image name="house" catalog="system" width="128" height="106"/>
