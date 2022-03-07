@@ -8,6 +8,8 @@ target 'GOYO' do
   # Pods for GOYO
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Core'
   pod 'GoogleSignIn'
   pod 'Alamofire'
   pod 'SwiftyJSON'
