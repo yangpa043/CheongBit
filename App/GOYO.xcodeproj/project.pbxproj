@@ -19,8 +19,7 @@
 		D575488326CFF63200B2E602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D575488226CFF63200B2E602 /* Assets.xcassets */; };
 		D575488626CFF63200B2E602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D575488426CFF63200B2E602 /* LaunchScreen.storyboard */; };
 		D5928EC427C8837A00EEE6A2 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5928EC327C8837A00EEE6A2 /* MyPageViewController.swift */; };
-		D5928EC827C8839200EEE6A2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5928EC727C8839200EEE6A2 /* SignInViewController.swift */; };
-		D5928ECA27C8839C00EEE6A2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5928EC927C8839C00EEE6A2 /* SignUpViewController.swift */; };
+		D5928ECA27C8839C00EEE6A2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5928EC927C8839C00EEE6A2 /* SignInViewController.swift */; };
 		D5928ECC27C883FB00EEE6A2 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5928ECB27C883FB00EEE6A2 /* SettingTableViewController.swift */; };
 		D593B794273CB275005784DB /* LocSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D593B793273CB275005784DB /* LocSearchViewController.swift */; };
 		D5AB1AF126EF02900058AE87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AB1AF026EF02900058AE87 /* Main.storyboard */; };
@@ -49,8 +48,7 @@
 		D575488526CFF63200B2E602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D575488726CFF63200B2E602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5928EC327C8837A00EEE6A2 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		D5928EC727C8839200EEE6A2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		D5928EC927C8839C00EEE6A2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D5928EC927C8839C00EEE6A2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		D5928ECB27C883FB00EEE6A2 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		D593B793273CB275005784DB /* LocSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocSearchViewController.swift; sourceTree = "<group>"; };
 		D5AB1AF026EF02900058AE87 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -137,8 +135,7 @@
 			children = (
 				D5928EC327C8837A00EEE6A2 /* MyPageViewController.swift */,
 				D5928ECB27C883FB00EEE6A2 /* SettingTableViewController.swift */,
-				D5928EC727C8839200EEE6A2 /* SignInViewController.swift */,
-				D5928EC927C8839C00EEE6A2 /* SignUpViewController.swift */,
+				D5928EC927C8839C00EEE6A2 /* SignInViewController.swift */,
 			);
 			path = MyPageView;
 			sourceTree = "<group>";
@@ -327,10 +324,9 @@
 				D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */,
 				D50221A4275706AC0041B4C5 /* LocAddEditViewController.swift in Sources */,
 				76B3552D26EAEC0D00957891 /* Data.swift in Sources */,
-				D5928ECA27C8839C00EEE6A2 /* SignUpViewController.swift in Sources */,
+				D5928ECA27C8839C00EEE6A2 /* SignInViewController.swift in Sources */,
 				D5928ECC27C883FB00EEE6A2 /* SettingTableViewController.swift in Sources */,
 				D5AB1AFD26F086020058AE87 /* LocationsTableViewCell.swift in Sources */,
-				D5928EC827C8839200EEE6A2 /* SignInViewController.swift in Sources */,
 				D5D8A6F026E6ED0000A31EC2 /* DesignFile.swift in Sources */,
 				76349AB726E7332000BD7BAE /* LocSelectViewController.swift in Sources */,
 				D593B794273CB275005784DB /* LocSearchViewController.swift in Sources */,

@@ -112,6 +112,11 @@
                             <constraint firstItem="8ft-sk-XMg" firstAttribute="leading" secondItem="uUg-Ms-x4c" secondAttribute="leading" constant="60" id="nWD-lS-IAI"/>
                             <constraint firstItem="Crw-Sk-Xv1" firstAttribute="top" secondItem="L2h-7h-ULB" secondAttribute="bottom" constant="5" id="nbZ-vZ-31d"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="L2h-7h-ULB"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title=" " id="RGB-XW-5Md">
                         <rightBarButtonItems>
@@ -345,33 +350,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="COv-YX-prL">
-                                <rect key="frame" x="158.66666666666666" y="372" width="72.666666666666657" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nv-VR-ViZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="72.666666666666671" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="로그인"/>
-                                        <connections>
-                                            <segue destination="0IO-e0-4wv" kind="presentation" id="niU-cx-JyU"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ng-E8-0Nn">
-                                        <rect key="frame" x="0.0" y="69" width="72.666666666666671" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="회원가입"/>
-                                        <connections>
-                                            <segue destination="Xr5-Cr-o0d" kind="presentation" id="VqT-Sw-jlC"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ng-E8-0Nn">
+                                <rect key="frame" x="150.66666666666666" y="406.66666666666669" width="89" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="소셜 로그인"/>
+                                <connections>
+                                    <segue destination="Xr5-Cr-o0d" kind="presentation" id="VqT-Sw-jlC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NHa-EI-wL0"/>
                         <color key="backgroundColor" red="0.99971312280000002" green="0.96884971860000002" blue="0.84112757439999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="COv-YX-prL" firstAttribute="centerX" secondItem="DTD-xK-87N" secondAttribute="centerX" id="8VZ-pp-M3g"/>
-                            <constraint firstItem="COv-YX-prL" firstAttribute="centerY" secondItem="DTD-xK-87N" secondAttribute="centerY" id="o9s-HF-B24"/>
+                            <constraint firstItem="3ng-E8-0Nn" firstAttribute="centerX" secondItem="DTD-xK-87N" secondAttribute="centerX" id="alC-i7-MEy"/>
+                            <constraint firstItem="3ng-E8-0Nn" firstAttribute="centerY" secondItem="DTD-xK-87N" secondAttribute="centerY" id="xfg-CO-ofN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="마이페이지" id="tt1-cB-Y4t">
@@ -562,16 +554,16 @@
             </objects>
             <point key="canvasLocation" x="2657" y="-877"/>
         </scene>
-        <!--Sign In View Controller-->
+        <!--View Controller-->
         <scene sceneID="0Mb-3t-fhd">
             <objects>
-                <viewController restorationIdentifier="SignInViewController" storyboardIdentifier="SignInViewController" id="0IO-e0-4wv" customClass="SignInViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0IO-e0-4wv" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ylU-xb-7ew">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이디를 입력해주셈" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="49w-Ga-QL6">
-                                <rect key="frame" x="40" y="215.66666666666666" width="310" height="40"/>
+                                <rect key="frame" x="40" y="247.66666666666663" width="310" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="EyM-9J-w3T"/>
                                 </constraints>
@@ -579,13 +571,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOYO에 오신것을 환영합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYE-gB-WHA">
-                                <rect key="frame" x="52.666666666666657" y="131" width="284.66666666666674" height="28.666666666666657"/>
+                                <rect key="frame" x="52.666666666666657" y="163" width="284.66666666666674" height="28.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호도 입력해주셈" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yM1-Ck-8dd">
-                                <rect key="frame" x="40" y="280.66666666666669" width="310" height="40"/>
+                                <rect key="frame" x="40" y="312.66666666666669" width="310" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="wUn-lh-wYa"/>
                                 </constraints>
@@ -593,7 +585,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="qTm-xl-kuD">
-                                <rect key="frame" x="82.666666666666686" y="360.66666666666669" width="225" height="31"/>
+                                <rect key="frame" x="82.666666666666686" y="392.66666666666669" width="225" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAn-RS-7uL">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="31"/>
@@ -614,7 +606,7 @@
                                 </subviews>
                             </stackView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arN-u9-JaC">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <items>
                                     <navigationItem title="로그인" id="exb-4j-MGe"/>
                                 </items>
@@ -641,12 +633,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOb-O5-zdV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3488" y="-877"/>
+            <point key="canvasLocation" x="4602" y="-877"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="58d-Gp-Zpz">
             <objects>
-                <viewController restorationIdentifier="SignUpViewController" storyboardIdentifier="SignUpViewController" id="Xr5-Cr-o0d" customClass="SignUpViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="SignInViewController" storyboardIdentifier="SignInViewController" id="Xr5-Cr-o0d" customClass="SignInViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wlj-nf-TTk">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -660,46 +652,24 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HzL-Bs-opJ">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                                 <items>
-                                    <navigationItem title="회원가입" id="RTp-Cn-QDm"/>
+                                    <navigationItem title="소셜 로그인" id="RTp-Cn-QDm"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4FF-bx-RTO">
-                                <rect key="frame" x="120" y="216" width="150" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="QO7-gp-cYP"/>
-                                    <constraint firstAttribute="width" constant="150" id="eP8-hx-68W"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Google 회원가입"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoR-kN-tec">
-                                <rect key="frame" x="120" y="281" width="150" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="g96-Ul-8qc"/>
-                                    <constraint firstAttribute="width" constant="150" id="zjD-AL-sHA"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Apple 회원가입"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WN9-z2-EvH"/>
                         <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4FF-bx-RTO" firstAttribute="centerX" secondItem="wlj-nf-TTk" secondAttribute="centerX" id="5bf-XP-m28"/>
                             <constraint firstItem="HzL-Bs-opJ" firstAttribute="top" secondItem="WN9-z2-EvH" secondAttribute="top" id="Bwv-dU-v8c"/>
                             <constraint firstItem="HzL-Bs-opJ" firstAttribute="leading" secondItem="WN9-z2-EvH" secondAttribute="leading" id="KJw-It-FSR"/>
                             <constraint firstItem="T6m-BC-8yZ" firstAttribute="top" secondItem="HzL-Bs-opJ" secondAttribute="bottom" constant="75" id="MRU-lx-Zpk"/>
                             <constraint firstItem="T6m-BC-8yZ" firstAttribute="centerX" secondItem="wlj-nf-TTk" secondAttribute="centerX" id="UZv-XI-5T0"/>
-                            <constraint firstItem="hoR-kN-tec" firstAttribute="top" secondItem="4FF-bx-RTO" secondAttribute="bottom" constant="25" id="fSn-Wy-eO5"/>
-                            <constraint firstItem="hoR-kN-tec" firstAttribute="centerX" secondItem="wlj-nf-TTk" secondAttribute="centerX" id="fVk-UM-D4O"/>
                             <constraint firstItem="HzL-Bs-opJ" firstAttribute="trailing" secondItem="WN9-z2-EvH" secondAttribute="trailing" id="mgt-Hn-agx"/>
-                            <constraint firstItem="4FF-bx-RTO" firstAttribute="top" secondItem="T6m-BC-8yZ" secondAttribute="bottom" constant="56" id="oGd-uN-ece"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adR-je-DaJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4297" y="-877"/>
+            <point key="canvasLocation" x="3488" y="-877"/>
         </scene>
         <!--LocationSelectViewController-->
         <scene sceneID="ps6-by-ia2">
