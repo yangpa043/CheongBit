@@ -25,6 +25,7 @@ class reportButton: UIButton {
         super.init(coder: aDecoder)!
         backgroundColor = #colorLiteral(red: 0.1098039216, green: 0.1019607843, blue: 0.2235294118, alpha: 1)
         tintColor = #colorLiteral(red: 0.9997131228, green: 0.9688497186, blue: 0.8411275744, alpha: 1)
+        layer.cornerRadius = 20.0
         
         
     }

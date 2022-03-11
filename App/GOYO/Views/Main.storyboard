@@ -25,24 +25,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crw-Sk-Xv1" customClass="reportButton" customModule="GOYO" customModuleProvider="target">
-                                <rect key="frame" x="20" y="655" width="350" height="56"/>
+                                <rect key="frame" x="20" y="631" width="350" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="4nf-Px-JBg"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="Iyz-BV-PAY"/>
-                                    <constraint firstAttribute="width" constant="350" id="TCD-hC-304"/>
+                                    <constraint firstAttribute="width" secondItem="Crw-Sk-Xv1" secondAttribute="height" multiplier="5:1" id="tor-uU-YoB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="신고하기"/>
                                 <connections>
                                     <action selector="reportButtonTapped:" destination="zNb-AT-MS6" eventType="touchUpInside" id="Ep5-sP-tP3"/>
                                     <segue destination="SBG-sK-nEL" kind="show" id="Rjd-Jo-jhZ"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="76" translatesAutoresizingMaskIntoConstraints="NO" id="uZV-b8-Spl">
-                                <rect key="frame" x="30.666666666666657" y="133" width="328.66666666666674" height="458"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="uZV-b8-Spl">
+                                <rect key="frame" x="36.333333333333343" y="161" width="317.33333333333326" height="442"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ujp-4M-Uvn">
-                                        <rect key="frame" x="18" y="0.0" width="292.66666666666669" height="351"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ujp-4M-Uvn">
+                                        <rect key="frame" x="12.333333333333343" y="0.0" width="292.66666666666663" height="371"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goyoOff" translatesAutoresizingMaskIntoConstraints="NO" id="k91-zu-IdK">
                                                 <rect key="frame" x="0.0" y="0.0" width="292.66666666666669" height="317"/>
@@ -51,7 +50,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인식 중이 아님" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjY-0R-nJN" customClass="whiteText" customModule="GOYO" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="327" width="292.66666666666669" height="24"/>
+                                                <rect key="frame" x="0.0" y="347" width="292.66666666666669" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="vva-iS-qAA"/>
                                                 </constraints>
@@ -60,9 +59,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ujp-4M-Uvn" secondAttribute="height" multiplier="292:370" id="XR9-Ku-vWW"/>
+                                        </constraints>
                                     </stackView>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cMa-Tq-MBH">
-                                        <rect key="frame" x="140" y="427" width="51" height="31"/>
+                                        <rect key="frame" x="134.33333333333331" y="411" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="4TB-dl-ppW"/>
                                         </constraints>
@@ -76,6 +78,7 @@
                                 <constraints>
                                     <constraint firstItem="cMa-Tq-MBH" firstAttribute="centerX" secondItem="uZV-b8-Spl" secondAttribute="centerX" id="KfR-XM-w6n"/>
                                     <constraint firstAttribute="width" secondItem="uZV-b8-Spl" secondAttribute="height" multiplier="145:202" id="c0j-Ss-a65"/>
+                                    <constraint firstItem="Ujp-4M-Uvn" firstAttribute="top" secondItem="uZV-b8-Spl" secondAttribute="top" id="lAr-QS-1fX"/>
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8ft-sk-XMg">
@@ -98,14 +101,13 @@
                         <viewLayoutGuide key="safeArea" id="uUg-Ms-x4c"/>
                         <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uZV-b8-Spl" firstAttribute="top" secondItem="uUg-Ms-x4c" secondAttribute="top" constant="45" id="2VU-Ws-udN"/>
                             <constraint firstItem="8ft-sk-XMg" firstAttribute="top" secondItem="uUg-Ms-x4c" secondAttribute="top" constant="567" id="9sp-x9-KYh"/>
                             <constraint firstItem="Crw-Sk-Xv1" firstAttribute="centerX" secondItem="yhW-BV-hyo" secondAttribute="centerX" id="BJ9-AI-0up"/>
-                            <constraint firstItem="uUg-Ms-x4c" firstAttribute="bottom" secondItem="Crw-Sk-Xv1" secondAttribute="bottom" constant="50" id="N3f-8P-Fav"/>
+                            <constraint firstItem="uUg-Ms-x4c" firstAttribute="bottom" secondItem="Crw-Sk-Xv1" secondAttribute="bottom" constant="60" id="N3f-8P-Fav"/>
                             <constraint firstItem="Crw-Sk-Xv1" firstAttribute="leading" secondItem="uUg-Ms-x4c" secondAttribute="leading" constant="20" id="RQC-pU-5ZN"/>
                             <constraint firstItem="uUg-Ms-x4c" firstAttribute="trailing" secondItem="Crw-Sk-Xv1" secondAttribute="trailing" constant="20" id="YdB-Ni-XBP"/>
                             <constraint firstItem="uZV-b8-Spl" firstAttribute="centerX" secondItem="yhW-BV-hyo" secondAttribute="centerX" id="Ye3-mz-dQe"/>
-                            <constraint firstItem="uZV-b8-Spl" firstAttribute="centerY" secondItem="yhW-BV-hyo" secondAttribute="centerY" constant="-60" id="a8a-AQ-LCq"/>
+                            <constraint firstItem="uZV-b8-Spl" firstAttribute="centerY" secondItem="yhW-BV-hyo" secondAttribute="centerY" constant="-40" id="a8a-AQ-LCq"/>
                             <constraint firstItem="uUg-Ms-x4c" firstAttribute="trailing" secondItem="8ft-sk-XMg" secondAttribute="trailing" constant="60" id="b6s-mL-hqg"/>
                             <constraint firstItem="uZV-b8-Spl" firstAttribute="centerX" secondItem="yhW-BV-hyo" secondAttribute="centerX" id="eZV-Ao-M1S"/>
                             <constraint firstItem="L2h-7h-ULB" firstAttribute="centerX" secondItem="yhW-BV-hyo" secondAttribute="centerX" id="j1P-xh-vVf"/>
@@ -176,9 +178,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du5-yG-CqQ" customClass="reportButton" customModule="GOYO" customModuleProvider="target">
-                                <rect key="frame" x="20" y="655" width="350" height="56"/>
+                                <rect key="frame" x="20" y="626" width="350" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="0d1-YT-QL9"/>
+                                    <constraint firstAttribute="width" secondItem="du5-yG-CqQ" secondAttribute="height" multiplier="5:1" id="IRt-B0-bOY"/>
+                                    <constraint firstAttribute="height" constant="75" id="vxb-Na-1bn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <state key="normal" title="신고하기"/>
@@ -312,7 +315,7 @@
                             <constraint firstItem="h2M-p9-1ka" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="a8w-xF-Qh3"/>
                             <constraint firstItem="2Ha-oY-SRA" firstAttribute="centerY" secondItem="BEW-TX-QIJ" secondAttribute="centerY" constant="30" id="bdn-re-AX6"/>
                             <constraint firstItem="qGS-RG-EWK" firstAttribute="trailing" secondItem="du5-yG-CqQ" secondAttribute="trailing" constant="20" id="gbb-bT-9VA"/>
-                            <constraint firstItem="qGS-RG-EWK" firstAttribute="bottom" secondItem="du5-yG-CqQ" secondAttribute="bottom" constant="50" id="hPv-sT-GLp"/>
+                            <constraint firstItem="qGS-RG-EWK" firstAttribute="bottom" secondItem="du5-yG-CqQ" secondAttribute="bottom" constant="60" id="hPv-sT-GLp"/>
                             <constraint firstItem="du5-yG-CqQ" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="rTR-al-cOi"/>
                             <constraint firstItem="s4y-LJ-oZ9" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="tO4-DJ-70R"/>
                             <constraint firstItem="2Ha-oY-SRA" firstAttribute="centerX" secondItem="BEW-TX-QIJ" secondAttribute="centerX" id="wMR-rj-3dQ"/>
@@ -355,7 +358,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="소셜 로그인"/>
                                 <connections>
-                                    <segue destination="Xr5-Cr-o0d" kind="presentation" id="VqT-Sw-jlC"/>
+                                    <segue destination="Xr5-Cr-o0d" kind="presentation" id="gTx-7W-lgI"/>
                                 </connections>
                             </button>
                         </subviews>
