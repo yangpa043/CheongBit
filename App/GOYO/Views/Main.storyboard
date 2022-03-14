@@ -655,11 +655,24 @@
                                     <navigationItem title="소셜 로그인" id="RTp-Cn-QDm"/>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdU-0Z-erF" customClass="GIDSignInButton">
+                                <rect key="frame" x="95" y="415" width="200" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="KzA-VK-Edm"/>
+                                    <constraint firstAttribute="height" constant="40" id="elc-UJ-Xjj"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="googleSignIn:" destination="Xr5-Cr-o0d" eventType="touchUpInside" id="lzh-LB-Oaq"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WN9-z2-EvH"/>
                         <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="AdU-0Z-erF" firstAttribute="centerX" secondItem="wlj-nf-TTk" secondAttribute="centerX" id="BpG-NB-5U1"/>
                             <constraint firstItem="HzL-Bs-opJ" firstAttribute="top" secondItem="WN9-z2-EvH" secondAttribute="top" id="Bwv-dU-v8c"/>
+                            <constraint firstItem="AdU-0Z-erF" firstAttribute="centerY" secondItem="wlj-nf-TTk" secondAttribute="centerY" constant="40" id="Jhd-Wi-kk1"/>
                             <constraint firstItem="HzL-Bs-opJ" firstAttribute="leading" secondItem="WN9-z2-EvH" secondAttribute="leading" id="KJw-It-FSR"/>
                             <constraint firstItem="T6m-BC-8yZ" firstAttribute="top" secondItem="HzL-Bs-opJ" secondAttribute="bottom" constant="75" id="MRU-lx-Zpk"/>
                             <constraint firstItem="T6m-BC-8yZ" firstAttribute="centerX" secondItem="wlj-nf-TTk" secondAttribute="centerX" id="UZv-XI-5T0"/>
