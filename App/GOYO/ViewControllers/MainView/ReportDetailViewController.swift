@@ -60,6 +60,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             self.tableViewHeight.constant = self.locationShowTableView.contentSize.height
         }
         
+        SelectedLocData.shared.location.insert(Location(location: "위치서비스를 받을 수 없습니다.", locationDetail: "", name: "현위치"), at: 0)
+        
         self.indicator.isHidden = true
         
         self.locationShowTableView.delegate = self

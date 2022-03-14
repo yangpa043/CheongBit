@@ -75,7 +75,7 @@ class MainViewController: UIViewController {
     
     // 신고버튼
     @IBAction func reportButtonTapped(_ sender: UIButton) {
-        SelectedLocData.shared.location.insert(Location(location: "위치서비스를 받을 수 없습니다.", locationDetail: "", name: "현위치"), at: 0)
+        
     }
     
     
@@ -85,6 +85,7 @@ class MainViewController: UIViewController {
     func switchButtonUpdate() {
         // 스위치가 꺼져있을 때
         if switchONorOFF == true{
+            fireCount = 0
             if micPermissionStatus == false {
                 micCanceldAlert()
             }
@@ -251,19 +252,19 @@ extension MainViewController: SNResultsObserving {
             let confidence = classification.confidence * 100
             if confidence > 5 {
                 temp.append((label: classification.identifier, confidence: Float(confidence)))
-                if classification.identifier == "2_fireAlarm"/*.contains("fire")*/{
-                    if confidence > 90 {
+                if confidence > 80 {
+                    if classification.identifier == "2_fireAlarm"/*.contains("fire")*/{
                         fireCount += 1
-                        if fireCount >= 6 {
-                            print("감지")
-                            
+                        if fireCount >= 10 {
+                            print("화재 감지")
                             fireSenseAlert()
-                            
                         }
                     }
+                } else {
+                    fireCount = 0
                 }
                 results = temp
-            }
+            }                                                           
         }
     }
 }
