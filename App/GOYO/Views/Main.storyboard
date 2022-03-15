@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hup-W3-jOT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hup-W3-jOT">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -355,15 +354,41 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="소셜 로그인"/>
                                 <connections>
-                                    <segue destination="Xr5-Cr-o0d" kind="presentation" id="gTx-7W-lgI"/>
+                                    <segue destination="Xr5-Cr-o0d" kind="show" id="xdr-3U-FK1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46x-Cg-A6Q">
+                                <rect key="frame" x="174.66666666666666" y="211.66666666666666" width="40.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="None" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kya-kx-lX3">
+                                <rect key="frame" x="174.66666666666666" y="261.66666666666669" width="40.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RO-U6-9Xv">
+                                <rect key="frame" x="158.66666666666666" y="456.66666666666669" width="73" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
+                                <connections>
+                                    <action selector="signOutButtonTapped:" destination="Puk-ct-MZp" eventType="touchUpInside" id="63d-VP-SOy"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NHa-EI-wL0"/>
                         <color key="backgroundColor" red="0.99971312280000002" green="0.96884971860000002" blue="0.84112757439999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Kya-kx-lX3" firstAttribute="centerY" secondItem="DTD-xK-87N" secondAttribute="centerY" constant="-150" id="FJs-5q-tCl"/>
+                            <constraint firstItem="7RO-U6-9Xv" firstAttribute="centerX" secondItem="DTD-xK-87N" secondAttribute="centerX" id="TRR-DM-MZ6"/>
+                            <constraint firstItem="46x-Cg-A6Q" firstAttribute="centerX" secondItem="DTD-xK-87N" secondAttribute="centerX" id="XAu-lI-Ewl"/>
                             <constraint firstItem="3ng-E8-0Nn" firstAttribute="centerX" secondItem="DTD-xK-87N" secondAttribute="centerX" id="alC-i7-MEy"/>
+                            <constraint firstItem="7RO-U6-9Xv" firstAttribute="centerY" secondItem="DTD-xK-87N" secondAttribute="centerY" constant="50" id="asq-sY-SsB"/>
+                            <constraint firstItem="46x-Cg-A6Q" firstAttribute="centerY" secondItem="DTD-xK-87N" secondAttribute="centerY" constant="-200" id="b3D-GM-5jc"/>
                             <constraint firstItem="3ng-E8-0Nn" firstAttribute="centerY" secondItem="DTD-xK-87N" secondAttribute="centerY" id="xfg-CO-ofN"/>
+                            <constraint firstItem="Kya-kx-lX3" firstAttribute="centerX" secondItem="DTD-xK-87N" secondAttribute="centerX" id="yhw-Up-13s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="마이페이지" id="tt1-cB-Y4t">
@@ -374,6 +399,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailLabel" destination="Kya-kx-lX3" id="Ned-QL-cUg"/>
+                        <outlet property="nameLabel" destination="46x-Cg-A6Q" id="v9g-Zy-u0J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yA-pN-gm7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -633,30 +662,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uOb-O5-zdV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4602" y="-877"/>
+            <point key="canvasLocation" x="4337" y="-877"/>
         </scene>
-        <!--Sign In View Controller-->
+        <!--소셜 로그인-->
         <scene sceneID="58d-Gp-Zpz">
             <objects>
                 <viewController restorationIdentifier="SignInViewController" storyboardIdentifier="SignInViewController" id="Xr5-Cr-o0d" customClass="SignInViewController" customModule="GOYO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wlj-nf-TTk">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="짜잔 GOYO로 오세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6m-BC-8yZ">
-                                <rect key="frame" x="94" y="131" width="202" height="29"/>
+                                <rect key="frame" x="94" y="163" width="202" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HzL-Bs-opJ">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
-                                <items>
-                                    <navigationItem title="소셜 로그인" id="RTp-Cn-QDm"/>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdU-0Z-erF" customClass="GIDSignInButton">
-                                <rect key="frame" x="95" y="415" width="200" height="40"/>
+                                <rect key="frame" x="95" y="442" width="200" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="KzA-VK-Edm"/>
@@ -671,14 +694,12 @@
                         <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="AdU-0Z-erF" firstAttribute="centerX" secondItem="wlj-nf-TTk" secondAttribute="centerX" id="BpG-NB-5U1"/>
-                            <constraint firstItem="HzL-Bs-opJ" firstAttribute="top" secondItem="WN9-z2-EvH" secondAttribute="top" id="Bwv-dU-v8c"/>
+                            <constraint firstItem="T6m-BC-8yZ" firstAttribute="top" secondItem="WN9-z2-EvH" secondAttribute="top" constant="75" id="FKj-y6-ZBh"/>
                             <constraint firstItem="AdU-0Z-erF" firstAttribute="centerY" secondItem="wlj-nf-TTk" secondAttribute="centerY" constant="40" id="Jhd-Wi-kk1"/>
-                            <constraint firstItem="HzL-Bs-opJ" firstAttribute="leading" secondItem="WN9-z2-EvH" secondAttribute="leading" id="KJw-It-FSR"/>
-                            <constraint firstItem="T6m-BC-8yZ" firstAttribute="top" secondItem="HzL-Bs-opJ" secondAttribute="bottom" constant="75" id="MRU-lx-Zpk"/>
                             <constraint firstItem="T6m-BC-8yZ" firstAttribute="centerX" secondItem="wlj-nf-TTk" secondAttribute="centerX" id="UZv-XI-5T0"/>
-                            <constraint firstItem="HzL-Bs-opJ" firstAttribute="trailing" secondItem="WN9-z2-EvH" secondAttribute="trailing" id="mgt-Hn-agx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="소셜 로그인" id="qcy-2p-Eyc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="adR-je-DaJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

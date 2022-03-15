@@ -51,7 +51,8 @@ class SignInViewController: UIViewController {
             
             // 사용자 정보 등록
             Auth.auth().signIn(with: credential) { _, _ in
-                print("로그인: \(String(describing: Auth.auth().currentUser?.displayName))")
+                print("로그인 성공")
+                self.signInSuccess()
             }
             // If sign in succeeded, display the app's main content View.
         }
@@ -60,5 +61,15 @@ class SignInViewController: UIViewController {
     
     // MARK: - Functions
     
+    func signInSuccess() {
+        let signInSuccessLabel = UIAlertController(title: "알림", message: "로그인 성공!", preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel) {_ in
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        signInSuccessLabel.addAction(ok)
+        
+        self.present(signInSuccessLabel, animated: true)
+    }
 
 }
