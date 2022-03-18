@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		66067D282766C633005AF896 /* Font in Resources */ = {isa = PBXBuildFile; fileRef = 66067D272766C633005AF896 /* Font */; };
-		6718FFF3B2C290ECA6A20E1A /* Pods_GOYO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3301607D6E2D4E42523A96AE /* Pods_GOYO.framework */; };
 		76349AB726E7332000BD7BAE /* LocSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76349AB626E7332000BD7BAE /* LocSelectViewController.swift */; };
 		76B3552D26EAEC0D00957891 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* Data.swift */; };
+		D37CCD13384C541331FDA3AE /* Pods_GOYO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BCF9B80EB5AE74205EB7E6A /* Pods_GOYO.framework */; };
 		D50221A4275706AC0041B4C5 /* LocAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50221A3275706AC0041B4C5 /* LocAddEditViewController.swift */; };
 		D503BD1A2725466C009D4DEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D503BD192725466C009D4DEA /* GoogleService-Info.plist */; };
 		D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487926CFF63000B2E602 /* AppDelegate.swift */; };
@@ -33,11 +33,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3301607D6E2D4E42523A96AE /* Pods_GOYO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOYO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50C69073CEC7860163B33A3B /* Pods-GOYO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.debug.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.debug.xcconfig"; sourceTree = "<group>"; };
 		66067D272766C633005AF896 /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
 		76349AB626E7332000BD7BAE /* LocSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocSelectViewController.swift; sourceTree = "<group>"; };
 		76B3552C26EAEC0D00957891 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		C38661FBFCD654EEA6E8B246 /* Pods-GOYO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.release.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.release.xcconfig"; sourceTree = "<group>"; };
+		9BCF9B80EB5AE74205EB7E6A /* Pods_GOYO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOYO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50221A3275706AC0041B4C5 /* LocAddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocAddEditViewController.swift; sourceTree = "<group>"; };
 		D503BD192725466C009D4DEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D53A17DC27380B2300E9888E /* GOYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,7 +59,7 @@
 		D5D8A6EF26E6ED0000A31EC2 /* DesignFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignFile.swift; sourceTree = "<group>"; };
 		D5D8A70B26EEE35400A31EC2 /* ReportDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportDetailViewController.swift; sourceTree = "<group>"; };
 		D5FF6FE72739F4E000C79629 /* fireAlarmSoundClassifier 7.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "fireAlarmSoundClassifier 7.mlpackage"; sourceTree = "<group>"; };
-		F36B429D6AB0FF78DC234947 /* Pods-GOYO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.debug.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.debug.xcconfig"; sourceTree = "<group>"; };
+		F3AD821D429CC4E1633B8E9D /* Pods-GOYO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GOYO.release.xcconfig"; path = "Target Support Files/Pods-GOYO/Pods-GOYO.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,18 +67,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6718FFF3B2C290ECA6A20E1A /* Pods_GOYO.framework in Frameworks */,
+				D37CCD13384C541331FDA3AE /* Pods_GOYO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		045573D3C428941BF6311628 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BCF9B80EB5AE74205EB7E6A /* Pods_GOYO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3791B4297A618B344787DFC7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F36B429D6AB0FF78DC234947 /* Pods-GOYO.debug.xcconfig */,
-				C38661FBFCD654EEA6E8B246 /* Pods-GOYO.release.xcconfig */,
+				50C69073CEC7860163B33A3B /* Pods-GOYO.debug.xcconfig */,
+				F3AD821D429CC4E1633B8E9D /* Pods-GOYO.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -89,7 +97,7 @@
 				D575487826CFF63000B2E602 /* GOYO */,
 				3791B4297A618B344787DFC7 /* Pods */,
 				D53A17DC27380B2300E9888E /* GOYO.app */,
-				D9F172388E7D42045E510B54 /* Frameworks */,
+				045573D3C428941BF6311628 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,14 +203,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D9F172388E7D42045E510B54 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3301607D6E2D4E42523A96AE /* Pods_GOYO.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,11 +210,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D575488A26CFF63200B2E602 /* Build configuration list for PBXNativeTarget "GOYO" */;
 			buildPhases = (
-				31BC299BAECEC31B43591632 /* [CP] Check Pods Manifest.lock */,
+				F01E5582FDBB045EF800E89D /* [CP] Check Pods Manifest.lock */,
 				D575487226CFF63000B2E602 /* Sources */,
 				D575487326CFF63000B2E602 /* Frameworks */,
 				D575487426CFF63000B2E602 /* Resources */,
-				15AABD138C54AA9B9869BC49 /* [CP] Embed Pods Frameworks */,
+				F3021A80464CC6F1E2559BC6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,24 +273,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15AABD138C54AA9B9869BC49 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GOYO/Pods-GOYO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GOYO/Pods-GOYO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GOYO/Pods-GOYO-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		31BC299BAECEC31B43591632 /* [CP] Check Pods Manifest.lock */ = {
+		F01E5582FDBB045EF800E89D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -310,6 +293,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3021A80464CC6F1E2559BC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GOYO/Pods-GOYO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GOYO/Pods-GOYO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GOYO/Pods-GOYO-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -408,6 +408,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -462,6 +463,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -471,7 +473,7 @@
 		};
 		D575488B26CFF63200B2E602 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F36B429D6AB0FF78DC234947 /* Pods-GOYO.debug.xcconfig */;
+			baseConfigurationReference = 50C69073CEC7860163B33A3B /* Pods-GOYO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -492,7 +494,7 @@
 		};
 		D575488C26CFF63200B2E602 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C38661FBFCD654EEA6E8B246 /* Pods-GOYO.release.xcconfig */;
+			baseConfigurationReference = F3AD821D429CC4E1633B8E9D /* Pods-GOYO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

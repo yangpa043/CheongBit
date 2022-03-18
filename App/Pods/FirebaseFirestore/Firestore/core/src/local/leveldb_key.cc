@@ -48,6 +48,14 @@ const char* kDocumentTargetsTable = "document_target";
 const char* kRemoteDocumentsTable = "remote_document";
 const char* kCollectionParentsTable = "collection_parent";
 const char* kRemoteDocumentReadTimeTable = "remote_document_read_time";
+const char* kBundlesTable = "bundles";
+const char* kNamedQueriesTable = "named_queries";
+const char* kIndexConfigurationTable = "index_configuration";
+const char* kIndexStateTable = "index_state";
+const char* kIndexEntriesTable = "index_entries";
+const char* kDocumentOverlaysTable = "document_overlays";
+const char* kDocumentOverlaysLargestBatchIdIndexTable =
+    "document_overlays_largest_batch_id_index";
 
 /**
  * Labels for the components of keys. These serve to make keys self-describing.
@@ -106,6 +114,24 @@ enum ComponentLabel {
 
   /** A component containing a snapshot version. */
   SnapshotVersion = 16,
+
+  /** A component containing a Firestore bundle id. */
+  BundleId = 17,
+
+  /** A component containing the name of a named query. */
+  QueryName = 18,
+
+  /** A component containing a index id. */
+  IndexId = 19,
+
+  /** A component containing an array index value. */
+  IndexArrayValue = 20,
+
+  /** A component containing a directional index value. */
+  IndexDirectionalValue = 21,
+
+  /** A component containing a collection group name. */
+  CollectionGroup = 22,
 
   /**
    * A path segment describes just a single segment in a resource path. Path
@@ -183,6 +209,30 @@ class Reader {
 
   std::string ReadDocumentId() {
     return ReadLabeledString(ComponentLabel::DocumentId);
+  }
+
+  std::string ReadBundleId() {
+    return ReadLabeledString(ComponentLabel::BundleId);
+  }
+
+  std::string ReadQueryName() {
+    return ReadLabeledString(ComponentLabel::QueryName);
+  }
+
+  int32_t ReadIndexId() {
+    return ReadLabeledInt32(ComponentLabel::IndexId);
+  }
+
+  std::string ReadCollectionGroup() {
+    return ReadLabeledString(ComponentLabel::CollectionGroup);
+  }
+
+  std::string ReadIndexArrayValue() {
+    return ReadLabeledString(ComponentLabel::IndexArrayValue);
+  }
+
+  std::string ReadIndexDirectionalValue() {
+    return ReadLabeledString(ComponentLabel::IndexDirectionalValue);
   }
 
   /**
@@ -541,6 +591,36 @@ std::string Reader::Describe() {
         absl::StrAppend(&description,
                         " snapshot_version=", snapshot_version.ToString());
       }
+    } else if (label == ComponentLabel::BundleId) {
+      std::string bundle_id = ReadBundleId();
+      if (ok_) {
+        absl::StrAppend(&description, " bundle_id=", bundle_id);
+      }
+    } else if (label == ComponentLabel::QueryName) {
+      std::string query_name = ReadQueryName();
+      if (ok_) {
+        absl::StrAppend(&description, " query_name=", query_name);
+      }
+    } else if (label == ComponentLabel::IndexId) {
+      int32_t index_id = ReadIndexId();
+      if (ok_) {
+        absl::StrAppend(&description, " index_id=", index_id);
+      }
+    } else if (label == ComponentLabel::CollectionGroup) {
+      auto group = ReadCollectionGroup();
+      if (ok_) {
+        absl::StrAppend(&description, " collection_group=", group);
+      }
+    } else if (label == ComponentLabel::IndexArrayValue) {
+      std::string value = ReadIndexArrayValue();
+      if (ok_) {
+        absl::StrAppend(&description, " array_value=", std::move(value));
+      }
+    } else if (label == ComponentLabel::IndexDirectionalValue) {
+      std::string value = ReadIndexDirectionalValue();
+      if (ok_) {
+        absl::StrAppend(&description, " directional_value=", std::move(value));
+      }
     } else {
       absl::StrAppend(&description, " unknown label=", static_cast<int>(label));
       Fail();
@@ -604,6 +684,14 @@ class Writer {
         &dest_, snapshot_version.timestamp().nanoseconds());
   }
 
+  void WriteBundleId(absl::string_view bundle_id) {
+    WriteLabeledString(ComponentLabel::BundleId, bundle_id);
+  }
+
+  void WriteQueryName(absl::string_view query_name) {
+    WriteLabeledString(ComponentLabel::QueryName, query_name);
+  }
+
   /**
    * For each segment in the given resource path writes a
    * ComponentLabel::PathSegment component label and a string containing the
@@ -614,6 +702,22 @@ class Writer {
       WriteComponentLabel(ComponentLabel::PathSegment);
       OrderedCode::WriteString(&dest_, segment);
     }
+  }
+
+  void WriteIndexId(int32_t id) {
+    WriteLabeledInt32(ComponentLabel::IndexId, id);
+  }
+
+  void WriteCollectionGroup(absl::string_view collection_group) {
+    WriteLabeledString(ComponentLabel::CollectionGroup, collection_group);
+  }
+
+  void WriteIndexArrayValue(absl::string_view value) {
+    WriteLabeledString(ComponentLabel::IndexArrayValue, value);
+  }
+
+  void WriteIndexDirectionalValue(absl::string_view value) {
+    WriteLabeledString(ComponentLabel::IndexDirectionalValue, value);
   }
 
  private:
@@ -1012,6 +1116,239 @@ bool LevelDbRemoteDocumentReadTimeKey::Decode(absl::string_view key) {
   collection_path_ = reader.ReadResourcePath();
   read_time_ = reader.ReadSnapshotVersion();
   document_id_ = reader.ReadDocumentId();
+  reader.ReadTerminator();
+  return reader.ok();
+}
+
+std::string LevelDbBundleKey::KeyPrefix() {
+  Writer writer;
+  writer.WriteTableName(kBundlesTable);
+  return writer.result();
+}
+
+std::string LevelDbBundleKey::Key(absl::string_view bundle_id) {
+  Writer writer;
+  writer.WriteTableName(kBundlesTable);
+  writer.WriteBundleId(bundle_id);
+  writer.WriteTerminator();
+  return writer.result();
+}
+
+bool LevelDbBundleKey::Decode(absl::string_view key) {
+  Reader reader{key};
+  reader.ReadTableNameMatching(kBundlesTable);
+  bundle_id_ = reader.ReadBundleId();
+  reader.ReadTerminator();
+  return reader.ok();
+}
+
+std::string LevelDbNamedQueryKey::KeyPrefix() {
+  Writer writer;
+  writer.WriteTableName(kNamedQueriesTable);
+  return writer.result();
+}
+
+std::string LevelDbNamedQueryKey::Key(absl::string_view query_name) {
+  Writer writer;
+  writer.WriteTableName(kNamedQueriesTable);
+  writer.WriteQueryName(query_name);
+  writer.WriteTerminator();
+  return writer.result();
+}
+
+bool LevelDbNamedQueryKey::Decode(absl::string_view key) {
+  Reader reader{key};
+  reader.ReadTableNameMatching(kNamedQueriesTable);
+  name_ = reader.ReadQueryName();
+  reader.ReadTerminator();
+  return reader.ok();
+}
+
+std::string LevelDbIndexConfigurationKey::KeyPrefix() {
+  Writer writer;
+  writer.WriteTableName(kIndexConfigurationTable);
+  return writer.result();
+}
+
+std::string LevelDbIndexConfigurationKey::Key(
+    int32_t id, absl::string_view collection_group) {
+  Writer writer;
+  writer.WriteTableName(kIndexConfigurationTable);
+  writer.WriteIndexId(id);
+  writer.WriteCollectionGroup(collection_group);
+  writer.WriteTerminator();
+  return writer.result();
+}
+
+bool LevelDbIndexConfigurationKey::Decode(absl::string_view key) {
+  Reader reader{key};
+  reader.ReadTableNameMatching(kIndexConfigurationTable);
+  index_id_ = reader.ReadIndexId();
+  collection_group_ = reader.ReadCollectionGroup();
+  reader.ReadTerminator();
+  return reader.ok();
+}
+
+std::string LevelDbIndexStateKey::KeyPrefix() {
+  Writer writer;
+  writer.WriteTableName(kIndexStateTable);
+  return writer.result();
+}
+
+std::string LevelDbIndexStateKey::KeyPrefix(absl::string_view user_id) {
+  Writer writer;
+  writer.WriteTableName(kIndexStateTable);
+  writer.WriteUserId(user_id);
+  return writer.result();
+}
+
+std::string LevelDbIndexStateKey::Key(absl::string_view user_id,
+                                      int32_t index_id) {
+  Writer writer;
+  writer.WriteTableName(kIndexStateTable);
+  writer.WriteUserId(user_id);
+  writer.WriteIndexId(index_id);
+  writer.WriteTerminator();
+  return writer.result();
+}
+
+bool LevelDbIndexStateKey::Decode(absl::string_view key) {
+  Reader reader{key};
+  reader.ReadTableNameMatching(kIndexStateTable);
+  user_id_ = reader.ReadUserId();
+  index_id_ = reader.ReadIndexId();
+  reader.ReadTerminator();
+  return reader.ok();
+}
+
+std::string LevelDbIndexEntryKey::KeyPrefix() {
+  Writer writer;
+  writer.WriteTableName(kIndexEntriesTable);
+  return writer.result();
+}
+
+std::string LevelDbIndexEntryKey::KeyPrefix(int32_t index_id) {
+  Writer writer;
+  writer.WriteTableName(kIndexEntriesTable);
+  writer.WriteIndexId(index_id);
+  return writer.result();
+}
+
+std::string LevelDbIndexEntryKey::Key(int32_t index_id,
+                                      absl::string_view user_id,
+                                      absl::string_view array_value,
+                                      absl::string_view directional_value,
+                                      absl::string_view document_name) {
+  Writer writer;
+  writer.WriteTableName(kIndexEntriesTable);
+  writer.WriteIndexId(index_id);
+  writer.WriteUserId(user_id);
+  writer.WriteIndexArrayValue(array_value);
+  writer.WriteIndexDirectionalValue(directional_value);
+  writer.WriteDocumentId(document_name);
+  writer.WriteTerminator();
+  return writer.result();
+}
+
+bool LevelDbIndexEntryKey::Decode(absl::string_view key) {
+  Reader reader{key};
+  reader.ReadTableNameMatching(kIndexEntriesTable);
+  index_id_ = reader.ReadIndexId();
+  user_id_ = reader.ReadUserId();
+  array_value_ = reader.ReadIndexArrayValue();
+  directional_value_ = reader.ReadIndexDirectionalValue();
+  document_key_ = reader.ReadDocumentId();
+  reader.ReadTerminator();
+  return reader.ok();
+}
+
+std::string LevelDbDocumentOverlayKey::KeyPrefix() {
+  Writer writer;
+  writer.WriteTableName(kDocumentOverlaysTable);
+  return writer.result();
+}
+
+std::string LevelDbDocumentOverlayKey::KeyPrefix(absl::string_view user_id) {
+  Writer writer;
+  writer.WriteTableName(kDocumentOverlaysTable);
+  writer.WriteUserId(user_id);
+  return writer.result();
+}
+
+std::string LevelDbDocumentOverlayKey::KeyPrefix(
+    absl::string_view user_id, const DocumentKey& document_key) {
+  Writer writer;
+  writer.WriteTableName(kDocumentOverlaysTable);
+  writer.WriteUserId(user_id);
+  writer.WriteResourcePath(document_key.path());
+  return writer.result();
+}
+
+std::string LevelDbDocumentOverlayKey::Key(absl::string_view user_id,
+                                           const DocumentKey& document_key,
+                                           model::BatchId largest_batch_id) {
+  Writer writer;
+  writer.WriteTableName(kDocumentOverlaysTable);
+  writer.WriteUserId(user_id);
+  writer.WriteResourcePath(document_key.path());
+  writer.WriteBatchId(largest_batch_id);
+  writer.WriteTerminator();
+  return writer.result();
+}
+
+bool LevelDbDocumentOverlayKey::Decode(absl::string_view key) {
+  Reader reader{key};
+  reader.ReadTableNameMatching(kDocumentOverlaysTable);
+  user_id_ = reader.ReadUserId();
+  document_key_ = reader.ReadDocumentKey();
+  largest_batch_id_ = reader.ReadBatchId();
+  reader.ReadTerminator();
+  return reader.ok();
+}
+
+std::string LevelDbDocumentOverlayLargestBatchIdIndexKey::KeyPrefix() {
+  Writer writer;
+  writer.WriteTableName(kDocumentOverlaysLargestBatchIdIndexTable);
+  return writer.result();
+}
+
+std::string LevelDbDocumentOverlayLargestBatchIdIndexKey::KeyPrefix(
+    absl::string_view user_id) {
+  Writer writer;
+  writer.WriteTableName(kDocumentOverlaysLargestBatchIdIndexTable);
+  writer.WriteUserId(user_id);
+  return writer.result();
+}
+
+std::string LevelDbDocumentOverlayLargestBatchIdIndexKey::KeyPrefix(
+    absl::string_view user_id, model::BatchId largest_batch_id) {
+  Writer writer;
+  writer.WriteTableName(kDocumentOverlaysLargestBatchIdIndexTable);
+  writer.WriteUserId(user_id);
+  writer.WriteBatchId(largest_batch_id);
+  return writer.result();
+}
+
+std::string LevelDbDocumentOverlayLargestBatchIdIndexKey::Key(
+    absl::string_view user_id,
+    model::BatchId largest_batch_id,
+    const model::DocumentKey& document_key) {
+  Writer writer;
+  writer.WriteTableName(kDocumentOverlaysLargestBatchIdIndexTable);
+  writer.WriteUserId(user_id);
+  writer.WriteBatchId(largest_batch_id);
+  writer.WriteResourcePath(document_key.path());
+  writer.WriteTerminator();
+  return writer.result();
+}
+
+bool LevelDbDocumentOverlayLargestBatchIdIndexKey::Decode(
+    absl::string_view key) {
+  Reader reader{key};
+  reader.ReadTableNameMatching(kDocumentOverlaysLargestBatchIdIndexTable);
+  user_id_ = reader.ReadUserId();
+  largest_batch_id_ = reader.ReadBatchId();
+  document_key_ = reader.ReadDocumentKey();
   reader.ReadTerminator();
   return reader.ok();
 }
