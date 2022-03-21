@@ -6,11 +6,6 @@ target 'GOYO' do
   use_frameworks!
 
   # Pods for GOYO
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'GoogleSignIn'
-  pod 'Firebase/Firestore'
   pod 'Alamofire'
   pod 'SwiftyJSON'
 
