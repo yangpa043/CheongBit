@@ -16,9 +16,7 @@ public struct Location {
 }
 
 class SelectedLocData {
-    static let shared = SelectedLocData()
-    
-    var location: [Location] = [
+    static var location: [Location] = [
         Location(location: "서울 종로구 대학로 116", locationDetail: "공공일호 4층", name: "거캠")
     ]
 }

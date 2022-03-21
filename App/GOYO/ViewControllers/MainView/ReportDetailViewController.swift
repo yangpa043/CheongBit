@@ -60,7 +60,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             self.tableViewHeight.constant = self.locationShowTableView.contentSize.height
         }
         
-        SelectedLocData.shared.location.insert(Location(location: "위치서비스를 받을 수 없습니다.", locationDetail: "", name: "현위치"), at: 0)
+        SelectedLocData.location.insert(Location(location: "위치서비스를 받을 수 없습니다.", locationDetail: "", name: "현위치"), at: 0)
         
         self.indicator.isHidden = true
         
@@ -100,8 +100,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         currentLocManger.stopUpdatingLocation()
         
         // 현위치 cell 삭제하기
-        if (SelectedLocData.shared.location.firstIndex(where: { $0.name == "현위치" }) != nil) {
-            SelectedLocData.shared.location.removeAll(where: { $0.name == "현위치"})
+        if (SelectedLocData.location.firstIndex(where: { $0.name == "현위치" }) != nil) {
+            SelectedLocData.location.removeAll(where: { $0.name == "현위치"})
         }
     }
     
@@ -221,7 +221,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         let fireString = "\n[화재 발생]"
         let rescueString = "\n[구조,구급 필요]"
         
-        reportContent = SelectedLocData.shared.location[selectLocationNumber].location
+        reportContent = SelectedLocData.location[selectLocationNumber].location
         
         if fireReportTypeSelected == true {
             reportContent += fireString
@@ -265,7 +265,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             case.success(let value): // api 성공
                 if JSON(value)["documents"].arrayValue.count > 0, let Location = JSON(value)["documents"][0]["address"]["address_name"].string { // api값이 있을 경우
                     print("좌표주소: \(Location)")
-                    SelectedLocData.shared.location[0].location = Location
+                    SelectedLocData.location[0].location = Location
                     self.locationShowTableView.reloadData()
                 } else { // 값이 없을 경우
                     print("non value")
@@ -323,13 +323,13 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        SelectedLocData.shared.location.count
+        SelectedLocData.location.count
     }
     
     // cellForRowAt
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationShowCell", for: indexPath) as! ReportDetailTableViewCell
-        let location = SelectedLocData.shared.location[indexPath.row]
+        let location = SelectedLocData.location[indexPath.row]
         
         cell.locationNameLabel.text = location.name
         cell.locationLabel.text = "\(location.location) \(location.locationDetail)"
@@ -344,7 +344,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             var myString = ""
             _ = selectedRow.map{ myString += "\($0)" }
             let myInt = Int(myString)
-            locationInfoButton.setTitle("\(SelectedLocData.shared.location[myInt!].name)  ⌵", for: .normal)
+            locationInfoButton.setTitle("\(SelectedLocData.location[myInt!].name)  ⌵", for: .normal)
             selectLocationNumber = myInt!
         }
     }
