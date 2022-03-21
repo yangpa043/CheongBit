@@ -58,6 +58,8 @@ class MainViewController: UIViewController {
         micSwitch.onTintColor = #colorLiteral(red: 0.1098039216, green: 0.1019607843, blue: 0.2235294118, alpha: 1)
         micSwitch.tintColor = #colorLiteral(red: 0.6627865434, green: 0.6705468297, blue: 0.7195122242, alpha: 1)
         
+        SelectedLocData.loadAllData()
+        
     }
     
     

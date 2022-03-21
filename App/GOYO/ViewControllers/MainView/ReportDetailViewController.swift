@@ -60,7 +60,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             self.tableViewHeight.constant = self.locationShowTableView.contentSize.height
         }
         
-        SelectedLocData.location.insert(Location(location: "위치서비스를 받을 수 없습니다.", locationDetail: "", name: "현위치"), at: 0)
+        SelectedLocData.location.insert(Location(location: "위치서비스를 받을 수 없습니다.", locationDetail: "", locationName: "현위치"), at: 0)
         
         self.indicator.isHidden = true
         
@@ -100,8 +100,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         currentLocManger.stopUpdatingLocation()
         
         // 현위치 cell 삭제하기
-        if (SelectedLocData.location.firstIndex(where: { $0.name == "현위치" }) != nil) {
-            SelectedLocData.location.removeAll(where: { $0.name == "현위치"})
+        if (SelectedLocData.location.firstIndex(where: { $0.locationName == "현위치" }) != nil) {
+            SelectedLocData.location.removeAll(where: { $0.locationName == "현위치"})
         }
     }
     
@@ -331,7 +331,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationShowCell", for: indexPath) as! ReportDetailTableViewCell
         let location = SelectedLocData.location[indexPath.row]
         
-        cell.locationNameLabel.text = location.name
+        cell.locationNameLabel.text = location.locationName
         cell.locationLabel.text = "\(location.location) \(location.locationDetail)"
         cell.locationLabel.dynamicFont(fontSize: 17, weight: .regular)
         cell.locationNameLabel.dynamicFont(fontSize: 24, weight: .regular)
@@ -344,7 +344,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             var myString = ""
             _ = selectedRow.map{ myString += "\($0)" }
             let myInt = Int(myString)
-            locationInfoButton.setTitle("\(SelectedLocData.location[myInt!].name)  ⌵", for: .normal)
+            locationInfoButton.setTitle("\(SelectedLocData.location[myInt!].locationName)  ⌵", for: .normal)
             selectLocationNumber = myInt!
         }
     }

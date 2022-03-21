@@ -80,7 +80,7 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationsTableViewCell
         let location = SelectedLocData.location[indexPath.row]
         
-        cell.locationNameLabel.text = location.name
+        cell.locationNameLabel.text = location.locationName
         cell.locationLabel.text = "\(location.location) \(location.locationDetail)"
         
         return cell
@@ -91,7 +91,7 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         let vcName = self.storyboard?.instantiateViewController(withIdentifier: "LocAddEditViewController") as! LocAddEditViewController
         vcName.locationName = SelectedLocData.location[indexPath.row].location
         vcName.locationDetail = SelectedLocData.location[indexPath.row].locationDetail
-        vcName.locationNickname = SelectedLocData.location[indexPath.row].name
+        vcName.locationNickname = SelectedLocData.location[indexPath.row].locationName
         vcName.userSelectedRow = indexPath.row
         self.present(vcName, animated: true, completion: nil)
     }
@@ -104,6 +104,7 @@ class LocationSelectViewController: UIViewController, UITableViewDelegate, UITab
         if editingStyle == .delete {
             SelectedLocData.location.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            SelectedLocData.saveAllData()
         }
     }
 }

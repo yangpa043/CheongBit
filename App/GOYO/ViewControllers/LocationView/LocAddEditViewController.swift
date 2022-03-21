@@ -96,26 +96,27 @@ class LocAddEditViewController: UIViewController {
             if locNicknameTextField.hasText == true {
                 SelectedLocData.location[userSelectedRow].location = locationTextField.text!
                 SelectedLocData.location[userSelectedRow].locationDetail = locDetailTextField.text!
-                SelectedLocData.location[userSelectedRow].name = locNicknameTextField.text!
+                SelectedLocData.location[userSelectedRow].locationName = locNicknameTextField.text!
             } else {
                 SelectedLocData.location[userSelectedRow].location = locationTextField.text!
                 SelectedLocData.location[userSelectedRow].locationDetail = locDetailTextField.text!
-                SelectedLocData.location[userSelectedRow].name = locationTextField.text!
+                SelectedLocData.location[userSelectedRow].locationName = locationTextField.text!
             }
             
             
             NotificationCenter.default.post(name: NSNotification.Name("locationEditComplete"), object: nil)
             
-            print(SelectedLocData.location[userSelectedRow])
+            SelectedLocData.saveAllData()
             self.presentingViewController?.dismiss(animated: true, completion: nil)
             
         } else { // 주소 추가 할 때에
             if locNicknameTextField.hasText == true {
-                SelectedLocData.location.insert(Location(location: "\(self.locationTextField.text ?? "")", locationDetail: "\(self.locDetailTextField.text ?? "")", name: self.locNicknameTextField.text ?? ""), at: 0)
+                SelectedLocData.location.insert(Location(location: "\(self.locationTextField.text ?? "")", locationDetail: "\(self.locDetailTextField.text ?? "")", locationName: self.locNicknameTextField.text ?? ""), at: 0)
             } else {
-                SelectedLocData.location.insert(Location(location: "\(self.locationTextField.text ?? "")", locationDetail: "\(self.locDetailTextField.text ?? "")", name: self.locationTextField.text ?? ""), at: 0)
+                SelectedLocData.location.insert(Location(location: "\(self.locationTextField.text ?? "")", locationDetail: "\(self.locDetailTextField.text ?? "")", locationName: self.locationTextField.text ?? ""), at: 0)
             }
             
+            SelectedLocData.saveAllData()
             self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         }
     }
