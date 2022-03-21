@@ -17,8 +17,6 @@
 		D575487E26CFF63000B2E602 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487D26CFF63000B2E602 /* MainViewController.swift */; };
 		D575488326CFF63200B2E602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D575488226CFF63200B2E602 /* Assets.xcassets */; };
 		D575488626CFF63200B2E602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D575488426CFF63200B2E602 /* LaunchScreen.storyboard */; };
-		D5928EC427C8837A00EEE6A2 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5928EC327C8837A00EEE6A2 /* MyPageViewController.swift */; };
-		D5928ECA27C8839C00EEE6A2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5928EC927C8839C00EEE6A2 /* SignInViewController.swift */; };
 		D5928ECC27C883FB00EEE6A2 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5928ECB27C883FB00EEE6A2 /* SettingTableViewController.swift */; };
 		D593B794273CB275005784DB /* LocSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D593B793273CB275005784DB /* LocSearchViewController.swift */; };
 		D5AB1AF126EF02900058AE87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AB1AF026EF02900058AE87 /* Main.storyboard */; };
@@ -45,8 +43,6 @@
 		D575488226CFF63200B2E602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D575488526CFF63200B2E602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D575488726CFF63200B2E602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5928EC327C8837A00EEE6A2 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		D5928EC927C8839C00EEE6A2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		D5928ECB27C883FB00EEE6A2 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		D593B793273CB275005784DB /* LocSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocSearchViewController.swift; sourceTree = "<group>"; };
 		D5AB1AF026EF02900058AE87 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -127,16 +123,6 @@
 			path = LocationView;
 			sourceTree = "<group>";
 		};
-		D5928EBF27C882AB00EEE6A2 /* MyPageView */ = {
-			isa = PBXGroup;
-			children = (
-				D5928EC327C8837A00EEE6A2 /* MyPageViewController.swift */,
-				D5928ECB27C883FB00EEE6A2 /* SettingTableViewController.swift */,
-				D5928EC927C8839C00EEE6A2 /* SignInViewController.swift */,
-			);
-			path = MyPageView;
-			sourceTree = "<group>";
-		};
 		D5928EC027C882F800EEE6A2 /* LocationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,19 +132,13 @@
 			path = LocationView;
 			sourceTree = "<group>";
 		};
-		D5928EC127C8830300EEE6A2 /* MyPageView */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyPageView;
-			sourceTree = "<group>";
-		};
 		D5AB1AF426F025F30058AE87 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
 				D5FF6FE72739F4E000C79629 /* fireAlarmSoundClassifier 7.mlpackage */,
 				D575487D26CFF63000B2E602 /* MainViewController.swift */,
 				D5D8A70B26EEE35400A31EC2 /* ReportDetailViewController.swift */,
+				D5928ECB27C883FB00EEE6A2 /* SettingTableViewController.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -168,7 +148,6 @@
 			children = (
 				D5AB1B0326F1759C0058AE87 /* MainView */,
 				D5928EC027C882F800EEE6A2 /* LocationView */,
-				D5928EC127C8830300EEE6A2 /* MyPageView */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -186,7 +165,6 @@
 			children = (
 				D5AB1AF426F025F30058AE87 /* MainView */,
 				D5928EBE27C8829100EEE6A2 /* LocationView */,
-				D5928EBF27C882AB00EEE6A2 /* MyPageView */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -320,14 +298,12 @@
 				D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */,
 				D50221A4275706AC0041B4C5 /* LocAddEditViewController.swift in Sources */,
 				76B3552D26EAEC0D00957891 /* Data.swift in Sources */,
-				D5928ECA27C8839C00EEE6A2 /* SignInViewController.swift in Sources */,
 				D5928ECC27C883FB00EEE6A2 /* SettingTableViewController.swift in Sources */,
 				D5AB1AFD26F086020058AE87 /* LocationsTableViewCell.swift in Sources */,
 				D5D8A6F026E6ED0000A31EC2 /* DesignFile.swift in Sources */,
 				76349AB726E7332000BD7BAE /* LocSelectViewController.swift in Sources */,
 				D593B794273CB275005784DB /* LocSearchViewController.swift in Sources */,
 				D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */,
-				D5928EC427C8837A00EEE6A2 /* MyPageViewController.swift in Sources */,
 				D575487C26CFF63000B2E602 /* SceneDelegate.swift in Sources */,
 				D5AB1B0626F179360058AE87 /* ReportDetailTableViewCell.swift in Sources */,
 				D5ABD88527473F0800DA6ABE /* LocSearchTableViewCell.swift in Sources */,
