@@ -166,7 +166,7 @@ class MainViewController: UIViewController {
     // MARK: - ML
     
     private let audioEngine = AVAudioEngine()
-    private var soundClassifier = fireAlarmSoundClassifier_7()
+    private var soundClassifier = fireAlarmSoundClassifier_9()
     var streamAnalyzer: SNAudioStreamAnalyzer!
     let queue = DispatchQueue(label: "TeamPdf.GOYO", attributes: .concurrent)
     var results = [(label: String, confidence: Float)]() {
@@ -257,7 +257,7 @@ extension MainViewController: SNResultsObserving {
                 if confidence > 80 {
                     if classification.identifier == "2_fireAlarm"/*.contains("fire")*/{
                         fireCount += 1
-                        if fireCount >= 10 {
+                        if fireCount >= 7 {
                             print("화재 감지")
                             fireSenseAlert()
                         }
