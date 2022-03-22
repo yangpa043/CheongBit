@@ -17,7 +17,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // MARK: - Variables
     
     // 신고 메시지 내용
-    var reportContent: String = ""
+    var reportContent: String = "신고 앱을 이용한 긴급신고입니다.\n"
     // 위치 선택 테이블뷰 셀 선택 Bool 값
     var locationSelected: Bool = false
     // 신고 타입 선택 완료 Bool 값
@@ -145,12 +145,6 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             return
         }
         
-        if fireReportTypeButton.isSelected {
-            reportContent = "화재 신고"
-        } else if rescueReportTypeButton.isSelected {
-            reportContent = "구조, 구급 신고"
-        }
-        
         let composeViewController = MFMessageComposeViewController()
         
         composeViewController.messageComposeDelegate = self
@@ -218,10 +212,13 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     // 화재 신고 내용 입력 함수
     func decideReportContent() {
+        let appReportText = "- 앱을 이용한 긴급신고입니다 -\n"
         let fireString = "\n[화재 발생]"
         let rescueString = "\n[구조,구급 필요]"
         
-        reportContent = SelectedLocData.location[selectLocationNumber].location
+        reportContent = appReportText
+        
+        reportContent += "\(SelectedLocData.location[selectLocationNumber].location) \(SelectedLocData.location[selectLocationNumber].locationDetail)"
         
         if fireReportTypeSelected == true {
             reportContent += fireString
@@ -283,26 +280,26 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         case .cancelled:
             stopIndicator()
             print("cancelled")
-            reportContent = ""
+            reportContent = "신고 앱을 이용한 긴급신고입니다.\n"
             dismiss(animated: true, completion: nil)
             
         case .sent:
             stopIndicator()
             print("sent message:", controller.body ?? "")
-            reportContent = ""
+            reportContent = "신고 앱을 이용한 긴급신고입니다.\n"
             dismiss(animated: true, completion: nil)
             reportSuccessAlert()
             
         case .failed:
             stopIndicator()
             print("failed")
-            reportContent = ""
+            reportContent = "신고 앱을 이용한 긴급신고입니다.\n"
             dismiss(animated: true, completion: nil)
             
         @unknown default:
             stopIndicator()
             print("unkown Error")
-            reportContent = ""
+            reportContent = "신고 앱을 이용한 긴급신고입니다.\n"
             dismiss(animated: true, completion: nil)
         }
     }

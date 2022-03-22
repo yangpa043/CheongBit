@@ -55,22 +55,11 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
     }
     
     @IBAction func SearchButtonTapped(_ sender: Any) {
-        
-        if checkNetworkValue == true{
-            doSearch()
-        } else {
-            let cantConnectNetwork = UIAlertController(title: "안내", message: "네트워크가 연결되어 있지 않아요.\n네트워크 연결 후 다시 시도해주세요.", preferredStyle: UIAlertController.Style.alert)
-            let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
-            
-            cantConnectNetwork.addAction(alertCancel)
-            
-            self.present(cantConnectNetwork, animated: true)
-        }
-        
+        checkNetworkBeforeSearch()
     }
     
     @IBAction func keyboardDoneButtonTapped(_ sender: Any) {
-        doSearch()
+        checkNetworkBeforeSearch()
     }
     
     
@@ -104,6 +93,19 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
                 print("[Network Not Connected]")
                 self.checkNetworkValue = false
             }
+        }
+    }
+    
+    func checkNetworkBeforeSearch() {
+        if checkNetworkValue == true{
+            doSearch()
+        } else {
+            let cantConnectNetwork = UIAlertController(title: "안내", message: "네트워크가 연결되어 있지 않아요.\n네트워크 연결 후 다시 시도해주세요.", preferredStyle: UIAlertController.Style.alert)
+            let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
+            
+            cantConnectNetwork.addAction(alertCancel)
+            
+            self.present(cantConnectNetwork, animated: true)
         }
     }
     
