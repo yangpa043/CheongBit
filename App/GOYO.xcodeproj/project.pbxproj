@@ -12,7 +12,7 @@
 		76B3552D26EAEC0D00957891 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B3552C26EAEC0D00957891 /* Data.swift */; };
 		D37CCD13384C541331FDA3AE /* Pods_GOYO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BCF9B80EB5AE74205EB7E6A /* Pods_GOYO.framework */; };
 		D50221A4275706AC0041B4C5 /* LocAddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50221A3275706AC0041B4C5 /* LocAddEditViewController.swift */; };
-		D5647BFD27E965EB0056F84C /* fireAlarmSoundClassifier 9.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = D5647BFC27E965EB0056F84C /* fireAlarmSoundClassifier 9.mlpackage */; };
+		D5594B9F27EAC9CF00B7FAA4 /* fireAlarmSoundClassifier 10.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D5594B9E27EAC9CF00B7FAA4 /* fireAlarmSoundClassifier 10.mlmodel */; };
 		D575487A26CFF63000B2E602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487926CFF63000B2E602 /* AppDelegate.swift */; };
 		D575487C26CFF63000B2E602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487B26CFF63000B2E602 /* SceneDelegate.swift */; };
 		D575487E26CFF63000B2E602 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575487D26CFF63000B2E602 /* MainViewController.swift */; };
@@ -37,7 +37,7 @@
 		9BCF9B80EB5AE74205EB7E6A /* Pods_GOYO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GOYO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50221A3275706AC0041B4C5 /* LocAddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocAddEditViewController.swift; sourceTree = "<group>"; };
 		D53A17DC27380B2300E9888E /* GOYO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GOYO.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5647BFC27E965EB0056F84C /* fireAlarmSoundClassifier 9.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = "fireAlarmSoundClassifier 9.mlpackage"; sourceTree = "<group>"; };
+		D5594B9E27EAC9CF00B7FAA4 /* fireAlarmSoundClassifier 10.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "fireAlarmSoundClassifier 10.mlmodel"; sourceTree = "<group>"; };
 		D575487926CFF63000B2E602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D575487B26CFF63000B2E602 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D575487D26CFF63000B2E602 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		D5AB1AF426F025F30058AE87 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				D5647BFC27E965EB0056F84C /* fireAlarmSoundClassifier 9.mlpackage */,
+				D5594B9E27EAC9CF00B7FAA4 /* fireAlarmSoundClassifier 10.mlmodel */,
 				D575487D26CFF63000B2E602 /* MainViewController.swift */,
 				D5D8A70B26EEE35400A31EC2 /* ReportDetailViewController.swift */,
 				D5928ECB27C883FB00EEE6A2 /* SettingTableViewController.swift */,
@@ -294,10 +294,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D575487E26CFF63000B2E602 /* MainViewController.swift in Sources */,
-				D5647BFD27E965EB0056F84C /* fireAlarmSoundClassifier 9.mlpackage in Sources */,
 				D5D8A70C26EEE35400A31EC2 /* ReportDetailViewController.swift in Sources */,
 				D5AB1AF926F036EE0058AE87 /* Extension.swift in Sources */,
 				D50221A4275706AC0041B4C5 /* LocAddEditViewController.swift in Sources */,
+				D5594B9F27EAC9CF00B7FAA4 /* fireAlarmSoundClassifier 10.mlmodel in Sources */,
 				76B3552D26EAEC0D00957891 /* Data.swift in Sources */,
 				D5928ECC27C883FB00EEE6A2 /* SettingTableViewController.swift in Sources */,
 				D5AB1AFD26F086020058AE87 /* LocationsTableViewCell.swift in Sources */,

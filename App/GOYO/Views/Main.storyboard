@@ -32,8 +32,8 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="Iyz-BV-PAY"/>
                                     <constraint firstAttribute="width" secondItem="Crw-Sk-Xv1" secondAttribute="height" multiplier="5:1" id="tor-uU-YoB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <state key="normal" title="신고하기"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                <state key="normal" title="신 고 하 기"/>
                                 <connections>
                                     <action selector="reportButtonTapped:" destination="zNb-AT-MS6" eventType="touchUpInside" id="Ep5-sP-tP3"/>
                                     <segue destination="SBG-sK-nEL" kind="show" id="Rjd-Jo-jhZ"/>
