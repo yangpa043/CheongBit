@@ -140,23 +140,23 @@ class MainViewController: UIViewController {
         self.present(micCanceled, animated: true)
     }
     
-    func fireSenseAlert() {
-        let fireSense = UIAlertController(title: "화재를 감지하였습니다.\n신고하시겠습니까?", message: "", preferredStyle: UIAlertController.Style.alert)
-        let fireCancel = UIAlertAction(title: "취소", style: UIAlertAction.Style.default)
-        let report = UIAlertAction(title: "신고", style: UIAlertAction.Style.default) { _ in
-            let vcName = self.storyboard?.instantiateViewController(withIdentifier: "ReportDetailViewController") as! ReportDetailViewController
-            self.navigationController?.pushViewController(vcName, animated: true)
-        }
-        
-        fireSense.addAction(fireCancel)
-        fireSense.addAction(report)
-        
-        // 메인쓰레드에서 동작하게 하는 함수 (앱의 UI를 바꾸는 코드는 메인쓰레드가 아닌 다른쓰레드에서는 동작 못 함)
+    func fireSense() {
+        // 메인쓰레드에서 동작하게 하는 메서드 (앱의 UI를 바꾸는 코드는 메인쓰레드가 아닌 다른쓰레드에서는 동작 못 함)
         DispatchQueue.main.async {
+            let fireSense = UIAlertController(title: "화재를 감지하였습니다.\n신고하시겠습니까?", message: "", preferredStyle: UIAlertController.Style.alert)
+            let fireCancel = UIAlertAction(title: "취소", style: UIAlertAction.Style.default)
+            let report = UIAlertAction(title: "신고", style: UIAlertAction.Style.default) { _ in
+                let vcName = self.storyboard?.instantiateViewController(withIdentifier: "ReportDetailViewController") as! ReportDetailViewController
+                self.navigationController?.pushViewController(vcName, animated: true)
+            }
+            
+            fireSense.addAction(fireCancel)
+            fireSense.addAction(report)
+            
             self.micSwitch.isOn = false
             self.switchONorOFF = false
             self.switchButtonUpdate()
-            self.present(fireSense, animated: true)
+            self.present(fireSense, animated: false)
         }
     }
     
@@ -216,7 +216,7 @@ extension MainViewController: SNResultsObserving {
             return first.confidence > second.confidence
         }
         for classification in sorted {
-//            print(fireCount)
+            print(fireCount)
             let confidence = classification.confidence * 100
             if confidence > 5 {
                 temp.append((label: classification.identifier, confidence: Float(confidence)))
@@ -225,14 +225,12 @@ extension MainViewController: SNResultsObserving {
                         fireCount += 1
                         if fireCount >= 7 {
                             print("화재 감지")
-                            fireSenseAlert()
+                            fireSense()
                         }
                     } else if classification.identifier == "4_boolyiyaSound" {
                         print("화재 감지")
-                        fireSenseAlert()
+                        fireSense()
                     }
-                } else {
-                    fireCount = 0
                 }
             }
         }
