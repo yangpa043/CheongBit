@@ -25,7 +25,6 @@ class MainViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var MLTableView: UITableView!
     @IBOutlet weak var micSwitch: UISwitch!
     @IBOutlet weak var goyoImage: UIImageView!
     @IBOutlet weak var micStatusLabel: UILabel!
@@ -50,7 +49,6 @@ class MainViewController: UIViewController {
         self.view.backgroundColor = #colorLiteral(red: 1, green: 0.968627451, blue: 0.8392156863, alpha: 1)
         switchButtonUpdate()
         applyDynamicFont()
-        MLTableView.isHidden = true
         // 마이크 스텍뷰 디자인
         micONandOFFStackView.layer.masksToBounds = false
         micSwitch.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
@@ -169,13 +167,6 @@ class MainViewController: UIViewController {
     private var soundClassifier = fireAlarmSoundClassifier_10()
     var streamAnalyzer: SNAudioStreamAnalyzer!
     let queue = DispatchQueue(label: "TeamPdf.GOYO", attributes: .concurrent)
-    var results = [(label: String, confidence: Float)]() {
-        didSet {
-            DispatchQueue.main.async { [weak self] in
-                self?.MLTableView.reloadData()
-            }
-        }
-    }
     
     private func startAudioEngine() {
         audioEngine.prepare()
@@ -216,31 +207,6 @@ class MainViewController: UIViewController {
     
 }
 
-extension MainViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return results.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell")
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "ResultCell")
-        }
-        
-        let result = results[indexPath.row]
-        let label = convert(id: result.label)
-        cell!.textLabel!.text = "\(label): \(result.confidence)"
-        return cell!
-    }
-    
-    private func convert(id: String) -> String {
-        let mapping = ["1_normalSound" : "normal", "2_fireAlarmSound" : "fireAlarm", "3_talkingSound" : "talking", "4_boolyiyaSound" : "boolyiya"]
-        return mapping[id] ?? id
-    }
-    
-}
-
 extension MainViewController: SNResultsObserving {
     
     func request(_ request: SNRequest, didProduce result: SNResult) {
@@ -268,7 +234,6 @@ extension MainViewController: SNResultsObserving {
                 } else {
                     fireCount = 0
                 }
-                results = temp
             }
         }
     }
