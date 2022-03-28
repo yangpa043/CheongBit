@@ -164,7 +164,7 @@ class MainViewController: UIViewController {
     // MARK: - ML
     
     private let audioEngine = AVAudioEngine()
-    private var soundClassifier = fireAlarmSoundClassifier_10()
+    private let soundClassifier = fireAlarmSoundClassifier_10()
     var streamAnalyzer: SNAudioStreamAnalyzer!
     let queue = DispatchQueue(label: "TeamPdf.GOYO", attributes: .concurrent)
     
@@ -216,7 +216,7 @@ extension MainViewController: SNResultsObserving {
             return first.confidence > second.confidence
         }
         for classification in sorted {
-            print(fireCount)
+//            print(fireCount)
             let confidence = classification.confidence * 100
             if confidence > 5 {
                 temp.append((label: classification.identifier, confidence: Float(confidence)))
