@@ -37,7 +37,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     
     @IBOutlet weak var locationContentTitle: UILabel!
     @IBOutlet weak var reportContentTitle: UILabel!
-    @IBOutlet weak var locationInfoButton: UIButton!
+    @IBOutlet weak var locationSelectButton: UIButton!
     @IBOutlet weak var fireReportTypeButton: UIButton!
     @IBOutlet weak var rescueReportTypeButton: UIButton!
     @IBOutlet weak var reportButton: reportButton!
@@ -111,9 +111,13 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     @IBAction func locationSelectTapped(_ sender: UIButton) {
         
         if locationShowTableView.isHidden == true { // 테이블뷰 on
+            let newLocationSelectButton = locationSelectButton.title(for: .normal)!.replacingOccurrences(of: ">", with: "⌵")
+            locationSelectButton.setTitle(newLocationSelectButton, for: .normal)
             locationShowTableView.isHidden = false
             dontWorryLabel.isHidden = true
         } else { // 테이블뷰 off
+            let newLocationSelectButton = locationSelectButton.title(for: .normal)!.replacingOccurrences(of: "⌵", with: ">")
+            locationSelectButton.setTitle(newLocationSelectButton, for: .normal)
             locationShowTableView.isHidden = true
             dontWorryLabel.isHidden = false
         }
@@ -160,7 +164,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     // 폰 크기에 따라서 폰트 바뀌는 함수
     func applyDynamicfont() {
         locationContentTitle.dynamicFont(fontSize:30 , weight: .semibold)
-        locationInfoButton.titleLabel?.dynamicFont(fontSize: 24, weight: .thin)
+        locationSelectButton.titleLabel?.dynamicFont(fontSize: 24, weight: .thin)
         reportContentTitle.dynamicFont(fontSize: 30, weight: .semibold)
         rescueReportTypeButton.titleLabel?.dynamicFont(fontSize: 24, weight: .thin)
         fireReportTypeButton.titleLabel?.dynamicFont(fontSize: 24, weight: .thin)
@@ -341,7 +345,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
             var myString = ""
             _ = selectedRow.map{ myString += "\($0)" }
             let myInt = Int(myString)
-            locationInfoButton.setTitle("\(SelectedLocData.location[myInt!].locationName)  ⌵", for: .normal)
+            locationSelectButton.setTitle("\(SelectedLocData.location[myInt!].locationName)  >", for: .normal)
             selectLocationNumber = myInt!
         }
     }

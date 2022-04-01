@@ -153,7 +153,7 @@
                                         <rect key="frame" x="0.0" y="61.666666666666657" width="310" height="42"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                         <color key="tintColor" systemColor="labelColor"/>
-                                        <state key="normal" title="현재 위치를 선택해 주세요.  ⌵"/>
+                                        <state key="normal" title="현재 위치를 선택해 주세요  &gt;"/>
                                         <connections>
                                             <action selector="locationSelectTapped:" destination="SBG-sK-nEL" eventType="touchUpInside" id="PXc-yG-ju3"/>
                                         </connections>
@@ -315,7 +315,7 @@
                         <outlet property="fireReportTypeButton" destination="bah-iF-6Wu" id="Hrl-Ru-oWS"/>
                         <outlet property="indicator" destination="tf0-nN-50Q" id="GhX-WS-Pbg"/>
                         <outlet property="locationContentTitle" destination="idi-wJ-Nhv" id="JmO-dA-xBV"/>
-                        <outlet property="locationInfoButton" destination="Q6p-1k-Pqo" id="zHa-le-CTc"/>
+                        <outlet property="locationSelectButton" destination="Q6p-1k-Pqo" id="hjY-er-cTR"/>
                         <outlet property="locationShowTableView" destination="ecL-uf-teV" id="urP-uB-cLO"/>
                         <outlet property="reportButton" destination="du5-yG-CqQ" id="7lZ-cW-jcc"/>
                         <outlet property="reportContentTitle" destination="2sR-Ja-c51" id="JNF-bY-uhs"/>
@@ -396,6 +396,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="설정" id="XCp-Gc-LJu"/>
+                    <connections>
+                        <outlet property="SettingTable" destination="Njp-2Q-grm" id="OMO-fZ-5jO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkQ-2b-doL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
