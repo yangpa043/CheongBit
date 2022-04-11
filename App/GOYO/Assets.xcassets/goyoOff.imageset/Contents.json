@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "팀 브랜딩-40.png",
+      "filename" : "goyoOff.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "goyoOff@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "goyoOff@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

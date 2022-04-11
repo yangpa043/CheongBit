@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "goyoOn.png",
+      "filename" : "settingAppIcon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "goyoOn@2x.png",
+      "filename" : "settingAppIcon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "goyoOn@3x.png",
+      "filename" : "settingAppIcon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

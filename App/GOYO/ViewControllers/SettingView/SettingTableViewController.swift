@@ -9,26 +9,51 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
 
+    // MARK: - Variables
+    
+    
+    
+    // MARK: - Outlets
+    
+    @IBOutlet var settingTable: UITableView!
+    
+    
+    
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.settingTable.delegate = self
+        self.settingTable.dataSource = self
+        
+        settingTable.separatorInset.right = 15
+        
     }
-
+    
+    
+    // MARK: - Actions
+    
+    
+    
+    // MARK: - Functions
+    
+    
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        if section == 0 {
+            return 1
+        } else {
+            return 3
+        }
     }
 
     /*

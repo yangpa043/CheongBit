@@ -9,21 +9,38 @@ import UIKit
 
 class AppInfoViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    // MARK: - Variables
+    
+    var version: String? {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        return version
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Outlets
+    
+    @IBOutlet weak var appIcon: UIImageView!
+    @IBOutlet weak var versionLabel: UILabel!
+    
+    // MARK: - LifeCycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        appIcon.layer.cornerRadius = 20
+        appIcon.translatesAutoresizingMaskIntoConstraints = false
+        appIcon.layer.borderWidth = 0.7
+        appIcon.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        
+        versionLabel.text = version
     }
-    */
+    
+    
+    // MARK: - Actions
+    
+    
+    
+    // MARK: - Functions
+    
+
 
 }
