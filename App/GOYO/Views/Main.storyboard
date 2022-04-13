@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -335,6 +334,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.90737452649999994" green="0.88660478819999999" blue="0.80025456399999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
@@ -348,7 +348,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <listContentConfiguration key="contentConfiguration" style="sidebarCell" text="주소 데이터 모두 삭제" secondaryText="추가한 주소 리스트를 모두 삭제합니다."/>
+                                        <listContentConfiguration key="contentConfiguration" style="sidebarCell" text="장소 데이터 초기화" secondaryText="신고 장소 리스트를 초기화 합니다."/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -375,7 +375,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <listContentConfiguration key="contentConfiguration" style="sidebarCell" text="서비스 이용약관" secondaryText=""/>
+                                        <listContentConfiguration key="contentConfiguration" style="sidebarCell" text="서비스 이용 안내" secondaryText=""/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="CellList" id="gqF-jD-xfI">
                                         <rect key="frame" x="0.0" y="244.33333015441895" width="390" height="39.333332061767578"/>
@@ -412,8 +412,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8tS-b5-6zg">
-                                <rect key="frame" x="120" y="206.66666666666669" width="150" height="230.66666666666669"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8tS-b5-6zg">
+                                <rect key="frame" x="120" y="207.66666666666669" width="150" height="248.66666666666669"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="slY-m5-5Wm">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
@@ -423,16 +423,27 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="j9b-bM-IC1">
-                                        <rect key="frame" x="27.999999999999993" y="170.00000000000003" width="94.333333333333314" height="60.666666666666657"/>
+                                        <rect key="frame" x="18.33333333333335" y="165.00000000000003" width="113.66666666666669" height="83.666666666666657"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOYO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wp-9M-bcA">
-                                                <rect key="frame" x="23.333333333333346" y="0.0" width="47.333333333333343" height="20.333333333333332"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ljg-R5-yXY">
+                                                <rect key="frame" x="0.0" y="0.0" width="113.66666666666667" height="43.333333333333336"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Go On Your Own" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MyU-rn-DbV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="113.66666666666667" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOYO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wp-9M-bcA">
+                                                        <rect key="frame" x="0.0" y="18" width="113.66666666666667" height="25.333333333333329"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="JmC-gj-K52">
-                                                <rect key="frame" x="0.0" y="40.333333333333314" width="94.333333333333329" height="20.333333333333329"/>
+                                                <rect key="frame" x="9.6666666666666572" y="63.333333333333321" width="94.333333333333329" height="20.333333333333336"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 버전" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0P-HT-1AC">
                                                         <rect key="frame" x="0.0" y="0.0" width="63.333333333333336" height="20.333333333333332"/>
@@ -456,7 +467,7 @@
                         <viewLayoutGuide key="safeArea" id="m2Q-a4-Iiz"/>
                         <color key="backgroundColor" red="1" green="0.96862745100000003" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8tS-b5-6zg" firstAttribute="centerY" secondItem="IBa-PP-B73" secondAttribute="centerY" constant="-100" id="1K3-bK-WeM"/>
+                            <constraint firstItem="8tS-b5-6zg" firstAttribute="centerY" secondItem="IBa-PP-B73" secondAttribute="centerY" constant="-90" id="1K3-bK-WeM"/>
                             <constraint firstItem="8tS-b5-6zg" firstAttribute="centerX" secondItem="IBa-PP-B73" secondAttribute="centerX" id="1hX-EJ-2gL"/>
                         </constraints>
                     </view>
@@ -549,7 +560,7 @@
                             <constraint firstItem="MQM-98-uPG" firstAttribute="leading" secondItem="V8z-GN-pCe" secondAttribute="leading" constant="16" id="yC8-cg-SxB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="신고 주소 리스트" id="7L7-lO-ob2">
+                    <navigationItem key="navigationItem" title="신고 장소 리스트" id="7L7-lO-ob2">
                         <barButtonItem key="rightBarButtonItem" title="편집" id="gcF-tH-ZxH">
                             <connections>
                                 <action selector="tableViewEdit:" destination="YLi-JK-DSt" id="Swz-or-5wc"/>
@@ -803,13 +814,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="k52-2O-Pou">
                                 <rect key="frame" x="20" y="298.66666666666669" width="350" height="77.333333333333314"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주소 별명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zck-6P-nEF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장소 별명" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zck-6P-nEF">
                                         <rect key="frame" x="0.0" y="0.0" width="96" height="31.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="주소 별명을 입력해주세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbm-ev-s6O">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="장소 별명을 입력해주세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bbm-ev-s6O">
                                         <rect key="frame" x="0.0" y="37.333333333333314" width="350" height="40"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.92941176469999998" blue="0.82745098039999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -832,7 +843,7 @@
                                     <constraint firstItem="bbm-ev-s6O" firstAttribute="leading" secondItem="k52-2O-Pou" secondAttribute="leading" id="sGa-Yp-5Uc"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" * 주소 별명을 입력하지 않으면 도로명 주소가 입력 됩니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqv-b5-Cbu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" * 장소 별명을 입력하지 않으면 도로명 주소가 입력 됩니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqv-b5-Cbu">
                                 <rect key="frame" x="20" y="376" width="301" height="15.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
@@ -902,7 +913,6 @@
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.99971312280000002" green="0.96884971860000002" blue="0.84112757439999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" name="AccentColor"/>
                         <color key="barTintColor" red="0.99971312280000002" green="0.96884971860000002" blue="0.84112757439999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.10980392160000001" green="0.1019607843" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

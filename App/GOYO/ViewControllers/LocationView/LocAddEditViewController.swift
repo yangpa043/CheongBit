@@ -33,6 +33,7 @@ class LocAddEditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        completeButton.isEnabled = false
         self.LabelTextDesign()
         
         if let locationName = locationName {

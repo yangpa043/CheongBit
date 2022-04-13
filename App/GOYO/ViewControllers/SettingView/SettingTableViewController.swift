@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class SettingTableViewController: UITableViewController {
 
@@ -38,6 +39,26 @@ class SettingTableViewController: UITableViewController {
     
     // MARK: - Functions
     
+    func openGoyoGuide() {
+        
+        guard let url = URL(string: "https://thin-memory-1d0.notion.site/GOYO-18fe4a9c675d4473ad7d47a35f482db9") else { return }
+        
+        let safariViewController = SFSafariViewController(url: url)
+        
+        present(safariViewController, animated: true, completion: nil)
+        
+    }
+    
+    func openPrivacyPolicy() {
+        
+        guard let url = URL(string: "https://thin-memory-1d0.notion.site/GOYO-df8b51e1ac9d4a14ad34549c749d5e0e") else { return }
+        
+        let safariViewController = SFSafariViewController(url: url)
+        
+        present(safariViewController, animated: true, completion: nil)
+        
+    }
+
     
     
     // MARK: - Table view data source
@@ -56,6 +77,32 @@ class SettingTableViewController: UITableViewController {
         }
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print(indexPath.row)
+        settingTable.deselectRow(at: indexPath, animated: true)
+        
+        if indexPath.section == 0 {     // 이용설정 섹션
+            if indexPath.row == 0 {     // 주소데이터 삭제 셀
+                let locDelete = UIAlertController(title: "주소 데이터를 초기화 하시겠습니까?", message: "신고 주소 리스트가 모두 삭제됩니다.", preferredStyle: UIAlertController.Style.alert)
+                let deleteCancel = UIAlertAction(title: "취소", style: UIAlertAction.Style.default)
+                let delete = UIAlertAction(title: "삭제", style: UIAlertAction.Style.default) { _ in
+                    SelectedLocData.location = []
+                    SelectedLocData.saveAllData()
+                    
+                    self.showOKAlertController(title: "초기화 되었습니다.", message: "", actionTitle: "확인", handler: nil)
+                }
+                locDelete.addAction(deleteCancel)
+                locDelete.addAction(delete)
+                self.present(locDelete, animated: true)
+            }
+        } else {    // 약관 및 정책 섹션
+            if indexPath.row == 1 {     // 서비스 이용 안내 셀
+                openGoyoGuide()
+            } else if indexPath.row == 2 {      // 개인정보 처리방침 셀
+                openPrivacyPolicy()
+            }
+        }
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

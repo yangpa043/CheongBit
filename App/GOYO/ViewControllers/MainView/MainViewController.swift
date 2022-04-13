@@ -156,7 +156,7 @@ class MainViewController: UIViewController {
             self.micSwitch.isOn = false
             self.switchONorOFF = false
             self.switchButtonUpdate()
-            self.present(fireSense, animated: false)
+            self.present(fireSense, animated: true)
         }
     }
     

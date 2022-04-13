@@ -70,7 +70,7 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
         
         currentLocManger.delegate = self
         currentLocManger.desiredAccuracy = kCLLocationAccuracyBest
-        currentLocManger.distanceFilter = 2
+        currentLocManger.distanceFilter = 3//Meter
         
         applyDynamicfont()
         reportButton.isEnabled = false
@@ -348,6 +348,8 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         selectedRow = [indexPath.row]
+        
+        locationShowTableView.deselectRow(at: indexPath, animated: true)
         
         locationShowTableView.isHidden = true
         locationSelected = true
