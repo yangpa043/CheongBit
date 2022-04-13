@@ -100,12 +100,7 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
         if checkNetworkValue == true{
             doSearch()
         } else {
-            let cantConnectNetwork = UIAlertController(title: "안내", message: "네트워크가 연결되어 있지 않아요.\n네트워크 연결 후 다시 시도해주세요.", preferredStyle: UIAlertController.Style.alert)
-            let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
-            
-            cantConnectNetwork.addAction(alertCancel)
-            
-            self.present(cantConnectNetwork, animated: true)
+            showOKAlertController(title: "안내", message: "네트워크가 연결되어 있지 않아요.\n네트워크 연결 후 다시 시도해주세요.", actionTitle: "확인", handler: nil)
         }
     }
     
@@ -147,12 +142,7 @@ class LocSearchViewController: UIViewController, ResultCellDelegate, UITableView
                 }
                 
                 if self.resultList.isEmpty == true {
-                    let noResult = UIAlertController(title: "안내", message: "검색 결과가 없습니다.", preferredStyle: UIAlertController.Style.alert)
-                    let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
-                    
-                    noResult.addAction(alertCancel)
-                    
-                    self.present(noResult, animated: true)
+                    self.showOKAlertController(title: "안내", message: "검색 결과가 없습니다.\n주소를 정확하게 입력해주세요.", actionTitle: "확인", handler: nil)
                 }
                 
                 self.resultTable.reloadData()

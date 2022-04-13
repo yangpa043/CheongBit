@@ -52,3 +52,14 @@ extension UILabel {
     self.font = UIFont.systemFont(ofSize: calculatedFont!.pointSize, weight: weight)
   }
 }
+
+extension UIViewController {
+    func showOKAlertController(title: String, message: String, actionTitle: String, handler: ((UIAlertAction) -> Void)?) {
+        let okController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: actionTitle, style: .default, handler: handler)
+
+        okController.addAction(okAction)
+        
+        self.present(okController, animated: true)
+    }
+}

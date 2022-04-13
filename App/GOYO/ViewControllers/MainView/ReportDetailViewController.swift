@@ -309,15 +309,9 @@ class ReportDetailViewController: UIViewController, MFMessageComposeViewControll
     }
     
     func reportSuccessAlert() {
-        let micCanceled = UIAlertController(title: "신고가 완료되었습니다.", message: "", preferredStyle: UIAlertController.Style.alert)
-        let alertCancel = UIAlertAction(title: "확인", style: UIAlertAction.Style.cancel)
-        { _ in
+        showOKAlertController(title: "신고가 완료되었습니다.", message: "", actionTitle: "확인") { _ in
             self.navigationController?.popViewController(animated: true)
         }
-        
-        micCanceled.addAction(alertCancel)
-        
-        self.present(micCanceled, animated: true)
     }
     
     
